@@ -31208,6 +31208,42 @@ open class WMKeyboardService : InputMethodService() {
     }
 
     /**
+     * A quick straight swipe left or down over the letters, read as the
+     * BlackBerry Keyboard's board gesture ([berrySwipe]) when the setting is
+     * on: left deletes the word behind the caret, down opens the symbols. The
+     * stroke is then spoken for and nothing is decoded from it.
+     *
+     * The glide grid carries centres, not heights, so a row's height is taken
+     * as the smallest gap between two distinct rows of centres.
+     */
+    private fun berrySwipePick(
+        state: KeyboardUiState,
+        points: List<GesturePoint>,
+        keys: List<KeyCenter>,
+        keyWidthPx: Float,
+    ): Boolean {
+        if (!state.settings.layoutBehavior.berrySwipes) return false
+        val rows = keys.map { it.y }.distinct().sorted()
+        var rowPitch = Float.MAX_VALUE
+        for (i in 1 until rows.size) {
+            val gap = rows[i] - rows[i - 1]
+            if (gap > keyWidthPx * 0.25f && gap < rowPitch) rowPitch = gap
+        }
+        if (rowPitch == Float.MAX_VALUE) rowPitch = keyWidthPx * 1.4f
+        return when (berrySwipe(points, keyWidthPx, rowPitch)) {
+            BerrySwipe.DELETE_WORD -> {
+                onKey(Key(label = "", action = KeyAction.Edit(TextEditAction.DELETE_WORD)))
+                true
+            }
+            BerrySwipe.SYMBOLS -> {
+                onKey(Key(label = "", action = KeyAction.Symbols))
+                true
+            }
+            null -> false
+        }
+    }
+
+    /**
      * A quick flick up off a key that is carrying a word: commit that word and
      * tell the caller the stroke is spoken for.
      *
@@ -32909,6 +32945,10 @@ open class WMKeyboardService : InputMethodService() {
         // Only when the picker did not answer. A frozen stroke was the user
         // choosing, and what they chose is not a key's word.
         if (verdict is GlideVerdict.Leader && octopusFlickPick(state, points, keys, keyWidthPx)) return
+        // A BlackBerry swipe over the letters: left deletes a word, down opens
+        // the symbols. Asked at the lift for the same reason as the flick
+        // above, and after it, so an upward word flick is never read as one.
+        if (verdict is GlideVerdict.Leader && berrySwipePick(state, points, keys, keyWidthPx)) return
         // A tap that rolled into a swipe under two thumbs is still the tap.
         if (duetStrokeAsTap(state, points, keys, keyWidthPx)) return
         // Two-thumb typing, or a swipe finishing typed letters: the stroke

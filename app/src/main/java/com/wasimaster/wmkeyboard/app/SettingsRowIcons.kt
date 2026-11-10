@@ -1299,6 +1299,8 @@ internal object SettingsRowIcons {
         put(R.string.typing_magnifier_follows_title) { Icons.Outlined.ZoomIn }
         put(R.string.typing_space_swipe_down_hide_title) { Icons.Outlined.SwipeDown }
         put(R.string.typing_edge_swipe_back_title) { Icons.AutoMirrored.Outlined.ArrowBack }
+        put(R.string.typing_berry_swipes_title) { Icons.Outlined.SwipeDown }
+        put(R.string.typing_spacebar_correction_title) { Icons.Outlined.SpaceBar }
         put(R.string.typing_hint_flick_title) { Icons.Outlined.SwipeDownAlt }
         put(R.string.typing_capital_flick_title) { Icons.Outlined.KeyboardCapslock }
         put(R.string.typing_flick_hints_title) { Icons.Outlined.OpenWith }

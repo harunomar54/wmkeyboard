@@ -381,6 +381,8 @@ import com.wasimaster.wmkeyboard.ime.OCTOPUS_SLOP_CLEARANCE
 import com.wasimaster.wmkeyboard.ime.OCTOPUS_START_REACH_WIDTHS
 import com.wasimaster.wmkeyboard.ime.OctopusSource
 import com.wasimaster.wmkeyboard.ime.octopusFlick
+import com.wasimaster.wmkeyboard.ime.BerrySwipe
+import com.wasimaster.wmkeyboard.ime.berrySwipe
 import com.wasimaster.wmkeyboard.ime.octopusFlickShape
 import com.wasimaster.wmkeyboard.ime.Modifiers
 import com.wasimaster.wmkeyboard.core.accessibility.KeyboardPassthrough
@@ -17062,6 +17064,24 @@ internal fun Key?.ownsDrag(): Boolean =
     startsChordDrag() || startsLayerDrag() || (this != null && hasFlicks())
 
 /**
+ * Whether a stroke from this key should be kept away from the words on the
+ * keys (discussion #102). [ownsDrag] answers yes for every flick key, which is
+ * right for a key with an upward arm: its flick up and the word's flick up
+ * would be the same stroke. A key whose arms all point elsewhere has nothing
+ * upward to lose, though, so a BlackBerry-style board (left deletes a word,
+ * down opens the symbols) keeps the word above each key one flick away.
+ * Chords and layer peeks still own their drags outright.
+ */
+internal fun Key?.ownsDragFromOctopus(): Boolean {
+    if (this == null) return false
+    if (startsChordDrag() || startsLayerDrag()) return true
+    if (!hasFlicks()) return false
+    return UPWARD_ARMS.any { flickArm(it) != null }
+}
+
+private val UPWARD_ARMS = listOf(FlickDirection.UP, FlickDirection.UP_LEFT, FlickDirection.UP_RIGHT)
+
+/**
  * Whether glide typing may still take a stroke that starts on this flick key
  * (#655). A letter key given corner swipes — every letter of an Unexpected
  * Keyboard layout, or one given arms in the editor — refused glide outright
@@ -19327,6 +19347,14 @@ private fun KeyRows(
     // Read live rather than captured: the words change on every keystroke, and
     // a pointer loop restarted that often would be a loop that misses touches.
     val octopusLive = rememberUpdatedState(state.octopus)
+    // BlackBerry board swipes (left deletes a word, down opens the symbols).
+    // With glide typing running on the letters the glide loop's lift asks the
+    // service instead; this loop covers every other board: glide off, and the
+    // symbol pages, where a second swipe down turns the page.
+    val berrySwipesHere = state.settings.layoutBehavior.berrySwipes && !gestureEnabled
+    val berryRowPx = rememberUpdatedState(
+        with(LocalDensity.current) { (state.settings.keyHeightDp.dp + keyGapV(state.settings) * 2).toPx() },
+    )
     // The keyboard's own haptic, which already routes through the service and
     // respects the user's feedback settings — not Compose's, whose name this
     // composition local deliberately shadows.
@@ -19940,7 +19968,7 @@ private fun KeyRows(
                     // (#243): backspace sits against the bottom letter row.
                     // So is a spacebar swipe (#333).
                     val downKey = liveRects.value.keyAt(down.position + boxOrigin)
-                    if (downKey.ownsDrag() || downKey.startsGlobeDrag(globeDragLive.value) ||
+                    if (downKey.ownsDragFromOctopus() || downKey.startsGlobeDrag(globeDragLive.value) ||
                         downKey.ownsDeleteStroke() || downKey.ownsSpaceStroke()
                     ) {
                         return@awaitEachGesture
@@ -20030,6 +20058,46 @@ private fun KeyRows(
                         last.consume()
                         octopusRects.markTaken(word.word)
                         octopusPick(word.word, OctopusSource.FLICK)
+                    }
+                }
+            }
+            .pointerInput(berrySwipesHere) {
+                if (!berrySwipesHere) return@pointerInput
+                awaitEachGesture {
+                    val down = awaitFirstDown(
+                        requireUnconsumed = false,
+                        pass = PointerEventPass.Initial,
+                    )
+                    // The keys that own their drags keep them, the same list
+                    // the octopus loop above leaves alone: chords, layer
+                    // peeks, flick arms, backspace's own word swipe and the
+                    // spacebar's swipes.
+                    val downKey = liveRects.value.keyAt(down.position + boxOrigin)
+                    if (downKey.ownsDrag() || downKey.startsGlobeDrag(globeDragLive.value) ||
+                        downKey.ownsDeleteStroke() || downKey.ownsSpaceStroke()
+                    ) {
+                        return@awaitEachGesture
+                    }
+                    val points = ArrayList<GesturePoint>()
+                    points.add(GesturePoint(down.position.x, down.position.y, down.uptimeMillis))
+                    var last = down
+                    while (true) {
+                        val event = awaitPointerEvent()
+                        val change = event.changes.firstOrNull { it.id == down.id } ?: break
+                        last = change
+                        points.add(GesturePoint(change.position.x, change.position.y, change.uptimeMillis))
+                        if (!change.pressed) break
+                    }
+                    if (fingerGate.claimed) return@awaitEachGesture
+                    val swipe = berrySwipe(points, keyWidth.value, berryRowPx.value)
+                        ?: return@awaitEachGesture
+                    // Only the lift, as the octopus does: the key under the
+                    // finger reads a consumed up as taken and types nothing.
+                    last.consume()
+                    when (swipe) {
+                        BerrySwipe.DELETE_WORD ->
+                            stampedOnKey(Key(label = "", action = KeyAction.Edit(TextEditAction.DELETE_WORD)))
+                        BerrySwipe.SYMBOLS -> stampedOnKey(Key(label = "", action = KeyAction.Symbols))
                     }
                 }
             }
@@ -28738,17 +28806,32 @@ private fun KeyContent(visual: KeyVisual, settings: KeyboardSettings, contentCol
                     }
                     // A custom label replaces the language name; %s inside it
                     // puts the name back, so "— %s —" keeps tracking the mode.
-                    if (showText) Text(
-                        text = visual.spaceText,
-                        fontSize = (11 * fontScale).sp,
-                        color = contentColor.copy(alpha = 0.5f),
-                        maxLines = 1,
-                        softWrap = false,
-                        overflow = TextOverflow.Ellipsis,
-                    )
+                    // BlackBerry style: the word a space will put in takes
+                    // the label's place, in green, while autocorrect has one.
+                    val correction = rememberSpacebarCorrection().value
+                    if (correction != null) {
+                        Text(
+                            text = correction,
+                            fontSize = (18 * fontScale).sp,
+                            fontWeight = FontWeight.Bold,
+                            color = SpacebarCorrectionGreen,
+                            maxLines = 1,
+                            softWrap = false,
+                            overflow = TextOverflow.Ellipsis,
+                        )
+                    } else if (showText) {
+                        Text(
+                            text = visual.spaceText,
+                            fontSize = (11 * fontScale).sp,
+                            color = contentColor.copy(alpha = 0.5f),
+                            maxLines = 1,
+                            softWrap = false,
+                            overflow = TextOverflow.Ellipsis,
+                        )
+                    }
                     // Issue #752: the speed of the last few words, on its own
                     // scope, so a new reading redraws this text and nothing else.
-                    if (showText) SpacebarLiveWpm(contentColor, fontScale)
+                    if (showText && correction == null) SpacebarLiveWpm(contentColor, fontScale)
                 }
             }
         }

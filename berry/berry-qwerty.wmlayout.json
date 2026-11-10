@@ -1,0 +1,192 @@
+{
+  "format": "wmkeyboard-layout",
+  "version": 1,
+  "layout": {
+    "id": "user_berry_qwerty",
+    "name": "Berry QWERTY",
+    "langId": "en",
+    "version": 2,
+    "layers": {
+      "letters": {
+        "rows": [
+          [
+            {
+              "label": "q",
+              "hideHint": true
+            },
+            {
+              "label": "w",
+              "hideHint": true
+            },
+            {
+              "label": "e",
+              "hideHint": true
+            },
+            {
+              "label": "r",
+              "hideHint": true
+            },
+            {
+              "label": "t",
+              "hideHint": true
+            },
+            {
+              "label": "y",
+              "hideHint": true
+            },
+            {
+              "label": "u",
+              "hideHint": true
+            },
+            {
+              "label": "i",
+              "hideHint": true
+            },
+            {
+              "label": "o",
+              "hideHint": true
+            },
+            {
+              "label": "p",
+              "hideHint": true
+            }
+          ],
+          [
+            {
+              "label": "a",
+              "hideHint": true,
+              "width": 1.1111
+            },
+            {
+              "label": "s",
+              "hideHint": true,
+              "width": 1.1111
+            },
+            {
+              "label": "d",
+              "hideHint": true,
+              "width": 1.1111
+            },
+            {
+              "label": "f",
+              "hideHint": true,
+              "width": 1.1111
+            },
+            {
+              "label": "g",
+              "hideHint": true,
+              "width": 1.1111
+            },
+            {
+              "label": "h",
+              "hideHint": true,
+              "width": 1.1111
+            },
+            {
+              "label": "j",
+              "hideHint": true,
+              "width": 1.1111
+            },
+            {
+              "label": "k",
+              "hideHint": true,
+              "width": 1.1111
+            },
+            {
+              "label": "l",
+              "hideHint": true,
+              "width": 1.1111
+            }
+          ],
+          [
+            {
+              "label": "⇧",
+              "action": {
+                "type": "shift"
+              },
+              "width": 1.5
+            },
+            {
+              "label": "z",
+              "hideHint": true
+            },
+            {
+              "label": "x",
+              "hideHint": true
+            },
+            {
+              "label": "c",
+              "hideHint": true
+            },
+            {
+              "label": "v",
+              "hideHint": true
+            },
+            {
+              "label": "b",
+              "hideHint": true
+            },
+            {
+              "label": "n",
+              "hideHint": true
+            },
+            {
+              "label": "m",
+              "hideHint": true
+            },
+            {
+              "label": "⌫",
+              "action": {
+                "type": "delete"
+              },
+              "width": 1.5
+            }
+          ],
+          [
+            {
+              "label": "?123",
+              "action": {
+                "type": "symbols"
+              },
+              "width": 1.5,
+              "labelScale": 0.9
+            },
+            {
+              "label": ",",
+              "hideHint": true
+            },
+            {
+              "label": " ",
+              "action": {
+                "type": "space"
+              },
+              "width": 5.0
+            },
+            {
+              "label": ".",
+              "longPress": [
+                "?",
+                "!",
+                "'",
+                "\"",
+                ":",
+                ";",
+                "-",
+                "@"
+              ],
+              "hideHint": true
+            },
+            {
+              "label": "⏎",
+              "action": {
+                "type": "enter"
+              },
+              "width": 1.5
+            }
+          ]
+        ],
+        "bottomRowAsLaidOut": true
+      }
+    }
+  }
+}

@@ -9481,6 +9481,21 @@ data class LayoutBehaviorSettings(
      */
     val capitalFlick: Boolean = false,
     /**
+     * BlackBerry-style swipes over the keys: a quick, straight swipe left
+     * anywhere on the board deletes the word behind the caret, and a swipe
+     * down opens the symbols (a second one turns their page). Judged at the
+     * lift (the ime module's berrySwipe) so a glide that only looks like one at first is
+     * never taken. Off by default: a fast straight glide along a row can read
+     * as a swipe, which is the trade BlackBerry made too.
+     */
+    val berrySwipes: Boolean = false,
+    /**
+     * The word a space will put in, drawn on the spacebar in place of its
+     * label while autocorrect has decided on it, the way the BlackBerry
+     * Keyboard showed it. Reads the same promise the strip colours.
+     */
+    val spacebarCorrection: Boolean = false,
+    /**
      * Whether a key with flick arms ([com.wasimaster.wmkeyboard.core.layout.Key.flick])
      * draws them on its face, small, at the edge or corner each is flicked
      * towards, the way MessagEase-style boards and Multiling O show what a
@@ -11787,6 +11802,8 @@ class SettingsRepository(private val context: Context) {
         private val GLOBE_TOOL = stringPreferencesKey("globe_tool")
         private val HINT_FLICK = booleanPreferencesKey("hint_flick")
         private val CAPITAL_FLICK = booleanPreferencesKey("capital_flick")
+        private val BERRY_SWIPES = booleanPreferencesKey("berry_swipes")
+        private val SPACEBAR_CORRECTION = booleanPreferencesKey("spacebar_correction")
         private val GLOBE_TYPING_GUARD_MS = intPreferencesKey("globe_typing_guard_ms")
         private val GLOBE_DRAG_SHORTCUTS = booleanPreferencesKey("globe_drag_shortcuts")
         private val BOARD_CORNER_TOP = intPreferencesKey("board_corner_top")
@@ -14604,6 +14621,8 @@ class SettingsRepository(private val context: Context) {
                 ?: defaults.layoutBehavior.fullBleedExtraHeightDp,
             hintFlick = p[HINT_FLICK] ?: defaults.layoutBehavior.hintFlick,
             capitalFlick = p[CAPITAL_FLICK] ?: defaults.layoutBehavior.capitalFlick,
+            berrySwipes = p[BERRY_SWIPES] ?: defaults.layoutBehavior.berrySwipes,
+            spacebarCorrection = p[SPACEBAR_CORRECTION] ?: defaults.layoutBehavior.spacebarCorrection,
             globeTypingGuardMs = p[GLOBE_TYPING_GUARD_MS]?.coerceIn(GlobeTypingGuardMsRange)
                 ?: defaults.layoutBehavior.globeTypingGuardMs,
             boardCornerTopDp = p[BOARD_CORNER_TOP]?.coerceIn(BoardCornerRadiusRange)
@@ -22008,6 +22027,12 @@ class SettingsRepository(private val context: Context) {
 
     suspend fun setCapitalFlick(value: Boolean) =
         editPrefs { it[CAPITAL_FLICK] = value }
+
+    suspend fun setBerrySwipes(value: Boolean) =
+        editPrefs { it[BERRY_SWIPES] = value }
+
+    suspend fun setSpacebarCorrection(value: Boolean) =
+        editPrefs { it[SPACEBAR_CORRECTION] = value }
 
     suspend fun setGlobeTypingGuardMs(value: Int) =
         editPrefs { it[GLOBE_TYPING_GUARD_MS] = value.coerceIn(GlobeTypingGuardMsRange) }

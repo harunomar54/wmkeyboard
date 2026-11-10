@@ -377,6 +377,14 @@ android {
     }
 
     signingConfigs {
+        // Berry fork: one fixed debug key, so each CI build installs over the
+        // last one instead of needing an uninstall (CI makes a new key per run).
+        create("berryDebug") {
+            storeFile = rootProject.file("app/berry-debug.jks")
+            storePassword = "android"
+            keyAlias = "berrydebug"
+            keyPassword = "android"
+        }
         create("release") {
             val storeFilePath = apiKey("RELEASE_STORE_FILE", "RELEASE_STORE_FILE")
             if (storeFilePath.isNotEmpty()) {
@@ -393,6 +401,10 @@ android {
 
     buildTypes {
         debug {
+            // Berry fork: installs beside the Play Store WM Keyboard.
+            applicationIdSuffix = ".berry"
+            versionNameSuffix = "-berry"
+            signingConfig = signingConfigs.getByName("berryDebug")
             ndk {
                 if (!splitApks) abiFilters += setOf("arm64-v8a")
             }

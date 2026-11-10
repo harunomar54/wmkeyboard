@@ -798,6 +798,8 @@ private fun SearchStrings.typingFlicksRows(): List<SettingsSearchEntry> {
     fun row(@StringRes title: Int, @StringRes subtitle: Int = 0, weight: EntryWeight = EntryWeight.NORMAL) =
         gesturePageRow(R.string.typing_page_flicks_title, "typing/gestures/flicks", title, subtitle, weight)
     return listOf(
+        row(R.string.typing_berry_swipes_title, R.string.typing_berry_swipes_subtitle),
+        row(R.string.typing_spacebar_correction_title, R.string.typing_spacebar_correction_subtitle),
         row(R.string.typing_hint_flick_title, R.string.typing_hint_flick_subtitle, weight = EntryWeight.PRIMARY),
         row(R.string.typing_capital_flick_title, R.string.typing_capital_flick_subtitle),
         row(R.string.typing_flick_hints_title, R.string.typing_flick_hints_subtitle),

@@ -974,6 +974,12 @@
     <string name="typing_space_swipe_down_hide_subtitle">A swipe down on the spacebar closes the keyboard</string>
     <string name="typing_space_swipe_down_hide_info">Swipe straight down on the spacebar to close the keyboard. This setting is off by default, so an accidental swipe down never closes the keyboard. When the 2-D cursor touchpad is on, a swipe down moves the cursor instead. The touchpad has priority.</string>
 
+    <string name="typing_berry_swipes_title">BlackBerry swipes</string>
+    <string name="typing_berry_swipes_subtitle">Swipe left anywhere to delete a word, swipe down for symbols</string>
+    <string name="typing_berry_swipes_info">A quick, straight swipe left across the keys deletes the word before the cursor, wherever it starts. A quick swipe down opens the numbers and symbols, and another swipe down shows the next page of them. Slow or curved strokes still glide words, and a swipe up still takes the word shown on a key.</string>
+    <string name="typing_spacebar_correction_title">Show the correction on the spacebar</string>
+    <string name="typing_spacebar_correction_subtitle">The word a space will type appears on the spacebar in green</string>
+    <string name="typing_spacebar_correction_info">While autocorrect has settled on a fix for the word you are typing, the spacebar shows that word in green instead of its usual label, so you can see what a space will type before you press it.</string>
     <string name="typing_hint_flick_title">Swipe down to type the hint</string>
     <string name="typing_hint_flick_subtitle">A quick swipe down on a key types its small corner character</string>
     <string name="typing_hint_flick_info">Each key shows its first press-and-hold character in the corner, such as 1 on q. A short, quick swipe straight down on the key types that character with no hold. This works on any key that has press-and-hold characters, on every layer. The spacebar, backspace and the shift and modifier keys keep their own swipes. The swipe must be short, straight down and fast. A longer or slower drag is a glide, as before. A swipe that ends on another letter, such as \"ok\" from o to k, is a glided word, not a flick. This setting is off by default.</string>

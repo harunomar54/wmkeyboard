@@ -3292,6 +3292,26 @@ internal fun TypingFlicksSettings(
     val glideOn = settings.watch { it.gestureTyping }
     SettingsGroup(stringResource(R.string.typing_group_flicks_title)) {
         item(level = SettingLevel.STANDARD) {
+            // BlackBerry board swipes: left deletes a word, down opens symbols.
+            ToggleSetting(
+                R.string.typing_berry_swipes_title,
+                stringResource(R.string.typing_berry_swipes_subtitle),
+                settings.watch { it.layoutBehavior.berrySwipes },
+                info = stringResource(R.string.typing_berry_swipes_info),
+                default = SettingsDefaults.layoutBehavior.berrySwipes,
+            ) { scope.launch { repository.setBerrySwipes(it) } }
+        }
+        item(level = SettingLevel.STANDARD) {
+            // BlackBerry style: the pending correction shown on the spacebar.
+            ToggleSetting(
+                R.string.typing_spacebar_correction_title,
+                stringResource(R.string.typing_spacebar_correction_subtitle),
+                settings.watch { it.layoutBehavior.spacebarCorrection },
+                info = stringResource(R.string.typing_spacebar_correction_info),
+                default = SettingsDefaults.layoutBehavior.spacebarCorrection,
+            ) { scope.launch { repository.setSpacebarCorrection(it) } }
+        }
+        item(level = SettingLevel.STANDARD) {
             // Issue #178: a quick flick down on a key types its corner hint.
             ToggleSetting(
                 R.string.typing_hint_flick_title,
