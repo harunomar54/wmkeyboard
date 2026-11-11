@@ -1,11 +1,11 @@
 {
-  "id": "berry_dark_v4",
+  "id": "berry_dark_v5",
   "name": "Berry Dark",
   "dark": true,
   "boardBackground": 4282071867,
   "suggestionBarBackground": 4280690214,
   "toolbarBackground": 4280690214,
-  "navigationBarBackground": 4280690214,
+  "navigationBarBackground": 4278190080,
   "keyShape": "SHARP",
   "keyCornerRadiusDp": 0,
   "keyBackground": 4280690214,
@@ -52,7 +52,7 @@
   "familyName": "Berry",
   "variants": [
     {
-      "id": "berry_light_v4",
+      "id": "berry_light_v5",
       "name": "Berry Light",
       "dark": false,
       "boardBackground": 4291085508,

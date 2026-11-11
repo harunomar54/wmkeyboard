@@ -17097,8 +17097,30 @@ private fun Modifier.berrySwipeInput(
     )
     val mode = rememberUpdatedState(state.layoutMode)
     val send = rememberUpdatedState(onKey)
+    // The delete cue: a backspace glyph that rides beside the finger once a
+    // stroke reads as a swipe left, grows as it nears the bar, and slides off
+    // and fades when the word goes (or just vanishes when it does not).
+    val cueAt = remember { mutableStateOf<Offset?>(null) }
+    val cueAlpha = remember { mutableFloatStateOf(0f) }
+    val cueGrow = remember { mutableFloatStateOf(0f) }
+    val cueSlide = remember { mutableFloatStateOf(0f) }
+    val cuePainter = rememberVectorPainter(Icons.AutoMirrored.Outlined.Backspace)
+    val cueTint = LocalKbTheme.current.keyText
+    val cueScope = rememberCoroutineScope()
     if (!on) return this
-    return pointerInput(Unit) {
+    return drawWithContent {
+        drawContent()
+        val at = cueAt.value ?: return@drawWithContent
+        val alpha = cueAlpha.floatValue
+        if (alpha <= 0f) return@drawWithContent
+        val side = (20f + 10f * cueGrow.floatValue).dp.toPx()
+        val w = side * 1.3f
+        translate(at.x - w - 10.dp.toPx() - cueSlide.floatValue, at.y - side / 2f) {
+            with(cuePainter) {
+                draw(Size(w, side), alpha = alpha, colorFilter = ColorFilter.tint(cueTint))
+            }
+        }
+    }.pointerInput(Unit) {
         awaitEachGesture {
             val down = awaitFirstDown(requireUnconsumed = false, pass = PointerEventPass.Initial)
             // The keys that own their drags keep them, the same list the
@@ -17119,8 +17141,24 @@ private fun Modifier.berrySwipeInput(
                 last = change
                 points.add(GesturePoint(change.position.x, change.position.y, change.uptimeMillis))
                 if (!change.pressed) break
+                // Live cue: shown once the stroke heads left and stays level.
+                val travel = down.position.x - change.position.x
+                val drift = kotlin.math.abs(change.position.y - down.position.y)
+                val width = keyWidth.value
+                if (width > 0f && travel > width * 0.35f && drift < travel * 0.6f) {
+                    val progress = (travel / (width * BERRY_SHORT_LEFT_KEYS)).coerceIn(0f, 1f)
+                    cueSlide.floatValue = 0f
+                    cueAt.value = change.position
+                    cueGrow.floatValue = progress
+                    cueAlpha.floatValue = 0.35f + 0.5f * progress
+                } else {
+                    cueAlpha.floatValue = 0f
+                }
             }
-            if (fingerGate.claimed) return@awaitEachGesture
+            if (fingerGate.claimed) {
+                cueAlpha.floatValue = 0f
+                return@awaitEachGesture
+            }
             // No glide typing runs here, so nothing else wants a short
             // straight stroke: one key's width left is enough (p to o), the
             // way the BlackBerry Keyboard took it, and a slower hand still
@@ -17131,7 +17169,21 @@ private fun Modifier.berrySwipeInput(
                 minLeftKeys = BERRY_SHORT_LEFT_KEYS,
                 minDownRows = BERRY_SHORT_DOWN_ROWS,
                 maxDurationMs = BERRY_SHORT_MAX_DURATION_MS,
-            ) ?: return@awaitEachGesture
+            )
+            if (swipe != BerrySwipe.DELETE_WORD || cueAt.value == null) cueAlpha.floatValue = 0f
+            if (swipe == null) return@awaitEachGesture
+            if (swipe == BerrySwipe.DELETE_WORD && cueAt.value != null) {
+                // The word is gone: the glyph carries on left and fades out.
+                val from = cueAlpha.floatValue.coerceAtLeast(0.6f)
+                val slide = 36.dp.toPx()
+                cueGrow.floatValue = 1f
+                cueScope.launch {
+                    androidx.compose.animation.core.animate(0f, 1f, animationSpec = tween(220)) { t, _ ->
+                        cueSlide.floatValue = slide * t
+                        cueAlpha.floatValue = from * (1f - t)
+                    }
+                }
+            }
             // Only the lift, as the octopus does: the key under the finger
             // reads a consumed up as taken and types nothing.
             last.consume()
