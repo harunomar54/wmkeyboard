@@ -1,0 +1,28 @@
+name: Berry data
+
+# One-off data jobs for the BB-Keyboard fork that need the open internet,
+# which the build machines have. Nothing here touches the app or its build.
+on:
+  workflow_dispatch:
+
+jobs:
+  name-capitals:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch AOSP's English word list
+        run: |
+          curl -fsSL "https://android.googlesource.com/platform/packages/inputmethods/LatinIME/+/refs/heads/main/dictionaries/en_US_wordlist.combined.gz?format=TEXT" \
+            | base64 -d | gunzip > en_US.combined
+          head -3 en_US.combined
+          wc -l en_US.combined
+      - name: List names written mostly with a capital
+        run: |
+          python3 berry/tools/name_capitals.py en_US.combined app/dictionaries-src/en.txt \
+            app/src/main/assets/dictionaries/en_caps.txt > name-capitals.tsv
+          wc -l name-capitals.tsv
+          cat name-capitals.tsv
+      - uses: actions/upload-artifact@v4
+        with:
+          name: name-capitals
+          path: name-capitals.tsv
