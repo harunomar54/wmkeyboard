@@ -142,11 +142,15 @@ def consider(name, source):
         return
     lf = freq.get(key)
     cf = freq.get(name[0].upper() + name[1:], freq.get(name, 0))
+    b = births.get(name, 0)
     english = lf is not None and (lf >= 100 or (lf >= 30 and key in dict_words))
+    # Webster's carries Arabic loanwords (hamza, amir, haji): a hand-listed
+    # name thousands of people carry outweighs a dictionary-only word.
+    if english and key in curated_keys and lf < 100 and b >= 5000:
+        english = False
     if english and key not in forced and not (cf - lf >= 30 and lf < 75):
         turned["English word"].append(f"{name}({cf}/{lf})")
         return
-    b = births.get(name, 0)
     if source == "ssa" and b < MIN_BIRTHS:
         turned["too rare"].append(name)
         return
