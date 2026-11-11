@@ -177,9 +177,10 @@ internal fun octopusSlots(
         // range there would throw inside the keyboard.
         val left = maxOf(lo, minOf(centre - drawnWidth / 2, hi - drawnWidth))
         val right = left + drawnWidth
-        // Slid, but never off its key: the word's middle stays over the key
-        // it is picked from.
-        if ((left + right) / 2 !in cell.left..cell.right) continue
+        // Never off its key: [centre] lies in [lo, hi] and the word is placed
+        // as close to centred on it as that room allows, so the word always
+        // spans its key's middle. A word on an edge key that the board edge
+        // pushes inward is the same case, and stays.
         val area = Rect(left, top, right, bandBottom)
         val hitTop = area.top.coerceIn(0f, boardSize.height)
         val hitBottom = area.bottom.coerceIn(0f, boardSize.height)
