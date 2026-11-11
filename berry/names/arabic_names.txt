@@ -1,0 +1,643 @@
+# Arabic and Muslim given names, as they are written in English letters.
+# One name per line; the spellings people actually use for it follow on the
+# same line, comma separated. Arabic, Somali, South Asian, Turkish and Persian
+# Muslim usage. Hand-curated for BB-Keyboard; berry/tools/build_names.py turns
+# it into capitals (and an optional prediction dictionary).
+#
+# Left out on purpose: words that are also everyday vocabulary in English or
+# in Muslim English (said, dua, iman, ameen, salam, deen, jannah, sabr, taqwa,
+# rahma...): see berry/names/exclude.txt.
+
+## Prophets (Anbiya)
+Adam, Aadam
+Idris, Idrees, Idriss
+Nuh, Nooh, Nouh
+Hud, Hood, Houd
+Salih, Saleh, Swaleh, Salih
+Ibrahim, Ebrahim, Ibraheem, Ibraahim, Brahim, Ibrahiim
+Ismail, Ismael, Ismaeel, Ismaaiil, Ismaaciil, Esmail, Ismayil
+Ishaq, Ishaaq, Ishak, Isaac
+Yaqub, Yaqoob, Yakub, Yaakub, Yacub, Yaquub, Yacquub, Yaqob
+Yusuf, Yousuf, Yousef, Youssef, Yusef, Yussuf, Yusof, Yosef, Yuusuf, Yousif, Yusif
+Lut, Loot, Lot
+Shuaib, Shoaib, Shuayb, Shuaybu, Shuayb
+Ayyub, Ayub, Ayoub, Ayoob, Eyup, Ayuub
+Dhul-Kifl, Dhulkifl
+Musa, Moosa, Mousa, Moussa, Muuse, Muse, Musah
+Harun, Haroon, Haroun, Harune, Haaruun, Harum
+Dawud, Dawood, Daud, Dawuud, Daoud, Dauda
+Sulayman, Sulaiman, Suleiman, Soliman, Suleyman, Sleiman, Sulaymaan, Suleman, Slimane
+Ilyas, Ilyaas, Elias, Elyas, Iliyas
+Alyasa, Alyasaa, Elisha
+Yunus, Younus, Younes, Yunis, Younis, Yunes, Yuunis
+Zakariya, Zakariyya, Zakaria, Zakariyah, Zakarie, Zakarya, Zakariye, Sakariye
+Yahya, Yahyah, Yehya, Yahye
+Isa, Eesa, Issa, Iisa, Ciise
+Muhammad, Mohammed, Mohamed, Mohammad, Muhammed, Mohamad, Muhamad, Mohamud, Mahamed, Maxamed, Mehmet, Mehmed, Mouhamed, Mohd, Mhd, Muhammet
+
+## Names of the Prophet and family
+Ahmad, Ahmed, Ahmet, Axmed, Amed, Ahmadou
+Mahmud, Mahmoud, Mahmood, Mehmood, Maxamuud, Mahamud
+Mustafa, Mostafa, Moustafa, Mustapha, Mostapha, Mustafe
+Hamid, Hamed, Haamid, Xaamid
+Abul-Qasim, Abulqasim
+Fatima, Fatimah, Fatma, Fatemeh, Faduma, Fadumo, Faadumo, Fathima, Fatuma, Fatou, Fatimata
+Khadija, Khadijah, Khadiijo, Khadeeja, Kadija, Khadidja, Hadija, Xadiijo
+Aisha, Aishah, Ayesha, Aysha, Aicha, Ayşe, Ayse, Aysha, Caasha, Caisha, Asha, Aysa
+Zaynab, Zainab, Zeinab, Zaineb, Zeynep, Zenab, Saynab, Zaynabu
+Ruqayya, Ruqayyah, Ruqaya, Roqaya, Rukaya, Rukiya, Rugiya
+Umm Kulthum, Kulthum, Kalsoom, Kulsoom, Kulsum
+Hasan, Hassan, Xasan, Hasaan, Hassane, Hassen
+Husayn, Hussein, Hussain, Husain, Hossein, Huseyn, Hüseyin, Huseyin, Xuseen, Hussien, Housein
+Ali, Aly, Alee, Cali, Aliyu
+Abbas, Abbaas, Cabaas
+Hamza, Hamzah, Hamse, Hamzeh, Xamse
+Jafar, Jaafar, Jaffar, Jafer
+Aqil, Aqeel, Akil, Akeel
+Qasim, Qasem, Kasim, Kassim, Qaasim, Casim
+Ibrahim
+
+## Sahaba and early Muslims
+Abu Bakr, Abubakar, Abubakr, Abubaker, Abubakar, Abuubakar, Bakr, Bakar, Bakari
+Umar, Omar, Omer, Oumar, Cumar, Umer, Omari
+Uthman, Usman, Othman, Osman, Osmane, Cusmaan, Usmaan, Othmane, Ousmane, Usmon
+Talha, Talhah, Talxa
+Zubayr, Zubair, Zubeir, Zubeyr, Zoubir
+Saad, Sad, Saed, Sacad, Saadi
+Said, Sacid, Saeed, Saiid, Saied
+Abdur-Rahman ibn Awf
+Abu Ubaidah, Ubaidah, Ubayda, Obaida, Obaidah, Ubaydah
+Bilal, Belal, Bilaal, Bilaal, Bilali
+Ammar, Amar, Cammaar, Ammaar
+Yasir, Yasser, Yaser, Yaasir, Yassir
+Sumayya, Sumaya, Sumayyah, Somaya, Sumaiya, Sumaia
+Khalid, Khaled, Khalidh, Xaalid, Khaalid, Halid
+Muadh, Muaz, Moaz, Muath, Mu'adh, Muaad, Moath
+Anas, Anass, Anes
+Ubayy, Ubay
+Zayd, Zaid, Zeyd, Zayed, Zaied, Zaydan, Zeid, Seyd
+Usama, Osama, Usamah, Oussama, Osamah, Usaama
+Salman, Salmaan, Selman, Salmon
+Abu Huraira, Abuhurayra, Hurayra, Huraira
+Abdullah ibn Masud, Masud, Masood, Mesut, Masoud, Mas'ud
+Ibn Abbas
+Jabir, Jaber, Jabiir
+Hudhayfa, Hudhaifa, Huzaifa, Huzayfa, Huthaifa, Hudaifa, Xudeyfa
+Mus'ab, Musab, Mosab, Musaab, Musacab
+Khabbab, Khubayb, Khubaib
+Suhayb, Suhaib, Sohaib, Suhaybu, Suheyb
+Abu Dharr, Abudharr
+Miqdad, Mikdad, Meqdad
+Asim, Asem, Aasim, Caasim, Assem
+Amr, Amru, Amro, Camr
+Ikrima, Ikrimah, Ikrime
+Nuaym, Nuaim, Naeem, Naim, Nayim, Nacim
+Hamna, Hamnah
+Asma, Asmaa, Asmah, Asmaa, Esma, Esmaa, Casma
+Hafsa, Hafsah, Hafza, Xafsa, Hafssa
+Safiyya, Safiya, Safia, Safiyyah, Safiyah, Saffiya
+Maymuna, Maimuna, Maimouna, Maymouna, Meimuna
+Juwayriyya, Juwairiya, Juwayriyah
+Sawda, Sawdah, Sauda
+Umm Salama, Salama, Salamah
+Ramla, Ramlah
+Nusayba, Nusaybah, Nusaiba, Nusaibah
+Rufayda, Rufaida, Rufaydah
+Barakah, Baraka, Baraka
+Halima, Halimah, Haleema, Xaliimo, Halimo, Halime
+Amina, Aminah, Ameena, Amena, Aamina, Aminata, Aminatu, Amiina, Aamino
+Abdullah, Abdallah, Abdulla, Abdalla, Abdella, Abdellah, Abdoulah, Abdollah, Abdullahi, Cabdullahi, Cabdalla, Abdillahi, Abdulahi, Abdoullah, Abdula
+
+## Male given names
+Aadil, Adil, Adel, Aadel
+Abid, Abed, Aabid
+Adnan, Adnaan
+Afif, Afeef
+Ahsan, Ehsan, Ihsaan, Ihsanullah
+Akram, Ekrem, Akrem
+Ala, Alaa, Ala'a, Aladdin, Alaeddine, Alaa-eddin, Aladin
+Amjad, Amgad
+Amir, Ameer, Emir, Amiir, Aamir, Amer, Aamer
+Anwar, Anouar, Anvar, Enver
+Arif, Aref, Aarif
+Ashraf, Achraf, Eshref
+Ayman, Aiman, Eyman, Aymen
+Ayaan, Ayan, Ayaan
+Azhar, Azher
+Aziz, Azeez, Abdulaziz, Abdelaziz, Abdiaziz, Abdulazeez, Cabdicasiis
+Badr, Bader, Badar, Bedir
+Bashir, Basheer, Bachir, Beshir, Bashiir
+Basim, Basem, Bassem, Bassam, Basaam
+Burhan, Burhaan, Burhanuddin
+Dalil, Daleel
+Dawoud
+Diyar, Diyaa, Diya, Ziya, Ziyad, Ziad, Ziyaad, Ziyaad
+Ehab, Ihab
+Emad, Imad, Imaad
+Fadi, Fady
+Fadil, Fadel, Fazil, Fadhil
+Fahad, Fahd, Fahid
+Fahim, Faheem, Fehim
+Faisal, Faysal, Feisal, Faysel, Faycal
+Fakhri, Fakhry, Fakhr
+Farah, Faarax
+Faraj, Farag
+Farhan, Farhaan
+Faris, Fares, Faaris, Fariss
+Farid, Fareed, Ferid
+Faruq, Farooq, Farouk, Faruk, Farouq, Faaruuq
+Fawaz, Fawwaz
+Fawzi, Fawzy, Fawzi, Fevzi
+Fayez, Faiz, Faez
+Firas, Feras, Firaas
+Fuad, Fouad, Fuat
+Ghassan, Ghasan
+Ghazi, Gazi
+Habib, Habeeb, Xabiib
+Hadi, Haadi, Hady
+Hafiz, Hafez, Hafidh, Haafiz, Xaafid
+Haider, Haidar, Haydar, Hyder
+Hakim, Hakeem, Haakim, Xakiim
+Hamdan, Hamdaan, Hamdi, Hamdy, Xamdi
+Hani, Hany, Haani
+Haris, Harith, Hares, Haarith, Haaris
+Hashim, Hashem, Haashim, Hachem
+Hatem, Hatim, Haatim
+Haytham, Haitham, Heitham, Haysam
+Hilal, Helal, Hilaal
+Hisham, Hicham, Hishaam, Hesham
+Hubayb
+Humam, Hammam
+Ibrahim
+Idrees
+Ihsan
+Ilham, Ilhaam
+Ilyas
+Imran, Emran, Imraan, Cimraan, Omran
+Irfan, Irfaan, Erfan
+Ishaq
+Iyad, Eyad, Iyaad
+Izz, Izzat, Izzeldin, Izzuddin, Ezzat, Izzeddine
+Jabril, Jibril, Jibreel, Jibriil, Gabriel
+Jalal, Jalaal, Celal, Jalaluddin
+Jamal, Jamaal, Gamal, Cemal, Jamaludin, Jamaaluddin
+Jamil, Jameel, Gamil, Cemil
+Jawad, Jawaad, Javad
+Junaid, Junayd, Juneid
+Kamal, Kamaal, Kemal
+Kamil, Kameel, Kamel, Kaamil
+Kamran, Kamraan
+Karim, Kareem, Kerim, Kariim, Abdulkarim, Abdikarim, Abdelkarim
+Khalil, Khaleel, Halil, Khaliil
+Khayr, Khair, Khayri, Khairy, Khairi
+Labib, Labeeb
+Latif, Lateef, Abdullatif, Abdellatif
+Luqman, Lukman, Loqman, Luqmaan
+Mahdi, Mehdi, Mahdy
+Mahir, Maher, Maahir
+Majid, Majed, Maajid, Maged, Majeed
+Malik, Malek, Maalik, Malick
+Mamun, Mamoun, Ma'mun, Maamoun
+Mansur, Mansour, Mansoor, Mansuur
+Marwan, Marwaan
+Mazin, Mazen, Maazin
+Muhannad, Mohannad, Muhanad
+Muhsin, Mohsen, Muhsen, Mohsin
+Mujahid, Mujaahid
+Mukhtar, Mokhtar, Mukhtaar
+Munir, Mounir, Muneer, Muniir
+Murad, Mourad, Muraad
+Murtada, Murtaza, Murtadha
+Musab
+Mutasim, Mutasem, Moatasem
+Nabil, Nabeel, Nabiil
+Nadir, Nader, Naadir
+Nadim, Nadeem, Nediim
+Naif, Nayef, Naayif
+Najib, Najeeb, Necip, Najiib
+Nasim, Naseem, Nesim
+Nasir, Nasser, Naser, Nasr, Nasser, Naasir, Nasiru, Abdinasir, Abdulnasir
+Nawaf, Nawwaf
+Nazim, Nazeem, Nazem
+Nizar, Nezar
+Nouri, Nuri, Noori
+Qadir, Kadir, Qaadir, Abdulqadir, Abdiqadir, Abdelkader, Abdelqader, Abdulkadir, Cabdulqaadir
+Qays, Qais, Kais, Kays
+Qutb, Qutub
+Rabi, Rabie, Rabih, Rabia
+Rafiq, Rafeeq, Rafik, Refik
+Rahim, Raheem, Abdulrahim, Abdirahim, Abderrahim
+Rais, Raees
+Rakan, Raakan
+Ramadan, Ramadhan, Ramazan, Ramzan, Ramdane, Ramadaan
+Rami, Ramy, Raami
+Rashid, Rashed, Rasheed, Raashid, Rachid, Reshid, Abdirashid, Abdulrashid
+Rayyan, Rayan, Raiyan, Ryan
+Rida, Reda, Ridha, Riza, Reza, Ridaa
+Riyad, Riyadh, Riad, Riyaad
+Rizwan, Ridwan, Rizvan, Ridwaan, Redouane, Rizwaan
+Sabir, Saber, Saabir, Sabri, Sabry
+Safwan, Safwaan
+Sahl, Sahal, Saxal
+Sajid, Sajed, Saajid
+Salim, Saleem, Selim, Saliim, Salem, Saalim
+Sami, Samy, Saami, Samee, Samiullah
+Samir, Sameer, Samiir
+Sharif, Shareef, Cherif, Sherif, Shariif
+Shakir, Shaker, Shaakir
+Shams, Shamsuddin, Shamsudeen
+Shihab, Shehab, Chihab
+Siraj, Siraaj, Sirajuddin
+Sufyan, Sufian, Sofian, Sofiane, Sufyaan
+Suhail, Suhayl, Sohail, Sohayl
+Taha, Taaha, Toha, Daaha
+Tahir, Taher, Tahar, Taahir, Daahir
+Tamim, Tameem, Temim
+Tariq, Tarek, Tarik, Tareq, Taariq, Tarık
+Tawfiq, Tawfik, Taufiq, Tevfik, Tofik
+Ubaid, Ubayd, Obaid, Obeid
+Ula, Ulla
+Usayd, Usaid, Osaid
+Wadud, Wadood, Abdulwadud
+Wahid, Waheed, Wahiid
+Wail, Wael, Waail
+Walid, Waleed, Oualid, Waliid, Velid
+Wasim, Waseem, Wassim, Vasim
+Yahya
+Yaman, Yamaan
+Yazid, Yazeed, Yezid
+Yunus
+Zahid, Zahed, Zaahid
+Zahir, Zaher, Zaahir, Abdulzahir
+Zakir, Zaakir, Zaker
+Zaki, Zaky, Zakee
+Zayn, Zain, Zein, Zane, Zaynab
+Ziyad
+Zubair
+Zuhair, Zuhayr, Zuheir, Zoheir
+
+## Abd compounds: Abd + a Name of Allah, as they are written
+Abdulrahman, Abdurrahman, Abdurahman, Abdel Rahman, Abdelrahman, Abderrahmane, Abdirahman, Abdulrehman, Abdur Rahman, Abd al-Rahman, Cabdiraxmaan, Abdourahmane, Abdoulrahman, Abdrahman, Abdorrahman
+Abdulrahim, Abdurrahim, Abdirahim, Abderrahim, Abdelrahim
+Abdulmalik, Abdelmalek, Abdimalik, Abdulmaalik, Abdelmalik
+Abdulquddus, Abdulkuddus, Abdelkoddous
+Abdussalam, Abdulsalam, Abdessalam, Abdisalam, Abdusalam, Abdelsalam, Abdisalaam, Cabdisalaan
+Abdulmumin, Abdelmoumen, Abdimumin
+Abdulmuhaymin
+Abdulaziz, Abdelaziz, Abdiaziz, Abdulazeez, Abdulazis, Abdelazeez
+Abduljabbar, Abdeljabbar, Abdijabbar, Abdijabar
+Abdulmutakabbir
+Abdulkhaliq, Abdelkhalek, Abdikhaliq
+Abdulbari, Abdelbari, Abdibari
+Abdulmusawwir
+Abdulghaffar, Abdelghaffar, Abdulgafar, Abdighafar
+Abdulqahhar, Abdelkahar, Abdulkahar
+Abdulwahhab, Abdulwahab, Abdelwahab, Abdiwahab, Abdelouahab, Abdulwahaab
+Abdurrazzaq, Abdulrazzaq, Abdulrazak, Abderrazak, Abdirazak, Abdirizak, Abdirisaq, Abdurazak, Abdelrazek
+Abdulfattah, Abdelfattah, Abdifatah, Abdulfatah, Abdifataah, Abdelfatah
+Abdulalim, Abdulaleem, Abdelalim, Abdialim
+Abdulqabid
+Abdulbasit, Abdelbasset, Abdibasit, Abdulbaasit
+Abdulkhafid
+Abdurrafi, Abdulrafi
+Abdulmuizz, Abdelmoez
+Abdussami, Abdulsami, Abdelsami, Abdisamad
+Abdulbasir, Abdelbasir
+Abdulhakam
+Abduladl
+Abdullatif, Abdellatif, Abdilatif, Abdullateef, Abdelatif
+Abdulkhabir
+Abdulhalim, Abdelhalim, Abdihalim, Abdulhaleem
+Abdulazim, Abdulazeem, Abdelazim, Abdiazim
+Abdulghafur, Abdulghafoor, Abdelghafour, Abdighafur
+Abdushshakur, Abdulshakur, Abdishakur, Abdulshakoor, Abdelchakour, Abdishakuur
+Abdulali, Abdelali, Abdiali
+Abdulkabir, Abdelkebir, Abdikabir
+Abdulhafiz, Abdelhafid, Abdihafid, Abdulhafeez
+Abdulmuqit
+Abdulhasib
+Abduljalil, Abdeljalil, Abdijalil, Abdulgalil
+Abdulkarim, Abdelkarim, Abdikarim, Abdulkareem, Abdelkrim, Cabdikariim
+Abdurraqib, Abdulraqib
+Abdulmujib, Abdelmajib
+Abdulwasi, Abdelwasie
+Abdulhakim, Abdelhakim, Abdihakim, Abdulhakeem, Cabdixakiim
+Abdulwadud, Abdelwadoud
+Abdulmajid, Abdelmajid, Abdimajid, Abdulmajeed, Abdelmadjid, Cabdimajiid
+Abdulbaith
+Abdushshahid, Abdulshahid, Abdishahid
+Abdulhaqq, Abdulhaq, Abdelhak, Abdihaq, Abdelhaq
+Abdulwakil, Abdelwakil
+Abdulqawi, Abdelkawi
+Abdulmatin, Abdelmatin
+Abdulwali, Abdelwali, Abdiwali, Abdulwaali
+Abdulhamid, Abdelhamid, Abdihamid, Abdulhameed, Abdulhamit, Cabdixamiid
+Abdulmuhsi
+Abdulmubdi
+Abdulmuid
+Abdulmuhyi
+Abdulhayy, Abdulhai, Abdelhay, Abdulhay
+Abdulqayyum, Abdulqayum, Abdelkayoum, Abdulkayum
+Abdulwajid
+Abdulmajid
+Abdulwahid, Abdelouahed, Abdulwaahid, Abdiwahid, Abdelwahed
+Abdulahad, Abdelahad, Abdiahad
+Abdussamad, Abdulsamad, Abdessamad, Abdisamad, Abdusamad, Abdelsamad
+Abdulqadir
+Abdulmuqtadir
+Abdulmuqaddim
+Abdulawwal, Abdelaoual
+Abdulakhir
+Abduzzahir, Abdulzahir, Abdelzaher
+Abdulbatin
+Abdulmuta'ali
+Abdulbarr
+Abduttawwab, Abdultawab, Abdeltawab, Abditawab
+Abdulafuw, Abdulafu
+Abdurrauf, Abdulrauf, Abderraouf, Abdirauf, Abdulraouf
+Abdulghani, Abdelghani, Abdighani, Abdulgani
+Abdulmughni
+Abdulmani
+Abdunnur, Abdulnoor, Abdelnour, Abdinur, Abdinuur
+Abdulhadi, Abdelhadi, Abdihadi
+Abdulbadi
+Abdulbaqi, Abdelbaki, Abdibaki
+Abdulwarith
+Abdurrashid, Abdulrashid, Abderrachid, Abdirashid, Abdirashiid
+Abdussabur, Abdulsabur, Abdisabur, Abdelsabour
+Abdunnasir, Abdulnasir, Abdinasir, Abdennacer, Abdelnasser
+Abdulmannan, Abdulmanan, Abdimanan
+Abdulilah, Abdelilah, Abdulelah, Abdullilah
+Abdulmuttalib, Abdelmottaleb
+Abdulmunim, Abdulmonem, Abdelmonem, Abdelmoneim
+Abdulfatah
+Abdinur, Abdifatah, Abdiweli, Abdiwali, Abdisalan, Abdikadir, Abdirisak, Abdishakur, Abdinasir, Abdiaziz, Abdirahim, Abdikarim, Abdimalik
+Abdul, Abdel, Abdou, Abdi, Abdu, Abdo, Cabdi, Abd
+
+## Female given names
+Abeer, Abir, Abiir
+Adila, Adeela, Adeelah
+Afaf, Afaaf
+Afia, Afiya, Afiyah, Aafiya
+Afra, Afrah
+Ahlam, Ahlaam
+Alia, Aliya, Aliyah, Aaliyah, Aaliya, Alya, Aliyya
+Almaz
+Amal, Amaal, Camal
+Amani, Amany, Amaani
+Amira, Ameera, Amirah, Emira, Amiira
+Anisa, Anisah, Aneesa, Anissa, Aniisa
+Anwaar
+Areej, Arij, Aryj
+Arwa, Arwah
+Asiya, Asiyah, Aasiya, Asia, Aasiyah, Aasiye
+Asmahan
+Ayat, Ayaat
+Aya, Ayah, Aaya
+Azra, Azrah
+Badia, Badiaa
+Bahia, Bahiya
+Basma, Basmah, Bassma
+Batool, Batul, Batoul
+Bayan, Bayaan
+Bisma, Bismah
+Bushra, Bouchra, Bushraa
+Dalia, Dalya, Daliyah
+Dana, Danah
+Dima, Deema
+Dina, Deena, Dinah
+Duaa, Doaa
+Dunya, Donia, Dunia, Dounia
+Eman, Emaan
+Esraa, Isra, Israa, Esra
+Fadwa, Fadua, Fadoua
+Faiza, Faizah, Fayza, Faaiza
+Fajr, Fajer
+Farida, Fareeda, Faridah
+Fatin, Faten, Fateen
+Fawzia, Fawziya, Fauzia
+Firdaus, Firdous, Firdaws, Firdose
+Ghada, Ghadah
+Ghazal, Gazal
+Habiba, Habibah, Habeeba, Xabiibo
+Hadil, Hadeel
+Hafida, Hafidha
+Hajar, Hajer, Haajar, Haagar, Xaajar, Hagar
+Hala, Halah
+Hamida, Hamidah, Hameeda
+Hanaa, Hanna, Hana, Hanah
+Hanan, Hanaan, Xanaan
+Hanifa, Hanifah, Haniifa
+Hasna, Hasnaa, Husna, Hosna, Husnaa
+Hawa, Hawwa, Haawa, Xaawo, Hawo
+Hayat, Hayaat
+Hiba, Heba, Hibah, Hibo
+Hind, Hend
+Hoda, Huda, Hudaa
+Ibtisam, Ibtissam, Ibtisaam
+Ikram, Ikraam, Ikraan
+Ilham
+Ilhan, Ilhaan
+Imaan
+Inas, Enas
+Insaf, Inssaf
+Intisar, Intissar
+Islam
+Jamila, Jameela, Jamilah, Djamila, Jamiila
+Jana, Janna
+Jawahir, Jawaher
+Jumana, Joumana, Jumanah
+Kalthoum
+Karima, Kareema, Karimah
+Kawthar, Kauthar, Kawsar, Kausar, Kouther
+Khadra, Khadro, Xadra
+Khawla, Khaoula, Khawlah, Kawla
+Lama, Lamaa
+Lamis, Lamees
+Lamya, Lamia, Lamiaa
+Lana, Lanah
+Latifa, Latifah, Lateefa
+Layla, Laila, Leila, Leyla, Lailah, Laylaa
+Lina, Leena, Lena
+Lubna, Loubna
+Lujain, Lujayn, Loujain
+Madiha, Madeeha
+Maha, Mahaa
+Malak, Malaak
+Manal, Manaal
+Maram, Maraam
+Mariam, Maryam, Mariyam, Meryem, Maryan, Mariama, Mariame, Maryaan
+Marwa, Marwah
+Masuma, Masooma, Masouma
+Maysa, Maysaa
+Mayy, Mai, Maya
+Mina, Meena
+Muna, Mona, Mouna, Muuna
+Munira, Mounira, Muneera
+Nabila, Nabeela, Nabilah
+Nada, Nadaa
+Nadia, Nadiya, Nadiyah, Nadja
+Nadira, Nadirah
+Nafisa, Nafeesa, Nafisah
+Nahla, Nahlah
+Naima, Naeema, Naimah, Nacima
+Najat, Najaat
+Najla, Najlaa
+Najma, Najmah
+Nasreen, Nasrin, Nesrine, Nasriin
+Nawal, Nawaal
+Nazira, Nazeera
+Nisa, Nisaa
+Noor, Nur, Nour, Nura, Noora, Nora, Nuur, Nuura
+Nuha, Nouha
+Rabab, Rabaab
+Rabia, Rabiah, Rabiya, Raabia
+Radia, Radiya, Radhia
+Rahaf, Rehaf
+Raja, Rajaa
+Rana, Ranaa
+Randa
+Rania, Raniya, Ranya
+Rasha, Rashaa
+Rashida, Rasheeda
+Rawan, Rawaan
+Rayan
+Reem, Rim, Riim
+Rihab, Rehab
+Rima, Reema
+Riyam
+Rokaya
+Ruba, Roba
+Rumaysa, Rumaisa, Rumaysaa
+Rukhsana, Rukhsaar
+Rushda
+Saba, Sabaa
+Sabah, Sabaah
+Sabira, Sabirah, Saabira
+Sabiha, Sabeeha
+Sabrina
+Sadia, Saadia, Sadiya, Saadiya
+Safa, Safaa, Saafa
+Sahar, Saxar
+Saida, Saeeda, Saiida
+Sajida, Sajda
+Sakina, Sakinah, Sakeena, Sakiina
+Salima, Saleema, Salimah
+Salma, Salmaa
+Salwa, Salwah
+Samah, Samaah
+Samar, Samaar
+Samia, Samiya, Samiyah
+Samira, Sameera, Samirah
+Sana, Sanaa
+Sara, Sarah, Saara, Sahra, Sahro
+Sawsan, Sawsen
+Shadia, Shadiya
+Shahd, Shahed
+Shaima, Shaimaa, Shayma
+Shams
+Sharifa, Shareefa
+Shayma
+Shifa, Shifaa, Shefa
+Shirin, Shereen, Shireen, Sherine
+Shukri, Shukria, Shukriya
+Siham, Seham
+Sireen
+Suad, Souad, Su'ad
+Subhiya
+Sukayna, Sukaina, Sukeina
+Sumaiyya
+Suha, Soha
+Suhayla, Suhaila, Souhaila
+Sumaya
+Tahira, Tahirah, Taahira
+Tasneem, Tasnim, Tesnim
+Thuraya, Thurayya, Soraya, Suraya, Thoraya
+Ulfa
+Umayma, Umaima, Oumayma
+Wafa, Wafaa
+Wahida, Waheeda
+Warda, Wardah
+Widad, Wedad
+Yara, Yaraa
+Yasmin, Yasmine, Yasmeen, Jasmine, Yasmina, Yasmiin
+Yumna, Yumnaa
+Yusra, Yousra, Yusraa
+Zahra, Zahraa, Zehra, Zahara
+Zakiya, Zakiyya, Zakia
+Zara, Zarah
+Zubaida, Zubaydah, Zobaida
+Zulaykha, Zulaikha, Zuleikha
+Zuhra
+
+## Somali names (Somali and English spellings)
+Abshir, Abshiir
+Ahmed
+Ayan, Ayaan, Ayanle
+Ubah, Ubax
+Burhaan
+Deeqa, Deqa
+Dahir, Daahir
+Fartun, Fardowsa, Fadumo
+Farhiya, Farxiyo
+Guled, Guuleed
+Hibaq, Hibaaq
+Hodan, Hodman
+Hamdi
+Ifrah, Ifra, Ifrax
+Ikran, Ikraan
+Ilwad
+Jama, Jaamac
+Jibril
+Kaltun, Kaltuun
+Khadar, Khadra
+Liban, Libaan
+Mahad, Maxad
+Mohamud
+Muna
+Nimco, Nimo
+Nasra, Nasro
+Osman
+Qamar, Qamaru
+Rahma
+Sagal
+Shamso
+Sahra
+Sucaad
+Ugbaad
+Warsame, Warsaame
+Xamar
+Xasan
+Yasmin
+Hirsi, Xirsi
+Farah
+Abdirizak, Abdirisak
+Mursal
+Barre, Barreh, Barrow
+Elmi, Cilmi
+Egal, Cigaal
+Hassan
+Haji, Xaaji
+Shire, Shiire
+Gedi, Geedi
+Siad, Siyaad
+Aden, Aadan
+Duale, Ducaale
+Warsan
+Yonis
+Muse
+Jibriil
+Hamse
+Ugaas
+Ilyaas
+
+## South Asian Muslim names
+Aamir, Arsalan, Arsalaan, Asad, Asif, Asim, Atif, Atiq, Azeem, Bilawal, Danish, Faizan, Faraz, Fawad, Furqan, Haris, Hasnain, Huzaifa, Iftikhar, Ijaz, Imtiaz, Iqbal, Irshad, Ishtiaq, Javed, Javaid, Junaid, Kashif, Mubashir, Mudassir, Muneeb, Naeem, Naveed, Nadeem, Nauman, Noman, Owais, Uwais, Qamar, Qasim, Rehan, Rizwan, Saad, Sajjad, Saqib, Shahbaz, Shahid, Shahzad, Shakeel, Sharjeel, Shehzad, Shoaib, Sohail, Tahir, Talha, Tanveer, Taimur, Tayyab, Umair, Usman, Waqar, Waqas, Yasir, Zeeshan, Zohaib, Zubair, Zulfiqar
+Aiza, Alina, Amna, Anam, Areeba, Arooj, Asma, Ayesha, Benazir, Fiza, Hira, Hina, Iqra, Javeria, Kiran, Madiha, Maham, Mahnoor, Maria, Mehwish, Misbah, Nimra, Rabia, Rida, Saba, Sadaf, Saima, Samina, Sana, Shazia, Sidra, Sumbul, Tahira, Ummara, Urooj, Uzma, Zainab, Zara, Zoya
+
+## Turkish and Persian Muslim names
+Ahmet, Mehmet, Mustafa, Emre, Burak, Yusuf, Ömer, Murat, Hakan, Kerem, Selim, Kemal, Orhan, Osman, Recep, Tayyip, Erdem, Emine, Elif, Zeynep, Meryem, Esra, Büşra, Busra, Hatice, Rabia
+Reza, Hossein, Mehdi, Amir, Ali, Davood, Hamid, Javad, Majid, Morteza, Mohsen, Saeed, Fatemeh, Zahra, Maryam, Narges, Parisa, Shirin, Leila, Mina, Nasrin, Ladan
+
+## Proper nouns of the faith (always written with a capital)
+Allah, Quran, Qur'an, Koran, Ramadan, Ramadhan, Eid, Muharram, Safar, Rajab, Shaban, Sha'ban, Shawwal, Dhul-Hijjah, Dhul-Qadah, Makkah, Mecca, Madinah, Medina, Kaaba, Ka'bah, Jerusalem, Quds, Sham, Hijaz, Yathrib, Taif, Uhud, Badr, Khandaq, Hudaybiyyah, Karbala, Sunni, Shia, Hanafi, Maliki, Shafi'i, Shafii, Hanbali, Bukhari, Muslim, Tirmidhi, Nasa'i, Nasai, Ibn Majah, Abu Dawud, Riyad as-Salihin, Jibril, Mikail, Israfil, Malik, Ridwan, Iblis, Shaytan, Firaun, Pharaoh, Qarun, Hamaan, Haman, Namrud, Luqman, Maryam, Asiya, Hawwa, Hawa

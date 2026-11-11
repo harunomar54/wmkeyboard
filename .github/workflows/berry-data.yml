@@ -26,3 +26,28 @@ jobs:
         with:
           name: name-capitals
           path: name-capitals.tsv
+
+  names:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch AOSP's English word list and the US baby names
+        run: |
+          curl -fsSL "https://android.googlesource.com/platform/packages/inputmethods/LatinIME/+/refs/heads/main/dictionaries/en_US_wordlist.combined.gz?format=TEXT" \
+            | base64 -d | gunzip > en_US.combined
+          curl -fsSL -A "Mozilla/5.0 (X11; Linux x86_64)" -o names.zip https://www.ssa.gov/oact/babynames/names.zip
+          mkdir ssa && unzip -q names.zip -d ssa && ls ssa | wc -l
+      - name: Build the name capitals
+        run: |
+          python3 berry/tools/build_names.py en_US.combined ssa app/dictionaries-src/en.txt \
+            app/src/main/assets/dictionaries/en_caps.txt berry/names/arabic_names.txt \
+            berry/names/exclude.txt out
+          wc -l out/*
+          echo "-----BEGIN NAMES-----"
+          tar czf - -C out . | base64 -w0
+          echo
+          echo "-----END NAMES-----"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: names
+          path: out/
