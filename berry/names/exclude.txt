@@ -69,3 +69,6 @@ rim
 nada
 lama
 hind
+# Not words, but what a thumb types for one: "isa" is "is a" without its
+# space far more often than it is the name (Eesa, Issa and Iisa stay).
+isa
