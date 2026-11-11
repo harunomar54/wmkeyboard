@@ -31,13 +31,13 @@ jobs:
       - name: Build the APK
         run: ./gradlew assembleEnDebug --stacktrace
 
-      - name: Unit tests for the Berry code
-        continue-on-error: true
-        run: ./gradlew :feature:ime:testDebugUnitTest --tests '*BerrySwipeTest' --tests '*OctopusFlickKeysTest' --tests '*OctopusFlickTest'
-
       - name: Upload the APK
         uses: actions/upload-artifact@v4
         with:
           name: berry-apk
           path: app/build/outputs/apk/en/debug/*.apk
           retention-days: 14
+
+      - name: Unit tests for the Berry code
+        continue-on-error: true
+        run: ./gradlew :feature:ime:testDebugUnitTest --tests '*BerrySwipeTest' --tests '*OctopusFlickKeysTest' --tests '*OctopusFlickTest'
