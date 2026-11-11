@@ -27,7 +27,7 @@ import re
 import sys
 from collections import defaultdict
 
-aosp_path, ssa_dir, en_txt, caps_path, arabic_path, exclude_path, out = sys.argv[1:8]
+aosp_path, ssa_dir, en_txt, caps_path, arabic_path, exclude_path, out, words_path = sys.argv[1:9]
 MIN_BIRTHS = 300
 POPULAR = 20000
 
@@ -39,6 +39,11 @@ for line in open(aosp_path, encoding="utf-8"):
     if m:
         freq[m.group(1)] = int(m.group(2))
 common = {w: f for w, f in freq.items() if f >= 100 and w.isalpha() and w == w.lower()}
+# A standard English word list (wamerican-large): AOSP's list also carries
+# names in small letters (hamza, malik, amir), so its lower-case entry alone
+# does not make a word English.
+dict_words = {l.strip() for l in open(words_path, encoding="utf-8", errors="replace") if l.strip() and l.strip() == l.strip().lower()}
+name_targets = set()
 
 births = defaultdict(int)
 for name in os.listdir(ssa_dir):
@@ -57,19 +62,25 @@ exclude = {l.strip().lower() for l in open(exclude_path, encoding="utf-8") if l.
 # (jhon, micheal), not a name of its own.
 for name, count in births.items():
     if count >= 200000:
-        common.setdefault(name.lower(), 255)
-for name in existing:
-    if name[:1].isupper() and name.isalpha():
-        common.setdefault(name.lower(), 255)
+        name_targets.add(name.lower())
 
 curated = []
+forced = set()
+section_forced = False
 for line in open(arabic_path, encoding="utf-8"):
     line = line.strip()
+    if line.startswith("## "):
+        # The faith's proper nouns are capitals whatever English does with
+        # the word ("a mecca for shoppers").
+        section_forced = line.startswith("## Proper nouns")
+        continue
     if not line or line.startswith("#"):
         continue
     for name in (n.strip() for n in line.split(",")):
         if name and " " not in name:
             curated.append(name)
+            if section_forced:
+                forced.add(name.lower())
 curated_keys = {n.lower() for n in curated}
 
 # ---- typo neighbours ----
@@ -83,27 +94,32 @@ def adjacent(a, b):
     return abs(r1 - r2) <= 1 and abs(c1 - c2) <= 1 and (a != b)
 
 def slip_of(key):
-    """A common word this spelling is one plausible slip away from, or None."""
+    """(word, f) for a common word, or (name, 0) for a very common name, this
+    spelling is one plausible slip away from; None when there is none."""
     n = len(key)
     for i in range(n):  # neighbour swapped in
         for c in "abcdefghijklmnopqrstuvwxyz":
             if c != key[i] and adjacent(c, key[i]):
                 w = key[:i] + c + key[i + 1:]
                 if w in common:
-                    return w
+                    return w, common[w]
+                if w in name_targets:
+                    return w, 0
     for i in range(n - 1):  # two letters crossed
         w = key[:i] + key[i + 1] + key[i] + key[i + 2:]
         if w != key and w in common:
-            return w
+            return w, common[w]
+        if w != key and w in name_targets:
+            return w, 0
     for i in range(n):  # a letter too many
         w = key[:i] + key[i + 1:]
         if len(w) >= 2 and w in common:
-            return w
+            return w, common[w]
     for i in range(n + 1):  # a letter missed
         for c in "abcdefghijklmnopqrstuvwxyz":
             w = key[:i] + c + key[i:]
             if w in common:
-                return w
+                return w, common[w]
     return None
 
 def shaped(name):
@@ -126,21 +142,31 @@ def consider(name, source):
         return
     lf = freq.get(key)
     cf = freq.get(name[0].upper() + name[1:], freq.get(name, 0))
-    if lf is not None and lf >= 30 and not (cf - lf >= 30 and lf < 75):
+    english = lf is not None and (lf >= 100 or (lf >= 30 and key in dict_words))
+    if english and key not in forced and not (cf - lf >= 30 and lf < 75):
         turned["English word"].append(f"{name}({cf}/{lf})")
         return
-    popular = key in curated_keys or births.get(name, 0) >= POPULAR
-    if source == "ssa" and births.get(name, 0) < MIN_BIRTHS:
+    b = births.get(name, 0)
+    if source == "ssa" and b < MIN_BIRTHS:
         turned["too rare"].append(name)
         return
     if source == "ssa" and len(key) < 3:
         turned["shape"].append(name)
         return
-    if not popular and key.isascii():
+    if key.isascii() and key not in forced:
         slip = slip_of(key)
         if slip:
-            turned["slip for a common word"].append(f"{name}~{slip}")
-            return
+            word, f = slip
+            if key in curated_keys:
+                # A hand-listed name gives way only to an everyday word a
+                # thumb really lands on it from ("and" -> "abd"), and not
+                # when people are actually called it.
+                if f >= 150 and b < 5000:
+                    turned["hand-listed, slip for an everyday word"].append(f"{name}~{word}({f})")
+                    return
+            elif b < POPULAR:
+                turned["slip for a common word or name"].append(f"{name}~{word}")
+                return
     kept[key] = shaped(name)
 
 for name in curated:
@@ -150,7 +176,7 @@ for name, count in sorted(births.items(), key=lambda kv: -kv[1]):
 
 # Curated names that are one slip from a common word: kept, but listed so
 # the trade-off can be read.
-curated_slips = sorted(f"{kept[k]}~{s}" for k in curated_keys if k in kept and k.isascii() and (s := slip_of(k)))
+curated_slips = sorted(f"{kept[k]}~{s[0]}({s[1]})" for k in curated_keys if k in kept and k.isascii() and (s := slip_of(k)))
 
 os.makedirs(out, exist_ok=True)
 with open(os.path.join(out, "caps_add.txt"), "w", encoding="utf-8") as fh:
