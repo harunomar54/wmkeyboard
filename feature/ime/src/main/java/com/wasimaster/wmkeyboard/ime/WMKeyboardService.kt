@@ -167,6 +167,7 @@ import com.wasimaster.wmkeyboard.core.tools.SolarCalculator
 import com.wasimaster.wmkeyboard.core.tools.LiveTypingSpeed
 import com.wasimaster.wmkeyboard.core.tools.TypingStatsMath
 import com.wasimaster.wmkeyboard.ime.ui.LiveWpmReadout
+import com.wasimaster.wmkeyboard.ime.ui.SpacebarSnippetPreview
 import com.wasimaster.wmkeyboard.core.tools.ContactPhones
 import com.wasimaster.wmkeyboard.core.emoji.AnimatedEmoji
 import com.wasimaster.wmkeyboard.core.emoji.EmojiCatalog
@@ -21296,6 +21297,29 @@ open class WMKeyboardService : InputMethodService() {
     }
 
     /** Takes down whatever the strip was offering, if anything. */
+    /**
+     * Berry fork: what a space would expand the word being typed into, for
+     * the spacebar to show in green beside autocorrect's promise. Only a
+     * trigger that fires on its own (not one that asks first, whose chip says
+     * so already), matched exactly as the commit path matches it. A snippet
+     * whose text fills in variables shows its label, since the text it types
+     * is not known until it fires.
+     */
+    private fun updateSpacebarSnippetPreview(state: KeyboardUiState) {
+        val typed = composing.toString()
+        val preview = if (typed.isEmpty() || state.secureField ||
+            state.composer.isTransliterating || state.composer.isConversion
+        ) {
+            null
+        } else {
+            snippetStore.matchTrigger(typed)
+                ?.takeIf { !snippetStore.offers(it) }
+                ?.let { s -> if ('{' in s.text || '$' in s.text) s.label else s.text }
+                ?.lineSequence()?.firstOrNull()?.take(40)
+        }
+        if (SpacebarSnippetPreview.text.value != preview) SpacebarSnippetPreview.text.value = preview
+    }
+
     private fun clearSnippetOffer() {
         snippetOfferJob?.cancel()
         if (_uiState.value.snippetOffers != null) _uiState.update { it.copy(snippetOffers = null) }
@@ -21501,6 +21525,7 @@ open class WMKeyboardService : InputMethodService() {
      * is, because it happens on every keystroke rather than once a word.
      */
     private fun refreshSnippetOffer(state: KeyboardUiState) {
+        updateSpacebarSnippetPreview(state)
         // Swap chips are about text that is already in the field, so they are
         // not derived from the buffer and must not be taken down by a pass over
         // it — the space that fired the expansion calls straight through here a

@@ -25,12 +25,25 @@ internal fun rememberSpacebarCorrection(): State<String?> {
         derivedStateOf {
             val now = live.value
             if (now.settings.layoutBehavior.spacebarCorrection) {
-                now.autocorrectWord?.takeIf { it.isNotBlank() }
+                // A shortcut fires before autocorrect on the same space, so
+                // what it expands to is what the space types.
+                SpacebarSnippetPreview.text.value
+                    ?: now.autocorrectWord?.takeIf { it.isNotBlank() }
             } else {
                 null
             }
         }
     }
+}
+
+/**
+ * What a space would expand the word being typed into, when it is a snippet
+ * trigger. The service writes it on every keystroke; null when the word fires
+ * nothing. A snapshot state of its own, as the live speed readout is, so the
+ * spacebar alone redraws when it changes.
+ */
+internal object SpacebarSnippetPreview {
+    val text = mutableStateOf<String?>(null)
 }
 
 /** The BlackBerry Keyboard's green for a correction waiting on the spacebar. */
