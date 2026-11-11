@@ -40,7 +40,7 @@ jobs:
           curl -fsSL -o babynames.tar.gz https://cran.r-project.org/src/contrib/babynames_1.0.1.tar.gz \
             || curl -fsSL -o babynames.tar.gz https://cran.r-project.org/src/contrib/Archive/babynames/babynames_1.0.1.tar.gz
           tar xzf babynames.tar.gz
-          pip install --quiet pyreadr
+          pip install --quiet pyreadr pandas
           mkdir ssa
           python3 berry/tools/babynames_totals.py babynames/data/babynames.rda ssa/yob2017.txt
           wc -l ssa/yob2017.txt
