@@ -33,7 +33,7 @@ jobs:
 
       - name: Unit tests for the Berry code
         continue-on-error: true
-        run: ./gradlew :feature:ime:testDebugUnitTest --tests '*BerrySwipeTest' --tests '*OctopusFlickKeysTest'
+        run: ./gradlew :feature:ime:testDebugUnitTest --tests '*BerrySwipeTest' --tests '*OctopusFlickKeysTest' --tests '*OctopusFlickTest'
 
       - name: Upload the APK
         uses: actions/upload-artifact@v4

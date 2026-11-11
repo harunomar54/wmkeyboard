@@ -17064,6 +17064,75 @@ internal fun Key?.ownsDrag(): Boolean =
     startsChordDrag() || startsLayerDrag() || (this != null && hasFlicks())
 
 /**
+ * BlackBerry board swipes (left deletes a word, down opens the symbols) on
+ * every board the glide loop does not run: glide typing off, and the symbol
+ * pages. With glide typing on the letters, the glide lift asks the service
+ * instead ([berrySwipe] either way).
+ *
+ * Down walks the pages the way the BlackBerry Keyboard did: the symbols, then
+ * their second page, then back to the letters.
+ *
+ * Its own function on purpose: [KeyRows] sits a few dozen instructions under
+ * ART's 10,000-instruction compile limit (app/dex-method-budget.txt), and the
+ * remembers and captures of this loop inlined there pushed it past, which
+ * would leave the keyboard's hottest composable interpreted for good.
+ */
+@Composable
+private fun Modifier.berrySwipeInput(
+    state: KeyboardUiState,
+    gestureEnabled: Boolean,
+    rects: State<KeyRects>,
+    boxOrigin: () -> Offset,
+    globeDrag: State<Boolean>,
+    fingerGate: FingerSwipeGate,
+    keyWidth: State<Float>,
+    onKey: (Key) -> Unit,
+): Modifier {
+    val on = state.settings.layoutBehavior.berrySwipes && !gestureEnabled
+    val rowPx = rememberUpdatedState(
+        with(LocalDensity.current) { (state.settings.keyHeightDp.dp + keyGapV(state.settings) * 2).toPx() },
+    )
+    val mode = rememberUpdatedState(state.layoutMode)
+    val send = rememberUpdatedState(onKey)
+    if (!on) return this
+    return pointerInput(Unit) {
+        awaitEachGesture {
+            val down = awaitFirstDown(requireUnconsumed = false, pass = PointerEventPass.Initial)
+            // The keys that own their drags keep them, the same list the
+            // octopus loop leaves alone: chords, layer peeks, flick arms,
+            // backspace's own word swipe and the spacebar's swipes.
+            val downKey = rects.value.keyAt(down.position + boxOrigin())
+            if (downKey.ownsDrag() || downKey.startsGlobeDrag(globeDrag.value) ||
+                downKey.ownsDeleteStroke() || downKey.ownsSpaceStroke()
+            ) {
+                return@awaitEachGesture
+            }
+            val points = ArrayList<GesturePoint>()
+            points.add(GesturePoint(down.position.x, down.position.y, down.uptimeMillis))
+            var last = down
+            while (true) {
+                val event = awaitPointerEvent()
+                val change = event.changes.firstOrNull { it.id == down.id } ?: break
+                last = change
+                points.add(GesturePoint(change.position.x, change.position.y, change.uptimeMillis))
+                if (!change.pressed) break
+            }
+            if (fingerGate.claimed) return@awaitEachGesture
+            val swipe = berrySwipe(points, keyWidth.value, rowPx.value) ?: return@awaitEachGesture
+            // Only the lift, as the octopus does: the key under the finger
+            // reads a consumed up as taken and types nothing.
+            last.consume()
+            val action = when (swipe) {
+                BerrySwipe.DELETE_WORD -> KeyAction.Edit(TextEditAction.DELETE_WORD)
+                BerrySwipe.SYMBOLS ->
+                    if (mode.value == LayoutMode.SYMBOLS_SHIFTED) KeyAction.Letters else KeyAction.Symbols
+            }
+            send.value(Key(label = "", action = action))
+        }
+    }
+}
+
+/**
  * Whether a stroke from this key should be kept away from the words on the
  * keys (discussion #102). [ownsDrag] answers yes for every flick key, which is
  * right for a key with an upward arm: its flick up and the word's flick up
@@ -19347,14 +19416,6 @@ private fun KeyRows(
     // Read live rather than captured: the words change on every keystroke, and
     // a pointer loop restarted that often would be a loop that misses touches.
     val octopusLive = rememberUpdatedState(state.octopus)
-    // BlackBerry board swipes (left deletes a word, down opens the symbols).
-    // With glide typing running on the letters the glide loop's lift asks the
-    // service instead; this loop covers every other board: glide off, and the
-    // symbol pages, where a second swipe down turns the page.
-    val berrySwipesHere = state.settings.layoutBehavior.berrySwipes && !gestureEnabled
-    val berryRowPx = rememberUpdatedState(
-        with(LocalDensity.current) { (state.settings.keyHeightDp.dp + keyGapV(state.settings) * 2).toPx() },
-    )
     // The keyboard's own haptic, which already routes through the service and
     // respects the user's feedback settings — not Compose's, whose name this
     // composition local deliberately shadows.
@@ -20061,46 +20122,8 @@ private fun KeyRows(
                     }
                 }
             }
-            .pointerInput(berrySwipesHere) {
-                if (!berrySwipesHere) return@pointerInput
-                awaitEachGesture {
-                    val down = awaitFirstDown(
-                        requireUnconsumed = false,
-                        pass = PointerEventPass.Initial,
-                    )
-                    // The keys that own their drags keep them, the same list
-                    // the octopus loop above leaves alone: chords, layer
-                    // peeks, flick arms, backspace's own word swipe and the
-                    // spacebar's swipes.
-                    val downKey = liveRects.value.keyAt(down.position + boxOrigin)
-                    if (downKey.ownsDrag() || downKey.startsGlobeDrag(globeDragLive.value) ||
-                        downKey.ownsDeleteStroke() || downKey.ownsSpaceStroke()
-                    ) {
-                        return@awaitEachGesture
-                    }
-                    val points = ArrayList<GesturePoint>()
-                    points.add(GesturePoint(down.position.x, down.position.y, down.uptimeMillis))
-                    var last = down
-                    while (true) {
-                        val event = awaitPointerEvent()
-                        val change = event.changes.firstOrNull { it.id == down.id } ?: break
-                        last = change
-                        points.add(GesturePoint(change.position.x, change.position.y, change.uptimeMillis))
-                        if (!change.pressed) break
-                    }
-                    if (fingerGate.claimed) return@awaitEachGesture
-                    val swipe = berrySwipe(points, keyWidth.value, berryRowPx.value)
-                        ?: return@awaitEachGesture
-                    // Only the lift, as the octopus does: the key under the
-                    // finger reads a consumed up as taken and types nothing.
-                    last.consume()
-                    when (swipe) {
-                        BerrySwipe.DELETE_WORD ->
-                            stampedOnKey(Key(label = "", action = KeyAction.Edit(TextEditAction.DELETE_WORD)))
-                        BerrySwipe.SYMBOLS -> stampedOnKey(Key(label = "", action = KeyAction.Symbols))
-                    }
-                }
-            }
+            // BlackBerry board swipes; its own function, see there for why.
+            .berrySwipeInput(state, gestureEnabled, liveRects, { boxOrigin }, globeDragLive, fingerGate, keyWidth, stampedOnKey)
             .pointerInput(
                 gestureEnabled, spaceGlide, startSlop, cooldownMs, trailMs,
                 possessiveChar, twoThumbOn,

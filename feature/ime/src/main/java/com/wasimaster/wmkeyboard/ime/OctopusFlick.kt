@@ -115,8 +115,14 @@ private const val OCTOPUS_MAX_TRAVEL_WIDTHS = 3.5f
 /** How near the key's centre a flick must begin to claim that key's word. */
 internal const val OCTOPUS_START_REACH_WIDTHS = 0.75f
 
-/** The shortest stroke that counts, before the glide slop clamp. */
-internal const val OCTOPUS_MIN_TRAVEL_WIDTHS = 1f
+/**
+ * The shortest stroke that counts, before the glide slop clamp. Berry fork:
+ * a little over half a key rather than a whole one, so the word above a key
+ * takes the short flick the BlackBerry Keyboard did. The cone and the
+ * straightness still keep glides with the decoder, and the slop clamp still
+ * keeps the flick clear of the glide loop's own start.
+ */
+internal const val OCTOPUS_MIN_TRAVEL_WIDTHS = 0.55f
 
 /**
  * How much clear of the glide loop's own start slop the minimum travel must

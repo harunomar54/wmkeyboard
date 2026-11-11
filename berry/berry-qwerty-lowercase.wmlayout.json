@@ -2,10 +2,10 @@
   "format": "wmkeyboard-layout",
   "version": 1,
   "layout": {
-    "id": "user_berry_qwerty",
-    "name": "Berry QWERTY",
+    "id": "user_berry_qwerty_lower",
+    "name": "Berry QWERTY (lowercase)",
     "langId": "en",
-    "version": 2,
+    "version": 3,
     "layers": {
       "letters": {
         "rows": [
