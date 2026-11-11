@@ -54,6 +54,12 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import com.wasimaster.wmkeyboard.core.icons.symbols.outlined.Share
+import com.wasimaster.wmkeyboard.core.icons.symbols.outlined.ExpandMore
+import com.wasimaster.wmkeyboard.core.icons.symbols.outlined.ExpandLess
+import com.wasimaster.wmkeyboard.core.icons.symbols.outlined.Notes
+import androidx.compose.ui.platform.LocalContext
+import android.content.Intent
 import com.wasimaster.wmkeyboard.core.selection.ColourCodes
 import com.wasimaster.wmkeyboard.core.icons.symbols.automirrored.outlined.OpenInNew
 import com.wasimaster.wmkeyboard.core.icons.symbols.filled.PushPin
@@ -3101,11 +3107,13 @@ private val ClipEntityKind.sectionRes: Int
     }
 
 /**
- * One history row of the list view: the number, the clip across the full
- * width, and the pin and delete circles at the end ([buttons], #414). Text
- * gets three lines rather than a card's six — a list is for scanning many
- * clips — and a picture is a thumbnail at the start of the row rather than the
- * whole row.
+ * One history row of the list view, drawn the way the BlackBerry Keyboard drew
+ * its clipboard: a document tile (or the picture's thumbnail) at the start, a
+ * thin rule, the clip's text across the rest of the row, and a hairline under
+ * it. A tap pastes, as it always has. The chevron under the tile opens the
+ * row: more of the text, and a row of round buttons for what used to sit at
+ * the end of every row (pin, delete) plus share and paste, so the closed rows
+ * stay uncluttered and scan quickly.
  */
 @Composable
 private fun ClipRow(
@@ -3120,42 +3128,63 @@ private fun ClipRow(
     callbacks: ClipboardFieldCallbacks,
 ) {
     var showInfo by remember { mutableStateOf(false) }
+    var open by remember(item.id) { mutableStateOf(false) }
     val visual = item.kind == ClipKind.IMAGE || item.kind == ClipKind.VIDEO
-    Row(
+    val current by rememberUpdatedState(item)
+    val currentCallbacks by rememberUpdatedState(callbacks)
+    val rule = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f)
+    Column(
         modifier = Modifier
             .fillMaxWidth()
-            .clipSurface(LocalKbTheme.current, item, focused, outlined || hold.picked == true, callbacks) { showInfo = true }
-            .padding(horizontal = 10.dp, vertical = 8.dp),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(8.dp),
+            .then(if (outlined || hold.picked == true) Modifier.border(PinnedOutlineWidth, MaterialTheme.colorScheme.primary) else Modifier)
+            .focusRing(focused, RoundedCornerShape(4.dp)),
     ) {
         if (showInfo) ClipHoldPopup(item, hold, callbacks) { showInfo = false }
-        hold.picked?.let { ClipPickMark(it) }
-        if (number != null) ClipNumberBadge(number)
-        rememberFloatingAppIcon(item.sourcePackage, ClipSourceIconDp)?.let { ClipSourceIcon(it, item.sourceApp) }
-        if (visual) {
-            // Width-bound, so the picture keeps its own shape at thumbnail
-            // size, and height-capped so a portrait shot stays a row.
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .pointerInput(item.id) {
+                    detectTapGestures(
+                        onTap = { currentCallbacks.onItem(current) },
+                        onLongPress = { showInfo = true },
+                    )
+                }
+                .padding(start = 8.dp, end = 10.dp, top = 8.dp),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            hold.picked?.let { ClipPickMark(it) }
+            if (number != null) ClipNumberBadge(number)
+            if (visual) {
+                Box(
+                    modifier = Modifier
+                        .size(BerryClipTile)
+                        .clip(RoundedCornerShape(3.dp)),
+                ) { ClipBody(item, maxLines = 1, hold = hold) }
+            } else {
+                BerryDocTile()
+            }
             Box(
                 modifier = Modifier
-                    .width(ListThumbnailWidth)
-                    .heightIn(max = ListThumbnailMaxHeight)
-                    .clip(RoundedCornerShape(8.dp)),
-            ) { ClipBody(item, maxLines = lines, hold = hold) }
+                    .padding(horizontal = 12.dp)
+                    .width(1.dp)
+                    // The tile's height rather than the row's: measuring the
+                    // row's intrinsic height would ask it of picture bodies
+                    // that cannot answer.
+                    .height(BerryClipTile)
+                    .background(rule),
+            )
             Column(modifier = Modifier.weight(1f)) {
-                Text(
-                    stringResource(
-                        if (item.kind == ClipKind.IMAGE) R.string.ime_clip_type_image else R.string.ime_clip_type_video,
-                    ),
-                    fontSize = 11.sp,
-                    maxLines = 1,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                )
-                if (time != null) ClipTimeText(time, Modifier.padding(top = 2.dp))
-            }
-        } else {
-            Column(modifier = Modifier.weight(1f)) {
-                ClipBody(item, maxLines = lines, hold = hold)
+                if (visual) {
+                    Text(
+                        stringResource(
+                            if (item.kind == ClipKind.IMAGE) R.string.ime_clip_type_image else R.string.ime_clip_type_video,
+                        ),
+                        fontSize = 15.sp,
+                        maxLines = 1,
+                    )
+                } else {
+                    ClipBody(item, maxLines = if (open) BerryOpenLines else lines, hold = hold)
+                }
                 if (item.tags.isNotEmpty()) ClipTagsLine(item.tags, Modifier.padding(top = 2.dp))
                 if (item.kind == ClipKind.HTML && hold.typeTag) {
                     Text(
@@ -3168,20 +3197,115 @@ private fun ClipRow(
                 }
                 if (time != null) ClipTimeText(time, Modifier.padding(top = 2.dp))
             }
-        }
-        val icons = hold.icons && hold.entities.isNotEmpty()
-        val shortcut = clipShortcut(item, hold)
-        if (buttons || icons || shortcut) {
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(6.dp),
-            ) {
-                if (icons) ClipEntityIcons(hold.entities, callbacks)
-                if (buttons) ClipActions(item, hold, callbacks) else if (shortcut) ClipShortcutButton(item, hold, callbacks)
+            if (item.pinned) {
+                Icon(
+                    Icons.Filled.PushPin,
+                    contentDescription = stringResource(R.string.ime_clip_unpin),
+                    tint = MaterialTheme.colorScheme.primary,
+                    modifier = Modifier.padding(start = 6.dp).size(14.dp),
+                )
+            }
+            if (hold.icons && hold.entities.isNotEmpty()) {
+                Box(Modifier.padding(start = 6.dp)) { ClipEntityIcons(hold.entities, callbacks) }
             }
         }
+        Row(
+            modifier = Modifier.fillMaxWidth().padding(start = 8.dp, end = 10.dp, bottom = 6.dp),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            // The chevron sits under the tile, as BlackBerry drew it.
+            Box(
+                modifier = Modifier
+                    .width(BerryClipTile)
+                    .clip(RoundedCornerShape(6.dp))
+                    .clickable { open = !open }
+                    .padding(vertical = 2.dp),
+                contentAlignment = Alignment.Center,
+            ) {
+                Icon(
+                    if (open) Icons.Outlined.ExpandLess else Icons.Outlined.ExpandMore,
+                    contentDescription = stringResource(if (open) R.string.ime_clip_row_less else R.string.ime_clip_row_more),
+                    tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.size(22.dp),
+                )
+            }
+            if (open) {
+                Row(
+                    modifier = Modifier.weight(1f).padding(start = 13.dp, top = 4.dp),
+                    horizontalArrangement = Arrangement.spacedBy(18.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    BerryClipButton(Icons.Outlined.Delete, stringResource(CommonR.string.common_delete)) {
+                        callbacks.onDelete(item)
+                    }
+                    if (item.kind.isTextual && !item.sensitive && item.text.isNotBlank()) {
+                        val context = LocalContext.current
+                        BerryClipButton(Icons.Outlined.Share, stringResource(CommonR.string.common_share)) {
+                            val send = Intent(Intent.ACTION_SEND).setType("text/plain").putExtra(Intent.EXTRA_TEXT, item.text)
+                            runCatching {
+                                context.startActivity(
+                                    Intent.createChooser(send, null).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
+                                )
+                            }
+                        }
+                    }
+                    BerryClipButton(Icons.Outlined.ContentPaste, stringResource(CommonR.string.common_paste)) {
+                        callbacks.onItem(item)
+                    }
+                    BerryClipButton(
+                        if (item.pinned) Icons.Filled.PushPin else Icons.Outlined.PushPin,
+                        stringResource(if (item.pinned) R.string.ime_clip_unpin else R.string.ime_clip_pin),
+                    ) { callbacks.onPin(item) }
+                    if (clipShortcut(item, hold) && hold.shortcut != ClipCardShortcut.EDITED_MARK) {
+                        ClipShortcutButton(item, hold, callbacks)
+                    }
+                }
+            }
+        }
+        Box(Modifier.fillMaxWidth().height(1.dp).background(rule))
     }
 }
+
+/** The grey document tile a text clip shows at the start of its row, BlackBerry's own. */
+@Composable
+private fun BerryDocTile() {
+    Box(
+        modifier = Modifier
+            .size(BerryClipTile)
+            .clip(RoundedCornerShape(3.dp))
+            .background(BerryTileColor),
+        contentAlignment = Alignment.Center,
+    ) {
+        Icon(
+            Icons.Outlined.Notes,
+            contentDescription = null,
+            tint = BerryTileLines,
+            modifier = Modifier.size(30.dp),
+        )
+    }
+}
+
+/** One of the round buttons an opened row shows: light, with a dark glyph, as BlackBerry drew them. */
+@Composable
+private fun BerryClipButton(icon: ImageVector, description: String, onClick: () -> Unit) = IconHint(description) {
+    Box(
+        modifier = Modifier
+            .size(40.dp)
+            .clip(CircleShape)
+            .background(BerryButtonColor)
+            .clickable(onClick = onClick),
+        contentAlignment = Alignment.Center,
+    ) {
+        Icon(icon, contentDescription = description, tint = BerryButtonGlyph, modifier = Modifier.size(22.dp))
+    }
+}
+
+private val BerryClipTile = 48.dp
+private const val BerryOpenLines = 12
+private val BerryTileColor = Color(0xFFCFCFCF)
+private val BerryTileLines = Color(0xFF7A7A7A)
+private val BerryButtonColor = Color(0xFFF2F2F2)
+private val BerryButtonGlyph = Color(0xFF2B2B2B)
 
 /** A clip's tags (#612), on one line under its body, each with its `#`, in the accent. */
 @Composable
@@ -3257,10 +3381,6 @@ private const val ClipTimeTickMs = 30_000L
 
 /** The history's bottom padding while the Undo bar covers its last few dp. */
 internal val UndoBarClearance = 64.dp
-
-/** How big a picture is drawn in a list row. */
-private val ListThumbnailWidth = 96.dp
-private val ListThumbnailMaxHeight = 80.dp
 
 /** A pinned clip's outline, when that setting is on: thin, a hairline over the card's own edge. */
 private val PinnedOutlineWidth = 1.5.dp

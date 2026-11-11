@@ -100,6 +100,8 @@ internal fun octopusSlots(
     /** Smallest a word may be shrunk before it is dropped instead. */
     minScale: Float,
     widthOf: (String) -> Float,
+    /** The clear space kept between two words in the same band. */
+    minGapPx: Float = 0f,
 ): List<OctopusSlot> {
     if (bounds.isEmpty() || bandHeightPx <= 0f) return emptyList()
     val kept = ArrayList<OctopusSlot>(words.size)
@@ -140,47 +142,63 @@ internal fun octopusSlots(
                 (cell.top - bandHeightPx * straddle.coerceIn(0f, 1f) - lift).coerceAtLeast(0f)
             OctopusPlacement.IN_KEY -> cell.top + gapVPx + lift
         }
+        // BB-Keyboard: words never overlap. The words already placed are
+        // better ranked (the walk is in rank order), so this word works around
+        // them: it may slide along its band or shrink into the free space
+        // beside them, as long as it still sits over its own key, and it is
+        // dropped when that leaves it smaller than [minScale]. Overlapping
+        // text ("this" over i running into "through" over o) cannot be read
+        // and cannot be aimed at, which is worse than one word fewer.
         val centre = cell.center.x
-        var left = centre - text / 2
-        var right = centre + text / 2
-        // Pulled inside the board rather than allowed to hang off it: nothing
-        // out there can be read, let alone pressed.
-        if (left < 0f) {
-            right -= left
-            left = 0f
+        val bandBottom = top + bandHeightPx
+        var lo = 0f
+        var hi = boardSize.width
+        var blocked = false
+        for (other in kept) {
+            if (other.area.top >= bandBottom || other.area.bottom <= top) continue
+            when {
+                other.area.right + minGapPx <= centre -> lo = maxOf(lo, other.area.right + minGapPx)
+                other.area.left - minGapPx >= centre -> hi = minOf(hi, other.area.left - minGapPx)
+                // A better word already covers this key's middle: nowhere left
+                // to point from.
+                else -> blocked = true
+            }
         }
-        if (right > boardSize.width) {
-            left -= right - boardSize.width
-            right = boardSize.width
+        if (blocked || hi <= lo) continue
+        var drawnWidth = text
+        var drawnScale = scale
+        if (drawnWidth > hi - lo) {
+            drawnScale = (hi - lo) / full
+            if (drawnScale < minScale) continue
+            drawnWidth = hi - lo
         }
-        val area = Rect(left.coerceAtLeast(0f), top, right, top + bandHeightPx)
-        // Walked in rank order, so the better word keeps its place and the
-        // worse one goes. Shrinking or shifting the loser would leave a word
-        // that no longer points at its own key, which is the one thing the
-        // whole feature must not do.
-        // A little overlap is what the reference boards look like; a lot is
-        // unreadable. Two words may touch, and the worse one goes only when it
-        // would take a real bite out of the better one.
-        if (kept.none { it.area.overlaps(area) && overlapFraction(it.area, area) > OctopusMaxOverlap }) {
-            val hitTop = area.top.coerceIn(0f, boardSize.height)
-            val hitBottom = area.bottom.coerceIn(0f, boardSize.height)
-            kept.add(
-                OctopusSlot(
-                    word = word,
-                    scale = scale,
-                    area = area,
-                    // Only the part still over the board can be tapped. Since
-                    // the band is held inside the board above, that is the
-                    // whole word on every row; the clamp stays as the last
-                    // word on what a grid-space touch can reach.
-                    hit = if (hitBottom > hitTop) {
-                        Rect(area.left, hitTop, area.right, hitBottom)
-                    } else {
-                        Rect.Zero
-                    },
-                )
+        // max/min rather than coerceIn: when the word was shrunk to exactly the
+        // gap, rounding can leave hi - drawnWidth a hair under lo, and an empty
+        // range there would throw inside the keyboard.
+        val left = maxOf(lo, minOf(centre - drawnWidth / 2, hi - drawnWidth))
+        val right = left + drawnWidth
+        // Slid, but never off its key: the word's middle stays over the key
+        // it is picked from.
+        if ((left + right) / 2 !in cell.left..cell.right) continue
+        val area = Rect(left, top, right, bandBottom)
+        val hitTop = area.top.coerceIn(0f, boardSize.height)
+        val hitBottom = area.bottom.coerceIn(0f, boardSize.height)
+        kept.add(
+            OctopusSlot(
+                word = word,
+                scale = drawnScale,
+                area = area,
+                // Only the part still over the board can be tapped. Since the
+                // band is held inside the board above, that is the whole word
+                // on every row; the clamp stays as the last word on what a
+                // grid-space touch can reach.
+                hit = if (hitBottom > hitTop) {
+                    Rect(area.left, hitTop, area.right, hitBottom)
+                } else {
+                    Rect.Zero
+                },
             )
-        }
+        )
     }
     return kept
 }
@@ -271,6 +289,7 @@ internal fun BoxScope.OctopusOverlay(
         minScale = OctopusMinScale,
         boardSize = boardSize,
         widthOf = { measurer.measure(it, style, maxLines = 1).size.width.toFloat() },
+        minGapPx = with(density) { OctopusWordGapDp.dp.toPx() },
     )
     // Stamped with the very table the rectangles were measured from, so a
     // layout change — which hands the grid a fresh one — reads as nothing until
@@ -560,13 +579,6 @@ private class OctopusFace(var text: AnnotatedString, var style: TextStyle) {
     }
 }
 
-/** How much of the narrower of two words the wider may cover before one goes. */
-private fun overlapFraction(a: Rect, b: Rect): Float {
-    val overlap = minOf(a.right, b.right) - maxOf(a.left, b.left)
-    if (overlap <= 0f) return 0f
-    return overlap / minOf(a.width, b.width).coerceAtLeast(1f)
-}
-
 /**
  * The word in two tones, split where what the user has typed ends.
  *
@@ -646,11 +658,11 @@ private const val OctopusOverhangWidths = 1f
 /** The smallest a word may be drawn before it is dropped instead. */
 private const val OctopusMinScale = 0.72f
 
-/** How much of the narrower word two of them may share before one is dropped. */
-private const val OctopusMaxOverlap = 0.35f
-
 /** The typed head, faded against the completion it introduces. */
 private const val OctopusHeadAlpha = 0.55f
+
+/** BB-Keyboard: the clear space between two words in one band, so their letters never touch. */
+private const val OctopusWordGapDp = 4f
 
 /** A word's bloom out of its key: how long, and from what size. */
 private const val OctopusBloomMs = 140

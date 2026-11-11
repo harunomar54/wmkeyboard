@@ -17909,8 +17909,9 @@ internal fun LayerPeekPopup(
     // the popup's key and the commit paths as they are now. Read at the lift,
     // so the peek must commit before it clears the key.
     peek.hold.onCommit = { index ->
-        when (val entry = peek.popupKey?.alternateEntries()?.getOrNull(index)) {
-            is AlternateEntry.Character -> onText(entry.text)
+        val popupKey = peek.popupKey
+        when (val entry = popupKey?.alternateEntries()?.getOrNull(index)) {
+            is AlternateEntry.Character -> onText(popupKey?.let { typedAlternate(it, entry.text, shifted) } ?: entry.text)
             is AlternateEntry.Action -> onKey(
                 Key(label = entry.alternate.label, action = entry.alternate.action),
             )
@@ -17980,7 +17981,7 @@ internal fun RingAlternatesPopup(
     // centre button reads it through `hold.commit()`.
     focus.hold.onCommit = { index ->
         when (val entry = key.alternateEntries().getOrNull(index)) {
-            is AlternateEntry.Character -> onText(entry.text)
+            is AlternateEntry.Character -> onText(typedAlternate(key, entry.text, shifted))
             is AlternateEntry.Action -> onKey(
                 Key(label = entry.alternate.label, action = entry.alternate.action),
             )
@@ -25767,7 +25768,7 @@ internal fun KeyButton(
         when (val entry = key.alternateEntries().getOrNull(index)) {
             is AlternateEntry.Character -> {
                 alternatesGate.onPicked(key.output ?: key.label, entry.text)
-                onText(entry.text)
+                onText(typedAlternate(key, entry.text, visual.alternatesShifted))
             }
             is AlternateEntry.Action ->
                 onKey(Key(label = entry.alternate.label, action = entry.alternate.action))
@@ -27228,12 +27229,12 @@ private fun AlternatesPopup(
                 key.alternateEntries().forEachIndexed { index, entry ->
                     when (entry) {
                         is AlternateEntry.Character -> AlternateCharacter(
-                            text = rtlMirrored(visibleAlternate(shiftCased(entry.text, shifted)), mirrorBrackets),
+                            text = rtlMirrored(visibleAlternate(shownAlternate(key, entry.text, shifted)), mirrorBrackets),
                             index = index,
                             hold = hold,
                             fontSize = (18 * fontScale).sp,
                             modifier = Modifier
-                                .clickable { onText(entry.text) }
+                                .clickable { onText(typedAlternate(key, entry.text, shifted)) }
                                 .alternateMagnify(index, hold)
                                 .alternatePadding(entryPadding),
                         )
@@ -29085,7 +29086,7 @@ private fun KeyContent(visual: KeyVisual, settings: KeyboardSettings, contentCol
                 null
             } else {
                 key.longPress.firstOrNull()?.let {
-                    rtlMirrored(shiftCased(it, visual.alternatesShifted), mirrorBrackets)
+                    rtlMirrored(shownAlternate(key, it, visual.alternatesShifted), mirrorBrackets)
                 }
             }
             // Issue #769: a hint the author wrote, in place of the first

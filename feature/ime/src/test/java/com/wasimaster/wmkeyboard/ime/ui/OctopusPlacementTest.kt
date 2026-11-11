@@ -204,6 +204,50 @@ class OctopusPlacementTest {
         assertEquals(2, kept.size)
     }
 
+    @Test
+    fun `neighbouring words never overlap - the worse one shrinks beside the better`() {
+        // 150 wide over w reaches into e's half; the word over e fits in what is left.
+        val kept = slots(
+            word('w', "w".repeat(15), rank = 0),
+            word('e', "e".repeat(10), rank = 1),
+        )
+        assertEquals(2, kept.size)
+        val (better, worse) = kept
+        assertTrue("overlap: ${better.area} and ${worse.area}", better.area.right <= worse.area.left)
+        assertTrue(worse.scale < 1f)
+        // Still over its own key.
+        assertTrue(worse.area.center.x in cells.getValue('e'.code).left..cells.getValue('e'.code).right)
+    }
+
+    @Test
+    fun `a word with no room left beside a better one is dropped rather than overlapping`() {
+        val kept = slots(
+            word('w', "w".repeat(18), rank = 0),
+            word('e', "e".repeat(10), rank = 1),
+        )
+        assertEquals(1, kept.size)
+        assertEquals('w'.code, kept.single().word.keyCodePoint)
+    }
+
+    @Test
+    fun `the gap between words is kept clear`() {
+        val kept = octopusSlots(
+            words = listOf(word('q', "q".repeat(12), rank = 0), word('w', "w".repeat(9), rank = 1)),
+            bounds = cells,
+            placement = OctopusPlacement.FLOAT,
+            bandHeightPx = band,
+            straddle = straddle,
+            gapVPx = gapV,
+            maxOverhangPx = overhang,
+            boardSize = board,
+            minScale = 0.5f,
+            widthOf = { it.length * 10f },
+            minGapPx = 6f,
+        )
+        assertEquals(2, kept.size)
+        assertTrue(kept[1].area.left - kept[0].area.right >= 6f - 0.001f)
+    }
+
     // ---- absent geometry ----
 
     @Test
