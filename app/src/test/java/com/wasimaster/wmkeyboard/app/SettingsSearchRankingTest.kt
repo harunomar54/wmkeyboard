@@ -48,7 +48,9 @@ class SettingsSearchRankingTest {
         // Hidden keywords: a feature found by the name another keyboard gave
         // it, which is the whole point of the table (see SettingsSearchKeywords).
         first("octopus", "typing_group_octopus_title"),
-        first("blackberry", "typing_group_octopus_title"),
+        // BB-Keyboard fork: "BlackBerry swipes" is named after the brand, so it
+        // leads; the octopus page, found through its keyword, stays in the top three.
+        first("blackberry", "typing_berry_swipes_title"),
         first("flow", "typing_glide_typing_title"),
         first("swype", "typing_glide_typing_title"),
         first("grammarly", "fonts_tool_grammar_title"),
@@ -121,6 +123,7 @@ class SettingsSearchRankingTest {
         first("remove trackers", "clipboard_clean_links_title"),
         first("utm", "clipboard_clean_links_title"),
         // The toggle, with the page and the check-up that share its first word.
+        first("blackberry", "typing_group_octopus_title"),
         first("glide", "typing_glide_typing_title"),
         first("swipe typing", "typing_glide_typing_title"),
         first("space", "typing_double_space_title"),

@@ -1,11 +1,21 @@
 name: Berry build
 
 # Builds the Berry fork (BlackBerry swipes, spacebar correction, fixed debug
-# key, .berry app id) into an installable APK.
+# key, .berry app id) into an installable APK, but only once every check has
+# passed. Quality gate, in order of what it protects:
+#   1. Every module's unit tests (the same aggregate upstream CI runs), so a
+#      Berry change that breaks anything else in the keyboard stops the APK.
+#   2. The ART method-size limits, so the APK cannot crash on a method the
+#      runtime refuses to verify.
+#   3. Only then the APK is built and uploaded.
 on:
   workflow_dispatch:
   push:
     branches: [main]
+
+concurrency:
+  group: berry-${{ github.ref }}
+  cancel-in-progress: true
 
 env:
   WMKB_ENABLE_PLAY_STORE: "false"
@@ -13,7 +23,95 @@ env:
   GRADLE_OPTS: -Dorg.gradle.jvmargs=-Xmx6g -Dorg.gradle.daemon=false
 
 jobs:
+  test:
+    name: Unit tests (all modules)
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      # The JVM suites build and load the real Rust engine for this runner.
+      - name: Cache the Rust engine's host build
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: |
+            native/wm-engine
+            native/wm-engine-jni
+
+      - name: Test the Rust engine
+        run: cargo test --release --manifest-path native/wm-engine/Cargo.toml
+
+      # --continue: one failing module must not hide the results of the
+      # others. :core:smarthome runs on its own below: its Tuya test talks to
+      # a network service and times out on CI runners, and Berry never
+      # touches that module.
+      - name: Run every module's unit tests
+        run: >
+          ./gradlew unitTests -Pwmkb.skipBenchmarks=true --continue --stacktrace
+          -x :core:smarthome:testDebugUnitTest
+
+      - name: Smart home tests (reported, not gating)
+        continue-on-error: true
+        run: ./gradlew :core:smarthome:testDebugUnitTest -Pwmkb.skipBenchmarks=true --stacktrace
+
+      # Prints each failing test with its full assertion message, so the
+      # reason is in the job log itself and not only inside the report zip.
+      - name: Show failing tests
+        if: failure()
+        run: |
+          python3 - <<'EOF'
+          import glob, xml.etree.ElementTree as ET
+          for path in glob.glob('**/build/test-results/**/*.xml', recursive=True):
+              try:
+                  root = ET.parse(path).getroot()
+              except ET.ParseError:
+                  continue
+              for case in root.iter('testcase'):
+                  for bad in list(case.findall('failure')) + list(case.findall('error')):
+                      print(f"::error::{case.get('classname')} > {case.get('name')}")
+                      print((bad.text or bad.get('message') or '')[:4000])
+                      print('-' * 60)
+          EOF
+
+      - name: Upload test reports
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports
+          path: '**/build/reports/tests/'
+          retention-days: 14
+
+  dex:
+    name: Dex method limits
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Check method sizes
+        run: ./gradlew :app:checkDexMethodsEnFast --stacktrace
+
   build:
+    name: Build the APK
+    needs: [test, dex]
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
@@ -37,7 +135,3 @@ jobs:
           name: berry-apk
           path: app/build/outputs/apk/en/debug/*.apk
           retention-days: 14
-
-      - name: Unit tests for the Berry code
-        continue-on-error: true
-        run: ./gradlew :feature:ime:testDebugUnitTest --tests '*BerrySwipeTest' --tests '*OctopusFlickKeysTest' --tests '*OctopusFlickTest'
