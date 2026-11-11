@@ -41,7 +41,10 @@ jobs:
             || curl -fsSL -o babynames.tar.gz https://cran.r-project.org/src/contrib/Archive/babynames/babynames_1.0.1.tar.gz
           tar xzf babynames.tar.gz
           pip install --quiet pyreadr pandas
-          sudo apt-get update -qq > /dev/null && sudo apt-get install -y -qq wamerican-large > /dev/null
+          # A standard English word list (Webster's, GCIDE), from PyPI.
+          pip install --quiet english-words
+          python3 -c "from english_words import get_english_words_set as g; open('words.txt','w').write(chr(10).join(sorted(w for w in g(['web2','gcide'], lower=False) if w == w.lower())))"
+          wc -l words.txt
           mkdir ssa
           python3 berry/tools/babynames_totals.py babynames/data/babynames.rda ssa/yob2017.txt
           wc -l ssa/yob2017.txt
@@ -49,7 +52,7 @@ jobs:
         run: |
           python3 berry/tools/build_names.py en_US.combined ssa app/dictionaries-src/en.txt \
             app/src/main/assets/dictionaries/en_caps.txt berry/names/arabic_names.txt \
-            berry/names/exclude.txt out /usr/share/dict/american-english-large
+            berry/names/exclude.txt out words.txt
           wc -l out/*
           echo "-----BEGIN NAMES-----"
           tar czf - -C out . | base64 -w0
