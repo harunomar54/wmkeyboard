@@ -54049,6 +54049,8 @@ open class WMKeyboardService : InputMethodService() {
             // way when the user asked for the typed-out effect (#418), up to
             // a length where the effect would become a wait.
             else -> when {
+                // Obsidian Key: a clip copied with formatting keeps it.
+                item.kind == ClipKind.HTML && pasteWithFormatting(item) -> Unit
                 ClipSensitivity.isBareCode(item.text.trim()) -> {
                     commitCodeToField(item.text.trim())
                 }
@@ -54071,6 +54073,42 @@ open class WMKeyboardService : InputMethodService() {
     }
 
     /**
+     * Obsidian Key: a clip copied with formatting (a table out of Outlook, bold
+     * and links out of a mail) goes in with its formatting.
+     *
+     * A keyboard can only commit plain text, so the clip goes onto the system
+     * clipboard as HTML, with its plain text alongside, and the app is asked to
+     * paste: its own paste is the path that keeps a table a table. An app that
+     * takes no formatting reads the plain text from the same clip, so nothing
+     * is lost there either. The echo is marked as the keyboard's own, so the
+     * copy listener does not file the clip again.
+     *
+     * Plain text instead (false) with Keep formatting off, into a password
+     * field, for a hidden clip, and while the keyboard's clipboard is private,
+     * where putting the clip on the system clipboard is the leak that mode
+     * exists to stop.
+     */
+    private fun pasteWithFormatting(item: com.wasimaster.wmkeyboard.core.clipboard.ClipItem): Boolean {
+        val html = item.htmlText?.takeIf { it.isNotBlank() } ?: return false
+        val state = _uiState.value
+        if (!state.settings.clipboard.keepRichText || state.secureField || item.sensitive || KeyboardClipboard.isPrivate) {
+            return false
+        }
+        val ic = currentInputConnection ?: return false
+        commitComposing(ic, autocorrect = false)
+        restoringSystemClipText = item.text
+        val placed = runCatching {
+            (getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager)
+                .setPrimaryClip(android.content.ClipData.newHtmlText(null, item.text, html))
+        }.isSuccess
+        if (!placed) {
+            restoringSystemClipText = null
+            return false
+        }
+        return ic.performContextMenuAction(android.R.id.paste)
+    }
+
+    /**
      * Moves a clip just pasted to the top of the history and puts it back on
      * the system clipboard, when [ClipboardSettings.bumpOnPaste] asks (#970),
      * so the app's own Paste gives the same thing next time.
@@ -54086,9 +54124,18 @@ open class WMKeyboardService : InputMethodService() {
         clipboardStore.bump(item.id) ?: return
         clipboardStore.save()
         if (item.kind.isTextual && !item.sensitive && !KeyboardClipboard.isPrivate) {
+            // A formatted clip goes back formatted: the app may still be reading
+            // the clipboard for the paste just asked of it (pasteWithFormatting),
+            // and plain text here would take the table out from under it.
+            val html = item.htmlText?.takeIf { item.kind == ClipKind.HTML && state.settings.clipboard.keepRichText }
             runCatching {
-                (getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager)
-                    .setPrimaryClip(android.content.ClipData.newPlainText(null, item.text))
+                (getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager).setPrimaryClip(
+                    if (html != null) {
+                        android.content.ClipData.newHtmlText(null, item.text, html)
+                    } else {
+                        android.content.ClipData.newPlainText(null, item.text)
+                    },
+                )
             }
         }
         _uiState.update { it.copy(clipboardItems = clipboardStore.items()) }
