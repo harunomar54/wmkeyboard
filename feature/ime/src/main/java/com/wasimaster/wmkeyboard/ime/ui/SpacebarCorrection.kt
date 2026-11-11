@@ -29,6 +29,8 @@ internal fun rememberSpacebarCorrection(): State<String?> {
                 // what it expands to is what the space types.
                 SpacebarSnippetPreview.text.value
                     ?: now.autocorrectWord?.takeIf { it.isNotBlank() }
+                    ?: SpacebarSnippetPreview.promise.value
+                    ?: SpacebarSnippetPreview.flash.value
             } else {
                 null
             }
@@ -44,6 +46,15 @@ internal fun rememberSpacebarCorrection(): State<String?> {
  */
 internal object SpacebarSnippetPreview {
     val text = mutableStateOf<String?>(null)
+
+    /** Autocorrect's decision for the word being typed, as soon as it lands. */
+    val promise = mutableStateOf<String?>(null)
+
+    /** The spelling [promise] was decided for. */
+    @Volatile var promiseFor: String = ""
+
+    /** The correction a space just made, held briefly after it. */
+    val flash = mutableStateOf<String?>(null)
 }
 
 /** The BlackBerry Keyboard's green for a correction waiting on the spacebar. */

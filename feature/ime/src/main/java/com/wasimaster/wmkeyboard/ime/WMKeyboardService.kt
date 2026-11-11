@@ -21318,6 +21318,32 @@ open class WMKeyboardService : InputMethodService() {
                 ?.lineSequence()?.firstOrNull()?.take(40)
         }
         if (SpacebarSnippetPreview.text.value != preview) SpacebarSnippetPreview.text.value = preview
+        // A promise is about one spelling of one word; any other retires it.
+        if (SpacebarSnippetPreview.promise.value != null && SpacebarSnippetPreview.promiseFor != typed) {
+            SpacebarSnippetPreview.promise.value = null
+        }
+        // The next word under way ends the flash of the last one's fix.
+        if (typed.isNotEmpty() && SpacebarSnippetPreview.flash.value != null) {
+            spacebarFlashJob?.cancel()
+            SpacebarSnippetPreview.flash.value = null
+        }
+    }
+
+    private var spacebarFlashJob: Job? = null
+
+    /**
+     * Berry fork: the word autocorrect just put in, held on the spacebar in
+     * green for a moment after the space, so a change never goes unseen.
+     */
+    private fun flashSpacebarCorrection(word: String) {
+        if (!_uiState.value.settings.layoutBehavior.spacebarCorrection) return
+        SpacebarSnippetPreview.promise.value = null
+        SpacebarSnippetPreview.flash.value = word
+        spacebarFlashJob?.cancel()
+        spacebarFlashJob = serviceScope.launch {
+            delay(SPACEBAR_FLASH_MS)
+            SpacebarSnippetPreview.flash.value = null
+        }
     }
 
     private fun clearSnippetOffer() {
@@ -23247,6 +23273,7 @@ open class WMKeyboardService : InputMethodService() {
         state: KeyboardUiState,
     ) {
         if (corrected == null || corrected.equals(typed, ignoreCase = true)) return
+        flashSpacebarCorrection(corrected)
         val strip = state.settings.suggestionStrip
         if (!strip.undoCorrectionChip || obviousness >= strip.undoChipObviousness) return
         pushUndo(UndoableCorrection(typed, corrected, before = wordContext(ic, fieldText)))
@@ -27876,6 +27903,15 @@ open class WMKeyboardService : InputMethodService() {
                     certainty = decision.certainty,
                     complexity = decision.complexity,
                 )
+                // Berry fork: straight to the spacebar, without waiting out
+                // the strip's debounce, so a fast space still shows it first.
+                val promised = decision.apply?.takeIf { it != typed }
+                serviceScope.launch {
+                    if (composing.toString() == typed) {
+                        SpacebarSnippetPreview.promiseFor = typed
+                        SpacebarSnippetPreview.promise.value = promised
+                    }
+                }
             } finally {
                 pending.done.countDown()
             }
@@ -59661,6 +59697,9 @@ private const val IDEOGRAPHIC_SPACE = "\u3000"
  * density alone would leave most keys bare.
  */
 private const val OCTOPUS_POOL_DEPTH = 4
+
+/** How long the spacebar keeps showing a correction once the space has made it. */
+private const val SPACEBAR_FLASH_MS = 1600L
 
 private class GesturePreviewRequest(
     val points: List<GesturePoint>,
