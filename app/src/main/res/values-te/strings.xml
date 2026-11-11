@@ -465,7 +465,7 @@
     <string name="addon_use_target_theme_label">థీమ్‌లు</string>
     <string name="ai_chat_picture_desc">చిత్రం</string>
     <string name="ai_chat_picture_remove_desc">చిత్రాన్ని తొలగించండి</string>
-    <string name="app_name">BB-Keyboard</string>
+    <string name="app_name">Obsidian Key</string>
     <string name="appearance_font_subtitle">గూగుల్ ఫాంట్‌లు, లేదా మీ స్వంత ఫాంట్ ఫైల్‌ను దిగుమతి చేసుకోండి</string>
     <string name="appearance_font_title">కీబోర్డ్ ఫాంట్</string>
     <plurals name="appearance_icons_changed_count">
@@ -3182,7 +3182,7 @@
     <string name="hue_pair_subtitle">బ్రిడ్జ్‌పై ఉన్న గుండ్రని బటన్‌ను నొక్కి, ముప్పై సెకన్లలోపు పెయిర్ (Pair) నొక్కండి. బ్రిడ్జ్ కీబోర్డ్‌కు దాని స్వంత కీని ఇస్తుంది.</string>
     <string name="hue_paired">జత చేయబడింది. బ్రిడ్జ్ సర్టిఫికేట్ పిన్ చేయబడింది: ఈ చిరునామాలో వేరే బ్రిడ్జ్ ఉంటే తిరస్కరించబడుతుంది.</string>
     <string name="imagegen_module_title">స్టిక్కర్ జనరేటర్</string>
-    <string name="ime_name">BB-Keyboard</string>
+    <string name="ime_name">Obsidian Key</string>
     <string name="import_anki_body">ఇది ఒక అంకి (Anki) డెక్. యాప్ దీనిని పదజాలం ప్యాక్‌గా మారుస్తుంది.</string>
     <string name="import_anki_title">ఫ్లాష్‌కార్డ్‌లను దిగుమతి చేయాలా?</string>
     <string name="import_api_keys_note">ఫైల్‌లో API కీలు ఉన్నాయి. అవి మీరు ఇక్కడ సెట్ చేసిన కీలను భర్తీ చేస్తాయి.</string>
@@ -9560,7 +9560,7 @@
     <string name="text_actions_group_language">భాష</string>
     <string name="text_actions_group_open">దీనిలో తెరవండి</string>
     <string name="text_actions_group_rewrite">తిరిగి వ్రాయండి</string>
-    <string name="text_actions_menu_label">BB-Keyboard</string>
+    <string name="text_actions_menu_label">Obsidian Key</string>
     <string name="text_actions_metered_ask">డేటా సేవర్ ఆన్‌లో ఉంది. మొబైల్ డేటా ద్వారా దీనిని పంపడానికి యాక్షన్‌ని మళ్ళీ నొక్కండి.</string>
     <string name="text_actions_open_translate_action">అనువాద సాధనం</string>
     <string name="text_actions_read_only_hint">ఈ యాప్ ఈ టెక్స్ట్‌లో ఎటువంటి మార్పులను స్వీకరించదు. దానికి బదులుగా ఫలితాన్ని కాపీ చేయండి.</string>

@@ -977,7 +977,7 @@
     <string name="ime_clipboard_clips_section">Clips</string>
     <string name="ime_clip_pin">Pin</string>
     <string name="ime_clip_unpin">Unpin</string>
-    <!-- BB-Keyboard: the chevron under a clipboard row's tile, opening it to show more text and its buttons, and closing it again. -->
+    <!-- Obsidian Key: the chevron under a clipboard row's tile, opening it to show more text and its buttons, and closing it again. -->
     <string name="ime_clip_row_more">Show more</string>
     <string name="ime_clip_row_less">Show less</string>
     <!-- Button in the press-and-hold details for an image clip. The image is

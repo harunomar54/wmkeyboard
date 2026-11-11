@@ -466,7 +466,7 @@
     <string name="addon_use_target_theme_label">Thema\'s</string>
     <string name="ai_chat_picture_desc">Afbeelding</string>
     <string name="ai_chat_picture_remove_desc">Verwijder de afbeelding</string>
-    <string name="app_name">BB-Keyboard</string>
+    <string name="app_name">Obsidian Key</string>
     <string name="appearance_font_subtitle">Google Fonts, of importeer je eigen lettertypebestand</string>
     <string name="appearance_font_title">Toetsenbordlettertype</string>
     <plurals name="appearance_icons_changed_count">
@@ -3183,7 +3183,7 @@
     <string name="hue_pair_subtitle">Druk op de ronde knop op de bridge en tik binnen dertig seconden op Koppelen. De bridge geeft het toetsenbord een eigen sleutel.</string>
     <string name="hue_paired">Gekoppeld. Het certificaat van de bridge is vastgezet: een andere bridge op dit adres wordt geweigerd.</string>
     <string name="imagegen_module_title">Stickergenerator</string>
-    <string name="ime_name">BB-Keyboard</string>
+    <string name="ime_name">Obsidian Key</string>
     <string name="import_anki_body">Dit is een Anki-deck. De app verandert het in een vocabulairepakket.</string>
     <string name="import_anki_title">Flashcards importeren?</string>
     <string name="import_api_keys_note">Het bestand bevat API-sleutels. Deze vervangen de sleutels die je hier hebt ingesteld.</string>
@@ -9555,7 +9555,7 @@
     <string name="text_actions_group_language">Taal</string>
     <string name="text_actions_group_open">Openen in</string>
     <string name="text_actions_group_rewrite">Herschrijven</string>
-    <string name="text_actions_menu_label">BB-Keyboard</string>
+    <string name="text_actions_menu_label">Obsidian Key</string>
     <string name="text_actions_metered_ask">Gegevensbesparing staat aan. Tik nogmaals op de actie om dit via mobiele data te verzenden.</string>
     <string name="text_actions_open_translate_action">Vertaaltool</string>
     <string name="text_actions_read_only_hint">Deze app accepteert geen wijzigingen in deze tekst. Kopieer in plaats daarvan het resultaat.</string>

@@ -464,7 +464,7 @@
     <string name="addon_use_target_theme_label">Tema</string>
     <string name="ai_chat_picture_desc">Gambar</string>
     <string name="ai_chat_picture_remove_desc">Hapus gambar</string>
-    <string name="app_name">BB-Keyboard</string>
+    <string name="app_name">Obsidian Key</string>
     <string name="appearance_font_subtitle">Google Fonts, atau impor file font Anda sendiri</string>
     <string name="appearance_font_title">Font keyboard</string>
     <plurals name="appearance_icons_changed_count">
@@ -3179,7 +3179,7 @@
     <string name="hue_pair_subtitle">Tekan tombol bulat pada bridge, lalu ketuk Pasangkan dalam waktu tiga puluh detik. Bridge akan memberikan kunci tersendiri untuk keyboard.</string>
     <string name="hue_paired">Telah dipasangkan. Sertifikat bridge disematkan: bridge lain di alamat ini akan ditolak.</string>
     <string name="imagegen_module_title">Generator stiker</string>
-    <string name="ime_name">BB-Keyboard</string>
+    <string name="ime_name">Obsidian Key</string>
     <string name="import_anki_body">Ini adalah dek Anki. Aplikasi mengubahnya menjadi paket kosakata.</string>
     <string name="import_anki_title">Impor kartu flash?</string>
     <string name="import_api_keys_note">File tersebut memiliki kunci API. Kunci tersebut menggantikan kunci yang Anda tetapkan di sini.</string>
@@ -9553,7 +9553,7 @@
     <string name="text_actions_group_language">Bahasa</string>
     <string name="text_actions_group_open">Buka di</string>
     <string name="text_actions_group_rewrite">Tulis ulang</string>
-    <string name="text_actions_menu_label">BB-Keyboard</string>
+    <string name="text_actions_menu_label">Obsidian Key</string>
     <string name="text_actions_metered_ask">Penghemat data aktif. Ketuk tindakan lagi untuk mengirim ini melalui data seluler.</string>
     <string name="text_actions_open_translate_action">Alat terjemahan</string>
     <string name="text_actions_read_only_hint">Aplikasi ini tidak menerima perubahan pada teks ini. Salin hasilnya sebagai gantinya.</string>

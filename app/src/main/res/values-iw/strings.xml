@@ -464,7 +464,7 @@
     <string name="addon_use_target_theme_label">ערכות נושא</string>
     <string name="ai_chat_picture_desc">תמונה</string>
     <string name="ai_chat_picture_remove_desc">הסר את התמונה</string>
-    <string name="app_name">BB-Keyboard</string>
+    <string name="app_name">Obsidian Key</string>
     <string name="appearance_font_subtitle">גופני Google, או ייבוא קובץ גופן משלך</string>
     <string name="appearance_font_title">גופן המקלדת</string>
     <plurals name="appearance_icons_changed_count">
@@ -3183,7 +3183,7 @@
     <string name="hue_pair_subtitle">לחץ על הכפתור העגול בגשר, ולאחר מכן הקש על \'צמד\' תוך שלושים שניות. הגשר יעניק למקלדת מפתח משלה.</string>
     <string name="hue_paired">צומד. האישור של הגשר מוצמד: גשר אחר בכתובת זו יידחה.</string>
     <string name="imagegen_module_title">מחולל מדבקות</string>
-    <string name="ime_name">BB-Keyboard</string>
+    <string name="ime_name">Obsidian Key</string>
     <string name="import_anki_body">זוהי חפיסת Anki. האפליקציה הופכת אותה לחבילת אוצר מילים.</string>
     <string name="import_anki_title">לייבא כרטיסיות?</string>
     <string name="import_api_keys_note">הקובץ מכיל מפתחות API. הם יחליפו את המפתחות שהגדרת כאן.</string>
@@ -9554,7 +9554,7 @@
     <string name="text_actions_group_language">שפה</string>
     <string name="text_actions_group_open">פתח ב-</string>
     <string name="text_actions_group_rewrite">כתוב מחדש</string>
-    <string name="text_actions_menu_label">BB-Keyboard</string>
+    <string name="text_actions_menu_label">Obsidian Key</string>
     <string name="text_actions_metered_ask">שומר נתונים מופעל. הקש על הפעולה שוב כדי לשלוח זאת דרך נתונים ניידים.</string>
     <string name="text_actions_open_translate_action">כלי תרגום</string>
     <string name="text_actions_read_only_hint">יישום זה אינו מקבל שינויים בטקסט זה. העתק את התוצאה במקום זאת.</string>

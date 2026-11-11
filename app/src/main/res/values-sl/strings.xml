@@ -466,7 +466,7 @@
     <string name="addon_use_target_theme_label">Teme</string>
     <string name="ai_chat_picture_desc">Slika</string>
     <string name="ai_chat_picture_remove_desc">Odstrani sliko</string>
-    <string name="app_name">BB-Keyboard</string>
+    <string name="app_name">Obsidian Key</string>
     <string name="appearance_font_subtitle">Google Fonts ali uvoz lastne datoteke pisave</string>
     <string name="appearance_font_title">Pisava tipkovnice</string>
     <plurals name="appearance_icons_changed_count">
@@ -3183,7 +3183,7 @@
     <string name="hue_pair_subtitle">Pritisnite okrogel gumb na mostu in v tridesetih sekundah tapnite Seznani. Most dodeli tipkovnici lasten ključ.</string>
     <string name="hue_paired">Seznanjeno. Potrdilo mostu je pripeto: drug most na tem naslovu bo zavrnjen.</string>
     <string name="imagegen_module_title">Generator nalepk</string>
-    <string name="ime_name">BB-Keyboard</string>
+    <string name="ime_name">Obsidian Key</string>
     <string name="import_anki_body">To je komplet Anki. Aplikacija ga spremeni v paket besedišča.</string>
     <string name="import_anki_title">Uvoziti kartice za pomnjenje?</string>
     <string name="import_api_keys_note">Datoteka vsebuje ključe API. Ti bodo nadomestili ključe, ki ste jih nastavili tukaj.</string>
@@ -9560,7 +9560,7 @@
     <string name="text_actions_group_language">Jezik</string>
     <string name="text_actions_group_open">Odpri v</string>
     <string name="text_actions_group_rewrite">Prepiši</string>
-    <string name="text_actions_menu_label">BB-Keyboard</string>
+    <string name="text_actions_menu_label">Obsidian Key</string>
     <string name="text_actions_metered_ask">Varčevanje s podatki je vklopljeno. Ponovno tapnite dejanje, da ga pošljete prek mobilnih podatkov.</string>
     <string name="text_actions_open_translate_action">Orodje za prevajanje</string>
     <string name="text_actions_read_only_hint">Ta aplikacija ne sprejema sprememb tega besedila. Namesto tega kopirajte rezultat.</string>

@@ -1,4 +1,4 @@
-name: Berry build
+name: Obsidian Key build
 
 # Builds the Berry fork (BlackBerry swipes, spacebar correction, fixed debug
 # key, .berry app id) into an installable APK, but only once every check has
@@ -110,10 +110,10 @@ jobs:
         run: ./gradlew :app:checkDexMethodsEnFast --stacktrace
 
   build:
-    name: Build the APK
+    name: Build the release APK
     needs: [test, dex]
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
 
@@ -126,12 +126,46 @@ jobs:
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
 
-      - name: Build the APK
-        run: ./gradlew assembleEnDebug --stacktrace
+      # The release key lives in the repo only encrypted. One secret,
+      # OBSIDIAN_KEY_PASSWORD, unlocks it and is also its store and key
+      # password. It never touches the repo or the log.
+      - name: Unlock the release key
+        env:
+          OBSIDIAN_KEY_PASSWORD: ${{ secrets.OBSIDIAN_KEY_PASSWORD }}
+        run: |
+          if [ -z "$OBSIDIAN_KEY_PASSWORD" ]; then
+            echo "::error::The OBSIDIAN_KEY_PASSWORD secret is missing: add it in Settings, Secrets and variables, Actions."
+            exit 1
+          fi
+          openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -in app/obsidian-release.jks.enc \
+            -out "$RUNNER_TEMP/release.jks" -pass env:OBSIDIAN_KEY_PASSWORD
+          echo "RELEASE_STORE_FILE=$RUNNER_TEMP/release.jks" >> "$GITHUB_ENV"
+          echo "RELEASE_KEY_ALIAS=obsidiankey" >> "$GITHUB_ENV"
+
+      # A real release: R8 shrinks and optimizes, the baseline profile applies,
+      # nothing is debuggable. arm64 only, the phone's ABI, to keep it small.
+      - name: Build the release APK
+        env:
+          RELEASE_STORE_PASSWORD: ${{ secrets.OBSIDIAN_KEY_PASSWORD }}
+          RELEASE_KEY_PASSWORD: ${{ secrets.OBSIDIAN_KEY_PASSWORD }}
+        run: ./gradlew assembleEnRelease -Pwmkb.abi=arm64-v8a --stacktrace
+
+      - name: Check it is signed with the release key
+        run: |
+          apk=$(ls app/build/outputs/apk/en/release/*.apk | head -1)
+          case "$apk" in *unsigned*) echo "::error::The APK came out unsigned"; exit 1;; esac
+          signer=$(ls -d "$ANDROID_HOME"/build-tools/* | sort -V | tail -1)/apksigner
+          "$signer" verify --print-certs "$apk" | tee certs.txt
+          grep -q "CN=Obsidian Key" certs.txt
+          ls -la app/build/outputs/apk/en/release/
 
       - name: Upload the APK
         uses: actions/upload-artifact@v4
         with:
-          name: berry-apk
-          path: app/build/outputs/apk/en/debug/*.apk
-          retention-days: 14
+          name: obsidian-key-apk
+          path: app/build/outputs/apk/en/release/*.apk
+          retention-days: 30
+
+      - name: Forget the key
+        if: always()
+        run: rm -f "$RUNNER_TEMP/release.jks"

@@ -465,7 +465,7 @@
     <string name="addon_use_target_theme_label">تھیمز</string>
     <string name="ai_chat_picture_desc">تصویر</string>
     <string name="ai_chat_picture_remove_desc">تصویر ہٹائیں</string>
-    <string name="app_name">BB-Keyboard</string>
+    <string name="app_name">Obsidian Key</string>
     <string name="appearance_font_subtitle">گوگل فونٹس، یا اپنی فونٹ فائل درآمد کریں</string>
     <string name="appearance_font_title">کی بورڈ فونٹ</string>
     <plurals name="appearance_icons_changed_count">
@@ -3180,7 +3180,7 @@
     <string name="hue_pair_subtitle">برج پر گول بٹن دبائیں، پھر تیس سیکنڈ کے اندر جوڑا بنانے (Pair) پر ٹیپ کریں۔ برج کی بورڈ کو اپنی ایک کلید دیتا ہے۔</string>
     <string name="hue_paired">جوڑا بن گیا۔ برج کا سرٹیفکیٹ پن کر دیا گیا ہے: اس پتے پر کسی دوسرے برج کو مسترد کر دیا جائے گا۔</string>
     <string name="imagegen_module_title">اسٹیکر جنریٹر</string>
-    <string name="ime_name">BB-Keyboard</string>
+    <string name="ime_name">Obsidian Key</string>
     <string name="import_anki_body">یہ ایک Anki ڈیک ہے۔ ایپ اسے ایک وکیبلری پیک میں تبدیل کر دیتی ہے۔</string>
     <string name="import_anki_title">کیا فلیش کارڈز درآمد کریں؟</string>
     <string name="import_api_keys_note">فائل میں API کیز موجود ہیں۔ وہ ان کیز کی جگہ لے لیں گی جو آپ نے یہاں سیٹ کی ہیں۔</string>
@@ -9552,7 +9552,7 @@
     <string name="text_actions_group_language">زبان</string>
     <string name="text_actions_group_open">میں کھولیں</string>
     <string name="text_actions_group_rewrite">دوبارہ لکھیں</string>
-    <string name="text_actions_menu_label">BB-Keyboard</string>
+    <string name="text_actions_menu_label">Obsidian Key</string>
     <string name="text_actions_metered_ask">ڈیٹا سیور آن ہے۔ اسے موبائل ڈیٹا پر بھیجنے کے لیے ایکشن کو دوبارہ تھپتھپائیں۔</string>
     <string name="text_actions_open_translate_action">ترجمہ ٹول</string>
     <string name="text_actions_read_only_hint">یہ ایپ اس متن میں تبدیلیوں کو قبول نہیں کرتی ہے۔ اس کے بجائے نتیجہ کاپی کریں۔</string>

@@ -462,7 +462,7 @@
     <string name="addon_use_target_theme_label">主题</string>
     <string name="ai_chat_picture_desc">图片</string>
     <string name="ai_chat_picture_remove_desc">移除图片</string>
-    <string name="app_name">BB-Keyboard</string>
+    <string name="app_name">Obsidian Key</string>
     <string name="appearance_font_subtitle">Google 字体，或导入您自己的字体文件</string>
     <string name="appearance_font_title">键盘字体</string>
     <plurals name="appearance_icons_changed_count">
@@ -3177,7 +3177,7 @@
     <string name="hue_pair_subtitle">按下网桥上的圆形按钮，然后在三十秒内点击“配对”。网桥会为键盘分配一个专属密钥。</string>
     <string name="hue_paired">已配对。网桥证书已锁定：将拒绝连接此地址下的其他网桥。</string>
     <string name="imagegen_module_title">贴纸生成器</string>
-    <string name="ime_name">BB-Keyboard</string>
+    <string name="ime_name">Obsidian Key</string>
     <string name="import_anki_body">这是一个 Anki 牌组。应用会将其转换为词汇包。</string>
     <string name="import_anki_title">导入闪卡吗？</string>
     <string name="import_api_keys_note">该文件包含 API 密钥。它们将替换您在此处设置的密钥。</string>
@@ -9542,7 +9542,7 @@
     <string name="text_actions_group_language">语言</string>
     <string name="text_actions_group_open">打开方式</string>
     <string name="text_actions_group_rewrite">重写</string>
-    <string name="text_actions_menu_label">BB-Keyboard</string>
+    <string name="text_actions_menu_label">Obsidian Key</string>
     <string name="text_actions_metered_ask">流量节省程序已开启。再次点击该操作以通过移动数据发送。</string>
     <string name="text_actions_open_translate_action">翻译工具</string>
     <string name="text_actions_read_only_hint">此应用不接受对此文本的更改。请改为复制结果。</string>

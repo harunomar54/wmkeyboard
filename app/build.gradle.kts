@@ -410,6 +410,10 @@ android {
             }
         }
         release {
+            // Obsidian Key: its own app, beside WM Keyboard from the Play Store
+            // and the old debug builds, signed with the fork's private key
+            // (app/obsidian-release.jks.enc, unlocked in CI; see berry.yml).
+            applicationIdSuffix = ".obsidian"
             ndk {
                 if (!splitApks) abiFilters += singleAbi?.let(::setOf) ?: abiDigits.keys
                 debugSymbolLevel = "FULL"

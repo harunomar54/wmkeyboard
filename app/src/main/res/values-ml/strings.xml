@@ -466,7 +466,7 @@
     <string name="addon_use_target_theme_label">തീമുകൾ</string>
     <string name="ai_chat_picture_desc">ചിത്രം</string>
     <string name="ai_chat_picture_remove_desc">ചിത്രം നീക്കം ചെയ്യുക</string>
-    <string name="app_name">BB-Keyboard</string>
+    <string name="app_name">Obsidian Key</string>
     <string name="appearance_font_subtitle">ഗൂഗിൾ ഫോണ്ടുകൾ, അല്ലെങ്കിൽ നിങ്ങളുടെ സ്വന്തം ഫോണ്ട് ഫയൽ ഇറക്കുമതി ചെയ്യുക</string>
     <string name="appearance_font_title">കീബോർഡ് ഫോണ്ട്</string>
     <plurals name="appearance_icons_changed_count">
@@ -3181,7 +3181,7 @@
     <string name="hue_pair_subtitle">ബ്രിഡ്ജിലെ വൃത്താകൃതിയിലുള്ള ബട്ടൺ അമർത്തുക, തുടർന്ന് മുപ്പത് സെക്കൻഡിനുള്ളിൽ \'പെയർ\' (Pair) ടാപ്പ് ചെയ്യുക. ബ്രിഡ്ജ് കീബോർഡിന് അതിന്റേതായ ഒരു കീ നൽകുന്നു.</string>
     <string name="hue_paired">പെയർ ചെയ്തു. ബ്രിഡ്ജിന്റെ സർട്ടിഫിക്കറ്റ് പിൻ ചെയ്തിരിക്കുന്നു: ഈ വിലാസത്തിലുള്ള മറ്റൊരു ബ്രിഡ്ജ് നിരസിക്കപ്പെടും.</string>
     <string name="imagegen_module_title">സ്റ്റിക്കർ ജനറേറ്റർ</string>
-    <string name="ime_name">BB-Keyboard</string>
+    <string name="ime_name">Obsidian Key</string>
     <string name="import_anki_body">ഇതൊരു Anki ഡെക്കാണ്. ആപ്പ് ഇതിനെ ഒരു വൊക്കാബുലറി പാക്കാക്കി മാറ്റുന്നു.</string>
     <string name="import_anki_title">ഫ്ലാഷ് കാർഡുകൾ ഇമ്പോർട്ട് ചെയ്യണോ?</string>
     <string name="import_api_keys_note">ഈ ഫയലിൽ API കീകൾ അടങ്ങിയിരിക്കുന്നു. നിങ്ങൾ ഇവിടെ സജ്ജീകരിച്ചിട്ടുള്ള കീകളെ ഇവ മാറ്റിസ്ഥാപിക്കും.</string>
@@ -9562,7 +9562,7 @@
     <string name="text_actions_group_language">ഭാഷ</string>
     <string name="text_actions_group_open">ഇതിൽ തുറക്കുക</string>
     <string name="text_actions_group_rewrite">തിരുത്തിയെഴുതുക</string>
-    <string name="text_actions_menu_label">BB-Keyboard</string>
+    <string name="text_actions_menu_label">Obsidian Key</string>
     <string name="text_actions_metered_ask">ഡാറ്റ സേവർ ഓണാണ്. മൊബൈൽ ഡാറ്റ വഴി ഇത് അയക്കാൻ ആക്ഷൻ വീണ്ടും ടാപ്പ് ചെയ്യുക.</string>
     <string name="text_actions_open_translate_action">വിവർത്തന ഉപകരണം</string>
     <string name="text_actions_read_only_hint">ഈ ആപ്പ് ഈ വാചകത്തിൽ മാറ്റങ്ങൾ വരുത്തുന്നില്ല. പകരം ഫലം പകർത്തുക.</string>

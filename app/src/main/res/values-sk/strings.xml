@@ -465,7 +465,7 @@
     <string name="addon_use_target_theme_label">Motívy</string>
     <string name="ai_chat_picture_desc">Obrázok</string>
     <string name="ai_chat_picture_remove_desc">Odstrániť obrázok</string>
-    <string name="app_name">BB-Keyboard</string>
+    <string name="app_name">Obsidian Key</string>
     <string name="appearance_font_subtitle">Google Fonts alebo importujte vlastný súbor písma</string>
     <string name="appearance_font_title">Písmo klávesnice</string>
     <plurals name="appearance_icons_changed_count">
@@ -3183,7 +3183,7 @@
     <string name="hue_pair_subtitle">Stlačte okrúhle tlačidlo na mostíku a potom do tridsiatich sekúnd ťuknite na Spárovať. Mostík pridelí klávesnici vlastný kľúč.</string>
     <string name="hue_paired">Spárované. Certifikát mostíka je pripnutý: iný mostík na tejto adrese bude odmietnutý.</string>
     <string name="imagegen_module_title">Generátor nálepiek</string>
-    <string name="ime_name">BB-Keyboard</string>
+    <string name="ime_name">Obsidian Key</string>
     <string name="import_anki_body">Toto je balíček Anki. Aplikácia ho zmení na balík slovnej zásoby.</string>
     <string name="import_anki_title">Importovať kartičky?</string>
     <string name="import_api_keys_note">Súbor obsahuje kľúče API. Nahradia kľúče, ktoré ste tu nastavili.</string>
@@ -9557,7 +9557,7 @@
     <string name="text_actions_group_language">Jazyk</string>
     <string name="text_actions_group_open">Otvoriť v</string>
     <string name="text_actions_group_rewrite">Prepísať</string>
-    <string name="text_actions_menu_label">BB-Keyboard</string>
+    <string name="text_actions_menu_label">Obsidian Key</string>
     <string name="text_actions_metered_ask">Šetrič dát je zapnutý. Klepnite na akciu znova, ak ju chcete odoslať cez mobilné dáta.</string>
     <string name="text_actions_open_translate_action">Nástroj na preklad</string>
     <string name="text_actions_read_only_hint">Táto aplikácia neprijíma zmeny v tomto texte. Namiesto toho skopírujte výsledok.</string>

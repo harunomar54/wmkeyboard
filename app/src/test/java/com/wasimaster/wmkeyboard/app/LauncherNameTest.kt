@@ -97,8 +97,8 @@ class LauncherNameTest {
         assertEquals("@string/app_name_short", attribute(alias(LauncherName.SHORT_ALIAS).first, "label"))
         val strings = File("src/main/res/values/strings.xml").readText()
         assertTrue(
-            "app_name_short must read BBK",
-            Regex("""<string name="app_name_short"[^>]*>BBK</string>""").containsMatchIn(strings),
+            "app_name_short must read Obsidian",
+            Regex("""<string name="app_name_short"[^>]*>Obsidian</string>""").containsMatchIn(strings),
         )
     }
 

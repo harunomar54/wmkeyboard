@@ -463,7 +463,7 @@
     <string name="addon_use_target_theme_label">Thèmes</string>
     <string name="ai_chat_picture_desc">Image</string>
     <string name="ai_chat_picture_remove_desc">Supprimer l\'image</string>
-    <string name="app_name">BB-Keyboard</string>
+    <string name="app_name">Obsidian Key</string>
     <string name="appearance_font_subtitle">Google Fonts, ou importez votre propre fichier de police</string>
     <string name="appearance_font_title">Police du clavier</string>
     <plurals name="appearance_icons_changed_count">
@@ -3178,7 +3178,7 @@
     <string name="hue_pair_subtitle">Appuyez sur le bouton rond du pont, puis appuyez sur Associer dans les trente secondes. Le pont donne au clavier sa propre clé.</string>
     <string name="hue_paired">Appairé. Le certificat du pont est épinglé : un pont différent à cette adresse sera refusé.</string>
     <string name="imagegen_module_title">Générateur d\'autocollants</string>
-    <string name="ime_name">BB-Keyboard</string>
+    <string name="ime_name">Obsidian Key</string>
     <string name="import_anki_body">Il s\'agit d\'un paquet Anki. L\'application le transforme en pack de vocabulaire.</string>
     <string name="import_anki_title">Importer des cartes mémoire ?</string>
     <string name="import_api_keys_note">Le fichier contient des clés API. Elles remplaceront les clés que vous avez définies ici.</string>
@@ -9548,7 +9548,7 @@
     <string name="text_actions_group_language">Langue</string>
     <string name="text_actions_group_open">Ouvrir dans</string>
     <string name="text_actions_group_rewrite">Réécrire</string>
-    <string name="text_actions_menu_label">BB-Keyboard</string>
+    <string name="text_actions_menu_label">Obsidian Key</string>
     <string name="text_actions_metered_ask">L\'économiseur de données est activé. Appuyez à nouveau sur l\'action pour l\'envoyer via les données mobiles.</string>
     <string name="text_actions_open_translate_action">Outil de traduction</string>
     <string name="text_actions_read_only_hint">Cette application n\'accepte pas les modifications de ce texte. Copiez plutôt le résultat.</string>
