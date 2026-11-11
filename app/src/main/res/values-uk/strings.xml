@@ -465,7 +465,7 @@
     <string name="addon_use_target_theme_label">Теми</string>
     <string name="ai_chat_picture_desc">Зображення</string>
     <string name="ai_chat_picture_remove_desc">Видалити зображення</string>
-    <string name="app_name">WM Keyboard</string>
+    <string name="app_name">BB-Keyboard</string>
     <string name="appearance_font_subtitle">Google Fonts або імпорт власного файлу шрифту</string>
     <string name="appearance_font_title">Шрифт клавіатури</string>
     <plurals name="appearance_icons_changed_count">
@@ -3182,7 +3182,7 @@
     <string name="hue_pair_subtitle">Натисніть круглу кнопку на мосту, а потім натисніть «З\'єднати» протягом тридцяти секунд. Міст надасть клавіатурі власний ключ.</string>
     <string name="hue_paired">З\'єднано. Сертифікат моста закріплено: інший міст за цією адресою буде відхилено.</string>
     <string name="imagegen_module_title">Генератор стікерів</string>
-    <string name="ime_name">Клавіатура WM</string>
+    <string name="ime_name">BB-Keyboard</string>
     <string name="import_anki_body">Це колода Anki. Додаток перетворює її на словниковий пакет.</string>
     <string name="import_anki_title">Імпортувати картки?</string>
     <string name="import_api_keys_note">Файл містить ключі API. Вони замінять ключі, які ви встановили тут.</string>
@@ -9553,7 +9553,7 @@
     <string name="text_actions_group_language">Мова</string>
     <string name="text_actions_group_open">Відкрити в</string>
     <string name="text_actions_group_rewrite">Переписати</string>
-    <string name="text_actions_menu_label">Клавіатура WM</string>
+    <string name="text_actions_menu_label">BB-Keyboard</string>
     <string name="text_actions_metered_ask">Увімкнено економію трафіку. Торкніться дії ще раз, щоб надіслати це через мобільну мережу.</string>
     <string name="text_actions_open_translate_action">Інструмент перекладу</string>
     <string name="text_actions_read_only_hint">Цей додаток не вносить зміни в цей текст. Натомість скопіюйте результат.</string>

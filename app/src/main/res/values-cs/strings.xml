@@ -463,7 +463,7 @@
     <string name="addon_use_target_theme_label">Motivy</string>
     <string name="ai_chat_picture_desc">Obrázek</string>
     <string name="ai_chat_picture_remove_desc">Odstranit obrázek</string>
-    <string name="app_name">WM Klávesnice</string>
+    <string name="app_name">BB-Keyboard</string>
     <string name="appearance_font_subtitle">Google Fonts nebo import vlastního souboru písma</string>
     <string name="appearance_font_title">Písmo klávesnice</string>
     <plurals name="appearance_icons_changed_count">
@@ -3181,7 +3181,7 @@
     <string name="hue_pair_subtitle">Stiskněte kulaté tlačítko na bridge a poté do třiceti sekund klepněte na Spárovat. Bridge přidělí klávesnici vlastní klíč.</string>
     <string name="hue_paired">Spárováno. Certifikát bridge je připnut: jiný bridge na této adrese bude odmítnut.</string>
     <string name="imagegen_module_title">Generátor nálepek</string>
-    <string name="ime_name">WM Klávesnice</string>
+    <string name="ime_name">BB-Keyboard</string>
     <string name="import_anki_body">Toto je balíček Anki. Aplikace jej převede na balíček slovní zásoby.</string>
     <string name="import_anki_title">Importovat kartičky?</string>
     <string name="import_api_keys_note">Soubor obsahuje klíče API. Nahradí klíče, které jste zde nastavili.</string>
@@ -9550,7 +9550,7 @@
     <string name="text_actions_group_language">Jazyk</string>
     <string name="text_actions_group_open">Otevřít v</string>
     <string name="text_actions_group_rewrite">Přepsat</string>
-    <string name="text_actions_menu_label">Klávesnice WM</string>
+    <string name="text_actions_menu_label">BB-Keyboard</string>
     <string name="text_actions_metered_ask">Spořič dat je zapnutý. Klepněte na akci znovu pro odeslání přes mobilní data.</string>
     <string name="text_actions_open_translate_action">Nástroj Překladač</string>
     <string name="text_actions_read_only_hint">Tato aplikace neumožňuje změny tohoto textu. Místo toho výsledek zkopírujte.</string>

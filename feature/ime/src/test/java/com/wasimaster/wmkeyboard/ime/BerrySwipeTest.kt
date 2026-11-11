@@ -56,4 +56,31 @@ class BerrySwipeTest {
     fun `a diagonal is neither`() {
         assertNull(berrySwipe(line(800f, 100f, 500f, 400f, 150), keyW, keyH))
     }
+
+    private fun short(points: List<GesturePoint>) = berrySwipe(
+        points, keyW, keyH,
+        minLeftKeys = BERRY_SHORT_LEFT_KEYS,
+        minDownRows = BERRY_SHORT_DOWN_ROWS,
+        maxDurationMs = BERRY_SHORT_MAX_DURATION_MS,
+    )
+
+    @Test
+    fun `with no glide to share it, one key left is a delete`() {
+        assertEquals(BerrySwipe.DELETE_WORD, short(line(950f, 200f, 860f, 205f, 140)))
+    }
+
+    @Test
+    fun `with no glide to share it, an unhurried swipe still counts`() {
+        assertEquals(BerrySwipe.DELETE_WORD, short(line(900f, 200f, 400f, 210f, 520)))
+    }
+
+    @Test
+    fun `with no glide to share it, a tap that slides a little is still a tap`() {
+        assertNull(short(line(500f, 200f, 450f, 200f, 90)))
+    }
+
+    @Test
+    fun `the short bars only apply where asked for`() {
+        assertNull(berrySwipe(line(950f, 200f, 860f, 205f, 140), keyW, keyH))
+    }
 }

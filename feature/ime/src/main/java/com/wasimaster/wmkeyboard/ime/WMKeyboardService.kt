@@ -12078,8 +12078,13 @@ open class WMKeyboardService : InputMethodService() {
             return
         }
         val behavior = state.settings.layoutBehavior
-        if (!behavior.symbolsReturnToLetters) return
-        if (output[0] !in behavior.symbolsReturnCharSet()) return
+        // Berry fork: with BlackBerry swipes on, the symbols are one-shot the
+        // way the BlackBerry Keyboard's were: any single character, a digit
+        // included, goes back to the letters, whatever the list says.
+        if (!behavior.berrySwipes) {
+            if (!behavior.symbolsReturnToLetters) return
+            if (output[0] !in behavior.symbolsReturnCharSet()) return
+        }
         _uiState.update { it.copy(layoutMode = LayoutMode.LETTERS) }
     }
 

@@ -1,5 +1,5 @@
 {
-  "id": "berry_dark_v3",
+  "id": "berry_dark_v4",
   "name": "Berry Dark",
   "dark": true,
   "boardBackground": 4282071867,
@@ -14,7 +14,7 @@
   "modifierKeyText": 4294967295,
   "enterKeyBackground": 4279834905,
   "enterKeyText": 4294967295,
-  "pressedKeyBackground": 4282071867,
+  "pressedKeyBackground": 4279013058,
   "hintText": 4289638062,
   "keyBorderWidthDp": 0.0,
   "keyTextureScale": "stretch",
@@ -52,7 +52,7 @@
   "familyName": "Berry",
   "variants": [
     {
-      "id": "berry_light_v3",
+      "id": "berry_light_v4",
       "name": "Berry Light",
       "dark": false,
       "boardBackground": 4291085508,
@@ -67,7 +67,7 @@
       "modifierKeyText": 4279308561,
       "enterKeyBackground": 4292664540,
       "enterKeyText": 4279308561,
-      "pressedKeyBackground": 4291085508,
+      "pressedKeyBackground": 4279013058,
       "hintText": 4285427310,
       "keyBorderWidthDp": 0.0,
       "keyTextureScale": "stretch",

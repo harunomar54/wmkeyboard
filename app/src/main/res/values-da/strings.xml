@@ -465,7 +465,7 @@
     <string name="addon_use_target_theme_label">Temaer</string>
     <string name="ai_chat_picture_desc">Billede</string>
     <string name="ai_chat_picture_remove_desc">Fjern billedet</string>
-    <string name="app_name">WM Keyboard</string>
+    <string name="app_name">BB-Keyboard</string>
     <string name="appearance_font_subtitle">Google Fonts, eller importer din egen skrifttypefil</string>
     <string name="appearance_font_title">Tastaturskrifttype</string>
     <plurals name="appearance_icons_changed_count">
@@ -3183,7 +3183,7 @@
     <string name="hue_pair_subtitle">Tryk på den runde knap på broen, og tryk derefter på Par inden for tredive sekunder. Broen giver tastaturet sin egen nøgle.</string>
     <string name="hue_paired">Parret. Broens certifikat er fastlåst: en anden bro på denne adresse vil blive afvist.</string>
     <string name="imagegen_module_title">Klistermærkegenerator</string>
-    <string name="ime_name">WM Tastatur</string>
+    <string name="ime_name">BB-Keyboard</string>
     <string name="import_anki_body">Dette er et Anki-sæt. Appen omdanner det til en ordforrådspakke.</string>
     <string name="import_anki_title">Importer flashcards?</string>
     <string name="import_api_keys_note">Filen indeholder API-nøgler. De erstatter de nøgler, du har angivet her.</string>
@@ -9556,7 +9556,7 @@
     <string name="text_actions_group_language">Sprog</string>
     <string name="text_actions_group_open">Åbn i</string>
     <string name="text_actions_group_rewrite">Omskriv</string>
-    <string name="text_actions_menu_label">WM Keyboard</string>
+    <string name="text_actions_menu_label">BB-Keyboard</string>
     <string name="text_actions_metered_ask">Datasparetilstand er slået til. Tryk på handlingen igen for at sende dette via mobildata.</string>
     <string name="text_actions_open_translate_action">Oversættelsesværktøj</string>
     <string name="text_actions_read_only_hint">Denne app accepterer ikke ændringer i denne tekst. Kopiér resultatet i stedet.</string>

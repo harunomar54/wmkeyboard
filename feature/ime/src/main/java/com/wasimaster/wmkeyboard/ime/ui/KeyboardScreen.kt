@@ -383,6 +383,9 @@ import com.wasimaster.wmkeyboard.ime.OctopusSource
 import com.wasimaster.wmkeyboard.ime.octopusFlick
 import com.wasimaster.wmkeyboard.ime.BerrySwipe
 import com.wasimaster.wmkeyboard.ime.berrySwipe
+import com.wasimaster.wmkeyboard.ime.BERRY_SHORT_DOWN_ROWS
+import com.wasimaster.wmkeyboard.ime.BERRY_SHORT_LEFT_KEYS
+import com.wasimaster.wmkeyboard.ime.BERRY_SHORT_MAX_DURATION_MS
 import com.wasimaster.wmkeyboard.ime.octopusFlickShape
 import com.wasimaster.wmkeyboard.ime.Modifiers
 import com.wasimaster.wmkeyboard.core.accessibility.KeyboardPassthrough
@@ -17118,7 +17121,17 @@ private fun Modifier.berrySwipeInput(
                 if (!change.pressed) break
             }
             if (fingerGate.claimed) return@awaitEachGesture
-            val swipe = berrySwipe(points, keyWidth.value, rowPx.value) ?: return@awaitEachGesture
+            // No glide typing runs here, so nothing else wants a short
+            // straight stroke: one key's width left is enough (p to o), the
+            // way the BlackBerry Keyboard took it, and a slower hand still
+            // counts. The glide lift keeps the longer bar of [berrySwipe]'s
+            // defaults, where a two-letter glide such as "we" runs leftward.
+            val swipe = berrySwipe(
+                points, keyWidth.value, rowPx.value,
+                minLeftKeys = BERRY_SHORT_LEFT_KEYS,
+                minDownRows = BERRY_SHORT_DOWN_ROWS,
+                maxDurationMs = BERRY_SHORT_MAX_DURATION_MS,
+            ) ?: return@awaitEachGesture
             // Only the lift, as the octopus does: the key under the finger
             // reads a consumed up as taken and types nothing.
             last.consume()

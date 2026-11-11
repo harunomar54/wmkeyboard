@@ -467,7 +467,7 @@
     <string name="addon_use_target_theme_label">Теми</string>
     <string name="ai_chat_picture_desc">Снимка</string>
     <string name="ai_chat_picture_remove_desc">Премахване на снимката</string>
-    <string name="app_name">WM Keyboard</string>
+    <string name="app_name">BB-Keyboard</string>
     <string name="appearance_font_subtitle">Google Fonts или импортирайте собствен файл с шрифт</string>
     <string name="appearance_font_title">Шрифт на клавиатурата</string>
     <plurals name="appearance_icons_changed_count">
@@ -3185,7 +3185,7 @@
     <string name="hue_pair_subtitle">Натиснете кръглия бутон на моста, след което докоснете „Сдвояване“ в рамките на тридесет секунди. Мостът дава на клавиатурата собствен ключ.</string>
     <string name="hue_paired">Сдвоено. Сертификатът на моста е фиксиран: различен мост на този адрес ще бъде отказан.</string>
     <string name="imagegen_module_title">Генератор на стикери</string>
-    <string name="ime_name">WM Keyboard</string>
+    <string name="ime_name">BB-Keyboard</string>
     <string name="import_anki_body">Това е тесте с карти Anki. Приложението го превръща в пакет с речник.</string>
     <string name="import_anki_title">Импортиране на флаш карти?</string>
     <string name="import_api_keys_note">Файлът съдържа API ключове. Те ще заменят ключовете, които сте задали тук.</string>
@@ -9555,7 +9555,7 @@
     <string name="text_actions_group_language">Език</string>
     <string name="text_actions_group_open">Отваряне в</string>
     <string name="text_actions_group_rewrite">Пренаписване</string>
-    <string name="text_actions_menu_label">WM Keyboard</string>
+    <string name="text_actions_menu_label">BB-Keyboard</string>
     <string name="text_actions_metered_ask">Функцията за пестене на данни е включена. Докоснете действието отново, за да го изпратите чрез мобилни данни.</string>
     <string name="text_actions_open_translate_action">Инструмент за превод</string>
     <string name="text_actions_read_only_hint">Това приложение не приема промени в този текст. Копирайте резултата вместо това.</string>

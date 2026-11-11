@@ -467,7 +467,7 @@
     <string name="addon_use_target_theme_label">Teme</string>
     <string name="ai_chat_picture_desc">Slika</string>
     <string name="ai_chat_picture_remove_desc">Ukloni sliku</string>
-    <string name="app_name">WM tipkovnica</string>
+    <string name="app_name">BB-Keyboard</string>
     <string name="appearance_font_subtitle">Google fontovi ili uvezite vlastitu datoteku fonta</string>
     <string name="appearance_font_title">Font tipkovnice</string>
     <plurals name="appearance_icons_changed_count">
@@ -3184,7 +3184,7 @@
     <string name="hue_pair_subtitle">Pritisnite okrugli gumb na mostu, zatim dodirnite Uparivanje unutar trideset sekundi. Most dodjeljuje tipkovnici vlastiti ključ.</string>
     <string name="hue_paired">Upareno. Certifikat mosta je prikvačen: drugi most na ovoj adresi bit će odbijen.</string>
     <string name="imagegen_module_title">Generator naljepnica</string>
-    <string name="ime_name">WM tipkovnica</string>
+    <string name="ime_name">BB-Keyboard</string>
     <string name="import_anki_body">Ovo je Anki špil. Aplikacija ga pretvara u paket vokabulara.</string>
     <string name="import_anki_title">Uvesti flashcards?</string>
     <string name="import_api_keys_note">Datoteka sadrži API ključeve. Oni zamjenjuju ključeve koje ste ovdje postavili.</string>
@@ -9562,7 +9562,7 @@
     <string name="text_actions_group_language">Jezik</string>
     <string name="text_actions_group_open">Otvori u</string>
     <string name="text_actions_group_rewrite">Prepiši</string>
-    <string name="text_actions_menu_label">WM tipkovnica</string>
+    <string name="text_actions_menu_label">BB-Keyboard</string>
     <string name="text_actions_metered_ask">Ušteda podataka je uključena. Ponovo dodirnite radnju da biste je poslali putem mobilnih podataka.</string>
     <string name="text_actions_open_translate_action">Alat za prevođenje</string>
     <string name="text_actions_read_only_hint">Ova aplikacija ne prihvaća izmjene ovog teksta. Umjesto toga kopirajte rezultat.</string>

@@ -464,7 +464,7 @@
     <string name="addon_use_target_theme_label">テーマ</string>
     <string name="ai_chat_picture_desc">画像</string>
     <string name="ai_chat_picture_remove_desc">画像を削除</string>
-    <string name="app_name">WM Keyboard</string>
+    <string name="app_name">BB-Keyboard</string>
     <string name="appearance_font_subtitle">Google Fonts、または独自のフォントファイルをインポート</string>
     <string name="appearance_font_title">キーボードフォント</string>
     <plurals name="appearance_icons_changed_count">
@@ -3179,7 +3179,7 @@
     <string name="hue_pair_subtitle">ブリッジの丸いボタンを押してから、30秒以内に「ペアリング」をタップしてください。ブリッジはキーボードに独自のキーを割り当てます。</string>
     <string name="hue_paired">ペアリング済み。ブリッジの証明書が固定されています。このアドレスにある別のブリッジは拒否されます。</string>
     <string name="imagegen_module_title">ステッカー生成</string>
-    <string name="ime_name">WM Keyboard</string>
+    <string name="ime_name">BB-Keyboard</string>
     <string name="import_anki_body">これはAnkiデッキです。アプリはこれを語彙パックに変換します。</string>
     <string name="import_anki_title">フラッシュカードをインポートしますか？</string>
     <string name="import_api_keys_note">このファイルにはAPIキーが含まれています。ここで設定したキーが置き換えられます。</string>
@@ -9548,7 +9548,7 @@
     <string name="text_actions_group_language">言語</string>
     <string name="text_actions_group_open">で開く</string>
     <string name="text_actions_group_rewrite">書き換え</string>
-    <string name="text_actions_menu_label">WMキーボード</string>
+    <string name="text_actions_menu_label">BB-Keyboard</string>
     <string name="text_actions_metered_ask">データセーバーがオンになっています。モバイルデータ通信を使用して送信するには、もう一度操作をタップしてください。</string>
     <string name="text_actions_open_translate_action">翻訳ツール</string>
     <string name="text_actions_read_only_hint">このアプリはこのテキストへの変更を受け付けません。代わりに結果をコピーしてください。</string>

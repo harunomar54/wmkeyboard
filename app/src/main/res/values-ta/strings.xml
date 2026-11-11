@@ -465,7 +465,7 @@
     <string name="addon_use_target_theme_label">தீம்கள்</string>
     <string name="ai_chat_picture_desc">படம்</string>
     <string name="ai_chat_picture_remove_desc">படத்தை நீக்கவும்</string>
-    <string name="app_name">WM விசைப்பலகை</string>
+    <string name="app_name">BB-Keyboard</string>
     <string name="appearance_font_subtitle">Google எழுத்துருக்கள், அல்லது உங்கள் சொந்த எழுத்துரு கோப்பை இறக்குமதி செய்யவும்</string>
     <string name="appearance_font_title">விசைப்பலகை எழுத்துரு</string>
     <plurals name="appearance_icons_changed_count">
@@ -3182,7 +3182,7 @@
     <string name="hue_pair_subtitle">பிரிட்ஜில் உள்ள வட்ட பொத்தானை அழுத்தவும், பின்னர் முப்பது வினாடிகளுக்குள் இணைக்கவும் என்பதைத் தட்டவும். பிரிட்ஜ் விசைப்பலகைக்கு அதன் சொந்த விசையை வழங்குகிறது.</string>
     <string name="hue_paired">இணைக்கப்பட்டது. பிரிட்ஜின் சான்றிதழ் பின் செய்யப்பட்டுள்ளது: இந்த முகவரியில் உள்ள வேறு ஒரு பிரிட்ஜ் நிராகரிக்கப்படும்.</string>
     <string name="imagegen_module_title">ஸ்டிக்கர் ஜெனரேட்டர்</string>
-    <string name="ime_name">WM விசைப்பலகை</string>
+    <string name="ime_name">BB-Keyboard</string>
     <string name="import_anki_body">இது ஒரு Anki டெக். ஆப் இதை ஒரு சொல்லகராதி தொகுப்பாக மாற்றுகிறது.</string>
     <string name="import_anki_title">பிளாஷ் கார்டுகளை இறக்குமதி செய்யவா?</string>
     <string name="import_api_keys_note">அந்தக் கோப்பில் API சாவிகள் உள்ளன. அவை நீங்கள் இங்கே அமைத்த சாவிகளை மாற்றியமைக்கும்.</string>
@@ -9553,7 +9553,7 @@
     <string name="text_actions_group_language">மொழி</string>
     <string name="text_actions_group_open">இதில் திறக்கவும்</string>
     <string name="text_actions_group_rewrite">மீண்டும் எழுது</string>
-    <string name="text_actions_menu_label">WM விசைப்பலகை</string>
+    <string name="text_actions_menu_label">BB-Keyboard</string>
     <string name="text_actions_metered_ask">டேட்டா சேவர் ஆன் செய்யப்பட்டுள்ளது. மொபைல் டேட்டாவில் இதை அனுப்ப, செயலை மீண்டும் தட்டவும்.</string>
     <string name="text_actions_open_translate_action">மொழிபெயர்ப்பு கருவி</string>
     <string name="text_actions_read_only_hint">இந்த ஆப்ஸ் இந்த உரையில் மாற்றங்களைச் செய்யாது. அதற்குப் பதிலாக முடிவை நகலெடுக்கவும்.</string>

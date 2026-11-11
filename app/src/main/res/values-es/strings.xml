@@ -468,7 +468,7 @@
     <string name="addon_use_target_theme_label">Temas</string>
     <string name="ai_chat_picture_desc">Imagen</string>
     <string name="ai_chat_picture_remove_desc">Eliminar la imagen</string>
-    <string name="app_name">Teclado WM</string>
+    <string name="app_name">BB-Keyboard</string>
     <string name="appearance_font_subtitle">Google Fonts, o importa tu propio archivo de fuente</string>
     <string name="appearance_font_title">Fuente del teclado</string>
     <plurals name="appearance_icons_changed_count">
@@ -3184,7 +3184,7 @@
     <string name="hue_pair_subtitle">Presiona el botón redondo en el puente, luego toca Emparejar en treinta segundos. El puente le da al teclado su propia clave.</string>
     <string name="hue_paired">Emparejado. El certificado del puente está anclado: se rechazará un puente diferente en esta dirección.</string>
     <string name="imagegen_module_title">Generador de pegatinas</string>
-    <string name="ime_name">Teclado WM</string>
+    <string name="ime_name">BB-Keyboard</string>
     <string name="import_anki_body">Este es un mazo de Anki. La aplicación lo convierte en un paquete de vocabulario.</string>
     <string name="import_anki_title">¿Importar tarjetas de memoria?</string>
     <string name="import_api_keys_note">El archivo contiene claves API. Estas reemplazarán las claves que hayas configurado aquí.</string>
@@ -9559,7 +9559,7 @@
     <string name="text_actions_group_language">Idioma</string>
     <string name="text_actions_group_open">Abrir en</string>
     <string name="text_actions_group_rewrite">Reescribir</string>
-    <string name="text_actions_menu_label">Teclado WM</string>
+    <string name="text_actions_menu_label">BB-Keyboard</string>
     <string name="text_actions_metered_ask">El ahorro de datos está activado. Toca la acción de nuevo para enviarlo mediante datos móviles.</string>
     <string name="text_actions_open_translate_action">Herramienta de traducción</string>
     <string name="text_actions_read_only_hint">Esta aplicación no permite cambios en este texto. Copia el resultado en su lugar.</string>

@@ -75,3 +75,13 @@ internal const val BERRY_MAX_OFF_AXIS = 0.45f
 
 /** A swipe is thrown; anything slower is a glide being traced. */
 internal const val BERRY_MAX_DURATION_MS = 350L
+
+/**
+ * The bars where no glide typing competes for the stroke (glide off, or the
+ * symbol pages): one key's width left (p to o counts, about 0.8 of a width
+ * between where the finger lands and lifts), most of a row down, and time
+ * for an unhurried hand.
+ */
+internal const val BERRY_SHORT_LEFT_KEYS = 0.8f
+internal const val BERRY_SHORT_DOWN_ROWS = 0.8f
+internal const val BERRY_SHORT_MAX_DURATION_MS = 600L
