@@ -168,6 +168,7 @@ import com.wasimaster.wmkeyboard.core.tools.LiveTypingSpeed
 import com.wasimaster.wmkeyboard.core.tools.TypingStatsMath
 import com.wasimaster.wmkeyboard.ime.ui.LiveWpmReadout
 import com.wasimaster.wmkeyboard.ime.ui.SpacebarSnippetPreview
+import com.wasimaster.wmkeyboard.ime.ui.KEEP_TYPED_SPACE
 import com.wasimaster.wmkeyboard.core.tools.ContactPhones
 import com.wasimaster.wmkeyboard.core.emoji.AnimatedEmoji
 import com.wasimaster.wmkeyboard.core.emoji.EmojiCatalog
@@ -10931,6 +10932,10 @@ open class WMKeyboardService : InputMethodService() {
         // A sum on a number field's keypad takes its keys before anything else
         // sees them: they are the keyboard's, not the field's. See [KeypadSum].
         if (keypadSumTakes(key)) return
+        if (key.action == KeyAction.Space && key.output == KEEP_TYPED_SPACE) {
+            keepTypedWord()
+            return
+        }
         // Before the key runs: a space must find the rejection already
         // recorded, or it corrects the restored word straight back.
         if (!key.action.deletesBackward()) settlePendingUndoOnKey(key.action)
@@ -21330,6 +21335,24 @@ open class WMKeyboardService : InputMethodService() {
     }
 
     private var spacebarFlashJob: Job? = null
+
+    /**
+     * BB-Keyboard: the space bar swiped up. The word being written goes in
+     * exactly as typed, the way tapping it on the strip puts it in: no
+     * autocorrect, no shortcut, learned as a word the user meant. With no word
+     * under way, or one a composer is still converting, it is a plain space.
+     */
+    private fun keepTypedWord() {
+        val typed = composing.toString()
+        val composer = _uiState.value.composer
+        SpacebarSnippetPreview.text.value = null
+        SpacebarSnippetPreview.promise.value = null
+        if (typed.isEmpty() || composer.isTransliterating || composer.isConversion) {
+            handleKey(Key(label = " ", action = KeyAction.Space))
+            return
+        }
+        onSuggestionTapped(typed)
+    }
 
     /**
      * Berry fork: the word autocorrect just put in, held on the spacebar in

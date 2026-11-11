@@ -1,143 +1,155 @@
 {
- "format": "wmkeyboard-snippets",
- "version": 2,
- "appVersion": 0,
- "appVersionName": "",
- "snippets": [
-  {
-   "id": 1,
-   "label": "ﷺ",
-   "text": "ﷺ",
-   "trigger": "sallahu",
-   "aliases": [
-    "sallallahu",
-    "salallahu",
-    "sallalahu",
-    "salalahu",
-    "pbuh",
-    "saws"
-   ]
-  },
-  {
-   "id": 2,
-   "label": "ﷻ",
-   "text": "ﷻ",
-   "trigger": "jallajalaluh",
-   "aliases": [
-    "jalla",
-    "jallajalaluhu"
-   ]
-  },
-  {
-   "id": 3,
-   "label": "﷽",
-   "text": "﷽",
-   "trigger": "bissm",
-   "aliases": [
-    "bismillahrahmanrahim"
-   ]
-  },
-  {
-   "id": 4,
-   "label": "Alhamdulillah",
-   "text": "Alhamdulillah",
-   "trigger": "alh"
-  },
-  {
-   "id": 5,
-   "label": "Assalamu Alykum",
-   "text": "Assalamu Alykum",
-   "trigger": "assal"
-  },
-  {
-   "id": 6,
-   "label": "Jazaka Allahu Khayr",
-   "text": "Jazaka Allahu Khayr",
-   "trigger": "jazak"
-  },
-  {
-   "id": 7,
-   "label": "Waclaku Masalam",
-   "text": "Waclaku Masalam",
-   "trigger": "wac"
-  },
-  {
-   "id": 8,
-   "label": "Shaytan",
-   "text": "Shaytan",
-   "trigger": "sha"
-  },
-  {
-   "id": 9,
-   "label": "تبارك وتعالى",
-   "text": "تبارك وتعالى",
-   "trigger": "tabarka"
-  },
-  {
-   "id": 10,
-   "label": "سبحانه وتعالى",
-   "text": "سبحانه وتعالى",
-   "trigger": "subhan"
-  },
-  {
-   "id": 11,
-   "label": "عز وجل",
-   "text": "عز وجل",
-   "trigger": "azza"
-  },
-  {
-   "id": 12,
-   "label": "BlackBerry",
-   "text": "BlackBerry",
-   "trigger": "bb"
-  },
-  {
-   "id": 13,
-   "label": "a lot",
-   "text": "a lot",
-   "trigger": "alot"
-  },
-  {
-   "id": 14,
-   "label": "command",
-   "text": "command",
-   "trigger": "cmd"
-  },
-  {
-   "id": 15,
-   "label": "it's a",
-   "text": "it's a",
-   "trigger": "itsa"
-  },
-  {
-   "id": 16,
-   "label": "minute",
-   "text": "minute",
-   "trigger": "mn"
-  },
-  {
-   "id": 17,
-   "label": "minutes",
-   "text": "minutes",
-   "trigger": "mns"
-  },
-  {
-   "id": 18,
-   "label": "second",
-   "text": "second",
-   "trigger": "sec"
-  },
-  {
-   "id": 19,
-   "label": "seconds",
-   "text": "seconds",
-   "trigger": "secs"
-  },
-  {
-   "id": 20,
-   "label": "year",
-   "text": "year",
-   "trigger": "yr"
-  }
- ]
+  "format": "wmkeyboard-snippets",
+  "version": 2,
+  "appVersion": 0,
+  "appVersionName": "",
+  "snippets": [
+    {
+      "id": 1,
+      "label": "ﷺ",
+      "text": "ﷺ",
+      "trigger": "sallahu",
+      "aliases": [
+        "sallallahu",
+        "salallahu",
+        "sallalahu",
+        "salalahu",
+        "pbuh",
+        "saws"
+      ]
+    },
+    {
+      "id": 2,
+      "label": "ﷻ",
+      "text": "ﷻ",
+      "trigger": "jallajalaluh",
+      "aliases": [
+        "jalla",
+        "jallajalaluhu"
+      ]
+    },
+    {
+      "id": 3,
+      "label": "﷽",
+      "text": "﷽",
+      "trigger": "bissm",
+      "aliases": [
+        "bismillahrahmanrahim"
+      ]
+    },
+    {
+      "id": 4,
+      "label": "Alhamdulillah",
+      "text": "Alhamdulillah",
+      "trigger": "alh"
+    },
+    {
+      "id": 5,
+      "label": "Assalamu Alykum",
+      "text": "Assalamu Alykum",
+      "trigger": "assal"
+    },
+    {
+      "id": 6,
+      "label": "Jazaka Allahu Khayr",
+      "text": "Jazaka Allahu Khayr",
+      "trigger": "jazak"
+    },
+    {
+      "id": 7,
+      "label": "Waclaku Masalam",
+      "text": "Waclaku Masalam",
+      "trigger": "wac"
+    },
+    {
+      "id": 8,
+      "label": "Shaytan",
+      "text": "Shaytan",
+      "trigger": "sha"
+    },
+    {
+      "id": 9,
+      "label": "تبارك وتعالى",
+      "text": "تبارك وتعالى",
+      "trigger": "tabarka"
+    },
+    {
+      "id": 10,
+      "label": "سبحانه وتعالى",
+      "text": "سبحانه وتعالى",
+      "trigger": "subhan"
+    },
+    {
+      "id": 11,
+      "label": "عز وجل",
+      "text": "عز وجل",
+      "trigger": "azza"
+    },
+    {
+      "id": 12,
+      "label": "BlackBerry",
+      "text": "BlackBerry",
+      "trigger": "bb"
+    },
+    {
+      "id": 13,
+      "label": "a lot",
+      "text": "a lot",
+      "trigger": "alot"
+    },
+    {
+      "id": 14,
+      "label": "command",
+      "text": "command",
+      "trigger": "cmd"
+    },
+    {
+      "id": 15,
+      "label": "it's a",
+      "text": "it's a",
+      "trigger": "itsa"
+    },
+    {
+      "id": 16,
+      "label": "minute",
+      "text": "minute",
+      "trigger": "mn"
+    },
+    {
+      "id": 17,
+      "label": "minutes",
+      "text": "minutes",
+      "trigger": "mns"
+    },
+    {
+      "id": 18,
+      "label": "second",
+      "text": "second",
+      "trigger": "sec"
+    },
+    {
+      "id": 19,
+      "label": "seconds",
+      "text": "seconds",
+      "trigger": "secs"
+    },
+    {
+      "id": 20,
+      "label": "year",
+      "text": "year",
+      "trigger": "yr"
+    },
+    {
+      "id": 101,
+      "label": "Today's date",
+      "text": "{date:EEEE, MMMM d, yyyy}",
+      "trigger": "ld"
+    },
+    {
+      "id": 102,
+      "label": "Current time",
+      "text": "{date:h:mm:ss a}",
+      "trigger": "lt"
+    }
+  ]
 }

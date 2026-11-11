@@ -1,0 +1,20 @@
+{
+  "format": "wmkeyboard-snippets",
+  "version": 2,
+  "appVersion": 0,
+  "appVersionName": "",
+  "snippets": [
+    {
+      "id": 101,
+      "label": "Today's date",
+      "text": "{date:EEEE, MMMM d, yyyy}",
+      "trigger": "ld"
+    },
+    {
+      "id": 102,
+      "label": "Current time",
+      "text": "{date:h:mm:ss a}",
+      "trigger": "lt"
+    }
+  ]
+}

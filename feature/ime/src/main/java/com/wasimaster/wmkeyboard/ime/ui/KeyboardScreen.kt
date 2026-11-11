@@ -16937,6 +16937,9 @@ private const val SpaceCursorEdgeLineRepeatMs = 200L
  */
 private const val SpaceSwipeUpTouchpadDp = 80
 
+/** BB-Keyboard: how far up a space bar flick goes to keep the word as written. */
+private const val SpaceKeepTypedSwipeDp = 28
+
 /**
  * How long the finger that opened the touchpad with a swipe up must rest
  * before going on upward moves the caret a line (#682). Until then, or until
@@ -26072,6 +26075,7 @@ internal fun KeyButton(
             .then(
                 Modifier.pointerInputKey(
                     key, settings.longPressDelayMs, settings.keyRepeat, settings.textEditing,
+                    spaceSwipeUpKeepsTyped = settings.layoutBehavior.spacebarCorrection,
                     spaceShortSwipe = settings.spaceShortSwipe,
                     spaceLongSwipe = settings.spaceLongSwipe,
                     enabledLayoutIds = settings.switchLayoutIds(),
@@ -29963,6 +29967,11 @@ private fun Modifier.pointerInputKey(
     keyRepeat: KeyRepeatSettings,
     /** Carries the spacebar cursor step and the backspace word step. */
     textEditing: TextEditingSettings,
+    /**
+     * BB-Keyboard: a swipe up on the space bar types the word as it was
+     * written, turning down the correction the space bar shows in green.
+     */
+    spaceSwipeUpKeepsTyped: Boolean = false,
     spaceShortSwipe: SpaceSwipeAction,
     spaceLongSwipe: SpaceSwipeAction,
     enabledLayoutIds: List<String>,
@@ -30088,12 +30097,12 @@ private fun Modifier.pointerInputKey(
     if (key.action == KeyAction.Space &&
         (spaceShortSwipe != SpaceSwipeAction.NONE || spaceLongSwipe != SpaceSwipeAction.NONE ||
             spaceSwipeDownHide || textEditing.spaceSwipeUpTouchpad || textEditing.spaceSwipeUpNumpad ||
-            key.hasFlicks())
+            spaceSwipeUpKeepsTyped || key.hasFlicks())
     ) {
         Modifier.pointerInput(
             key, spaceShortSwipe, spaceLongSwipe, enabledLayoutIds, currentLayoutId, longPressDelayMs,
             hapticOnLongPress, hapticOnLongPressRelease, vibrateOnSpace, spaceCursor2d,
-            spaceSwipeDownHide, textEditing, alternates, pickerIsCarousel, pickerForLongRing,
+            spaceSwipeDownHide, textEditing, spaceSwipeUpKeepsTyped, alternates, pickerIsCarousel, pickerForLongRing,
             switcherExtraStop, languageEchoTotalMs, spaceTouchpad, keyRepeat, vibrateOnRepeat, soundOnRepeat,
             flickDistanceDp,
         ) {
@@ -30132,6 +30141,8 @@ private fun Modifier.pointerInputKey(
             // A swipe up must clear this before it opens the touchpad (#444):
             // twice the slop, so a tap that rolls upward still types a space.
             val swipeUpPx = SpaceSwipeUpTouchpadDp.dp.toPx().let { if (armed) maxOf(it, flickSlopPx) else it }
+            // A flick, not the touchpad's long pull: the finger only has to mean up.
+            val keepTypedPx = SpaceKeepTypedSwipeDp.dp.toPx().let { if (armed) maxOf(it, flickSlopPx) else it }
             // Extra travel demanded before the language list wraps around at
             // either end — the boundary acts like a detent, not a wall.
             val langWrapPx = langStepPx * 2.5f
@@ -30511,6 +30522,26 @@ private fun Modifier.pointerInputKey(
                             // A swipe up for the number pad, SwiftKey's way:
                             // discrete like the NUMPAD slot below, past the
                             // same debounce the touchpad waits for.
+                            // BB-Keyboard: up turns down the green correction and
+                            // types the word as written. The touchpad and the
+                            // number pad, when either is on, keep the swipe up.
+                            if (spaceSwipeUpKeepsTyped && !textEditing.spaceSwipeUpNumpad &&
+                                !textEditing.spaceSwipeUpTouchpad && -totalDy > abs(totalDx)
+                            ) {
+                                if (-totalDy > keepTypedPx) {
+                                    if (holdPreviewShown) {
+                                        holdPreviewShown = false
+                                        setLanguagePreview(null)
+                                        setPreviewExtraStop(false)
+                                    }
+                                    onKeyHaptic()
+                                    onKey(Key(label = " ", action = KeyAction.Space, output = KEEP_TYPED_SPACE))
+                                    hidden = true
+                                    change.consume()
+                                    break
+                                }
+                                continue
+                            }
                             if (textEditing.spaceSwipeUpNumpad && !textEditing.spaceSwipeUpTouchpad &&
                                 -totalDy > abs(totalDx)
                             ) {

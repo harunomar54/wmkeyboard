@@ -57,5 +57,12 @@ internal object SpacebarSnippetPreview {
     val flash = mutableStateOf<String?>(null)
 }
 
+/**
+ * The output a space bar swiped up sends with its space: the service types the
+ * word being written as it stands, with no correction and no shortcut, then
+ * the space. Starts with a word joiner, which no real key types.
+ */
+internal const val KEEP_TYPED_SPACE = "\u2060keep-typed"
+
 /** The BlackBerry Keyboard's green for a correction waiting on the spacebar. */
 internal val SpacebarCorrectionGreen = Color(0xFF9DD69D)
