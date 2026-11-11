@@ -60,8 +60,16 @@ exclude = {l.strip().lower() for l in open(exclude_path, encoding="utf-8") if l.
 
 # A rare spelling one slip from a very common name is a misspelling of it
 # (jhon, micheal), not a name of its own.
+# Names a misspelling is most often of: the commonest US names, and every
+# capital the app already ships (Israel, so "Isreal" is a slip, not a name).
+big_names = set()
 for name, count in births.items():
     if count >= 200000:
+        name_targets.add(name.lower())
+    if count >= 1000000:
+        big_names.add(name.lower())
+for name in existing:
+    if name[:1].isupper() and name.isalpha():
         name_targets.add(name.lower())
 
 curated = []
@@ -115,11 +123,15 @@ def slip_of(key):
         w = key[:i] + key[i + 1:]
         if len(w) >= 2 and w in common:
             return w, common[w]
-    for i in range(n + 1):  # a letter missed
+        if w in big_names:
+            return w, 0
+    for i in range(n + 1):  # a letter missed ("willam" for william)
         for c in "abcdefghijklmnopqrstuvwxyz":
             w = key[:i] + c + key[i:]
             if w in common:
                 return w, common[w]
+            if w in big_names:
+                return w, 0
     return None
 
 def shaped(name):
