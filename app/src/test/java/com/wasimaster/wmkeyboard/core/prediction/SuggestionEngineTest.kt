@@ -919,6 +919,22 @@ class SuggestionEngineTest {
         assertEquals("Of the", e.suggest("Ofthe", previousWord = null).first())
     }
 
+    @Test fun aContactNameTypedInSmallLettersGetsItsCapital() {
+        val dictionary = Trie().apply { insert("will", 7000); insert("grace", 3500) }
+        val e = SuggestionEngine(dictionary, BengaliPhoneticIndex(emptyList()), UserLexicon(null))
+        e.contacts = ContactNames.fromNames(listOf("Zayd Godane", "Will Smith", "Grace Lee", "OMAR ALI", "McKenzie Ray"))
+        assertEquals("Zayd", e.decideCorrection("zayd").apply)
+        assertEquals("Godane", e.decideCorrection("godane").apply)
+        assertEquals("McKenzie", e.decideCorrection("mckenzie").apply)
+        // A name that is also an everyday word stays the word.
+        assertNull(e.decideCorrection("will").apply)
+        assertNull(e.decideCorrection("grace").apply)
+        // A contact saved in capitals does not shout the name.
+        assertNull(e.decideCorrection("omar").apply)
+        // A capital the user typed is theirs to keep.
+        assertNull(e.decideCorrection("Zayd").apply)
+    }
+
     @Test fun contactNamesCompleteAndChain() {
         val contacts = ContactNames.fromNames(
             listOf("Wasi Mollik", "Wasim Akram", "Wasi Uddin")
@@ -931,8 +947,9 @@ class SuggestionEngineTest {
         // Next-word chaining through the name.
         val next = e.suggest("", previousWord = "Wasi")
         assertTrue("Mollik" in next && "Uddin" in next)
-        // A known name is never autocorrected away.
-        assertNull(e.shouldAutocorrect("wasim"))
+        // A known name is never autocorrected away. BB-Keyboard: it does get
+        // the capital the contact writes it with.
+        assertEquals("Wasim", e.shouldAutocorrect("wasim"))
     }
 
     @Test fun seedBigramsCoverColdStart() {

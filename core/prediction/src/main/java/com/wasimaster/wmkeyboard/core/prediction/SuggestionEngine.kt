@@ -5373,7 +5373,11 @@ class SuggestionEngine(
             // its capital was held back, and from then on it outvoted the
             // list's "I" for good.
             own != null && own != lower -> own.takeIf { it == listed }
-            else -> listed ?: asked(systemWordCases[lower])
+            // BB-Keyboard: a name as the user's contacts write it, on the
+            // same terms as a row of Android's dictionary: only a word no list
+            // spells in small letters, so a contact called Will or Grace does
+            // not capitalize every "will" and "grace".
+            else -> listed ?: asked(systemWordCases[lower]) ?: asked(contactCapital(lower))
         }?.takeIf { it != lower } ?: return null
         if (suppressed(lower)) return null
         // An undo blocks it for the run of typing that earned it, and two
@@ -5385,6 +5389,18 @@ class SuggestionEngine(
             CorrectionStats.Penalty.PENALIZED, CorrectionStats.Penalty.NONE -> Unit
         }
         return CorrectionDecision(apply = spelling, certainty = 1.0)
+    }
+
+    /**
+     * How the contacts write [lower], when that is as a name: a capital first
+     * and small letters after it somewhere ("Zayd", "McKenzie"). A contact
+     * saved all in capitals ("ZAYD") or all in small letters says nothing
+     * about how the name is written in a sentence.
+     */
+    private fun contactCapital(lower: String): String? {
+        val shown = contacts.displayOf(lower) ?: return null
+        if (shown.length < 2 || !shown[0].isUpperCase() || shown.drop(1).none { it.isLowerCase() }) return null
+        return shown
     }
 
     /**
