@@ -1,0 +1,3371 @@
+{
+  "format": "wmkeyboard-snippets",
+  "version": 2,
+  "appVersion": 0,
+  "appVersionName": "",
+  "snippets": [
+    {
+      "id": 1,
+      "label": "1. Al-Fatihah (Arabic)",
+      "text": "سورة الفاتحة",
+      "trigger": "sfatihah",
+      "aliases": [
+        "sfatiha",
+        "s1",
+        "سورة الفاتح",
+        "سورة الفات"
+      ]
+    },
+    {
+      "id": 2,
+      "label": "1. Al-Fatihah (English)",
+      "text": "Surah Al-Fatihah",
+      "trigger": "surah fatihah",
+      "aliases": [
+        "surah al fatihah",
+        "surah fatiha",
+        "surah al fatiha",
+        "surah fateeha",
+        "surah al fateeha",
+        "surat fatihah",
+        "surat al fatihah",
+        "surat fatiha",
+        "surat al fatiha",
+        "surat fateeha",
+        "surat al fateeha",
+        "sura fatihah",
+        "sura al fatihah",
+        "sura fatiha",
+        "sura al fatiha",
+        "sura fateeha",
+        "sura al fateeha",
+        "sefatihah",
+        "sefatiha"
+      ]
+    },
+    {
+      "id": 3,
+      "label": "2. Al-Baqarah (Arabic)",
+      "text": "سورة البقرة",
+      "trigger": "sbaqarah",
+      "aliases": [
+        "sbaqara",
+        "s2",
+        "سورة البق"
+      ]
+    },
+    {
+      "id": 4,
+      "label": "2. Al-Baqarah (English)",
+      "text": "Surah Al-Baqarah",
+      "trigger": "surah baqarah",
+      "aliases": [
+        "surah al baqarah",
+        "surah baqara",
+        "surah al baqara",
+        "surat baqarah",
+        "surat al baqarah",
+        "surat baqara",
+        "surat al baqara",
+        "sura baqarah",
+        "sura al baqarah",
+        "sura baqara",
+        "sura al baqara",
+        "sebaqarah",
+        "sebaqara"
+      ]
+    },
+    {
+      "id": 5,
+      "label": "3. Ali 'Imran (Arabic)",
+      "text": "سورة آل عمران",
+      "trigger": "simran",
+      "aliases": [
+        "saliimran",
+        "salimran",
+        "s3"
+      ]
+    },
+    {
+      "id": 6,
+      "label": "3. Ali 'Imran (English)",
+      "text": "Surah Ali 'Imran",
+      "trigger": "surah imran",
+      "aliases": [
+        "surah al imran",
+        "surah aliimran",
+        "surah al aliimran",
+        "surah alimran",
+        "surah al alimran",
+        "surat imran",
+        "surat al imran",
+        "surat aliimran",
+        "surat al aliimran",
+        "surat alimran",
+        "surat al alimran",
+        "sura imran",
+        "sura al imran",
+        "sura aliimran",
+        "sura al aliimran",
+        "sura alimran",
+        "sura al alimran",
+        "seimran",
+        "sealiimran",
+        "sealimran"
+      ]
+    },
+    {
+      "id": 7,
+      "label": "4. An-Nisa (Arabic)",
+      "text": "سورة النساء",
+      "trigger": "snisa",
+      "aliases": [
+        "s4",
+        "سورة النسا",
+        "سورة النس"
+      ]
+    },
+    {
+      "id": 8,
+      "label": "4. An-Nisa (English)",
+      "text": "Surah An-Nisa",
+      "trigger": "surah nisa",
+      "aliases": [
+        "surah al nisa",
+        "surah an nisa",
+        "surah neesa",
+        "surah al neesa",
+        "surah an neesa",
+        "surat nisa",
+        "surat al nisa",
+        "surat an nisa",
+        "surat neesa",
+        "surat al neesa",
+        "surat an neesa",
+        "sura nisa",
+        "sura al nisa",
+        "sura an nisa",
+        "sura neesa",
+        "sura al neesa",
+        "sura an neesa",
+        "senisa"
+      ]
+    },
+    {
+      "id": 9,
+      "label": "5. Al-Ma'idah (Arabic)",
+      "text": "سورة المائدة",
+      "trigger": "smaidah",
+      "aliases": [
+        "smaida",
+        "s5",
+        "سورة المائد",
+        "سورة المائ"
+      ]
+    },
+    {
+      "id": 10,
+      "label": "5. Al-Ma'idah (English)",
+      "text": "Surah Al-Ma'idah",
+      "trigger": "surah maidah",
+      "aliases": [
+        "surah al maidah",
+        "surah maida",
+        "surah al maida",
+        "surah maeeda",
+        "surah al maeeda",
+        "surat maidah",
+        "surat al maidah",
+        "surat maida",
+        "surat al maida",
+        "surat maeeda",
+        "surat al maeeda",
+        "sura maidah",
+        "sura al maidah",
+        "sura maida",
+        "sura al maida",
+        "sura maeeda",
+        "sura al maeeda",
+        "semaidah",
+        "semaida"
+      ]
+    },
+    {
+      "id": 11,
+      "label": "6. Al-An'am (Arabic)",
+      "text": "سورة الأنعام",
+      "trigger": "sanam",
+      "aliases": [
+        "s6",
+        "سورة الأنعا",
+        "سورة الأنع"
+      ]
+    },
+    {
+      "id": 12,
+      "label": "6. Al-An'am (English)",
+      "text": "Surah Al-An'am",
+      "trigger": "surah anam",
+      "aliases": [
+        "surah al anam",
+        "surat anam",
+        "surat al anam",
+        "sura anam",
+        "sura al anam",
+        "seanam"
+      ]
+    },
+    {
+      "id": 13,
+      "label": "7. Al-A'raf (Arabic)",
+      "text": "سورة الأعراف",
+      "trigger": "saraf",
+      "aliases": [
+        "s7",
+        "سورة الأعرا",
+        "سورة الأعر"
+      ]
+    },
+    {
+      "id": 14,
+      "label": "7. Al-A'raf (English)",
+      "text": "Surah Al-A'raf",
+      "trigger": "surah araf",
+      "aliases": [
+        "surah al araf",
+        "surat araf",
+        "surat al araf",
+        "sura araf",
+        "sura al araf",
+        "searaf"
+      ]
+    },
+    {
+      "id": 15,
+      "label": "8. Al-Anfal (Arabic)",
+      "text": "سورة الأنفال",
+      "trigger": "sanfal",
+      "aliases": [
+        "s8",
+        "سورة الأنفا",
+        "سورة الأنف"
+      ]
+    },
+    {
+      "id": 16,
+      "label": "8. Al-Anfal (English)",
+      "text": "Surah Al-Anfal",
+      "trigger": "surah anfal",
+      "aliases": [
+        "surah al anfal",
+        "surat anfal",
+        "surat al anfal",
+        "sura anfal",
+        "sura al anfal",
+        "seanfal"
+      ]
+    },
+    {
+      "id": 17,
+      "label": "9. At-Tawbah (Arabic)",
+      "text": "سورة التوبة",
+      "trigger": "stawbah",
+      "aliases": [
+        "stawba",
+        "staubah",
+        "s9",
+        "سورة التو"
+      ]
+    },
+    {
+      "id": 18,
+      "label": "9. At-Tawbah (English)",
+      "text": "Surah At-Tawbah",
+      "trigger": "surah tawbah",
+      "aliases": [
+        "surah al tawbah",
+        "surah at tawbah",
+        "surah tawba",
+        "surah al tawba",
+        "surah at tawba",
+        "surah taubah",
+        "surah al taubah",
+        "surah at taubah",
+        "surat tawbah",
+        "surat al tawbah",
+        "surat at tawbah",
+        "surat tawba",
+        "surat al tawba",
+        "surat at tawba",
+        "surat taubah",
+        "surat al taubah",
+        "surat at taubah",
+        "sura tawbah",
+        "sura al tawbah",
+        "sura at tawbah",
+        "sura tawba",
+        "sura al tawba",
+        "sura at tawba",
+        "sura taubah",
+        "sura al taubah",
+        "sura at taubah",
+        "setawbah",
+        "setawba",
+        "setaubah"
+      ]
+    },
+    {
+      "id": 19,
+      "label": "10. Yunus (Arabic)",
+      "text": "سورة يونس",
+      "trigger": "syunus",
+      "aliases": [
+        "s10",
+        "سورة يون"
+      ]
+    },
+    {
+      "id": 20,
+      "label": "10. Yunus (English)",
+      "text": "Surah Yunus",
+      "trigger": "surah yunus",
+      "aliases": [
+        "surah al yunus",
+        "surah yunoos",
+        "surah al yunoos",
+        "surat yunus",
+        "surat al yunus",
+        "surat yunoos",
+        "surat al yunoos",
+        "sura yunus",
+        "sura al yunus",
+        "sura yunoos",
+        "sura al yunoos",
+        "seyunus"
+      ]
+    },
+    {
+      "id": 21,
+      "label": "11. Hud (Arabic)",
+      "text": "سورة هود",
+      "trigger": "shood",
+      "aliases": [
+        "s11"
+      ]
+    },
+    {
+      "id": 22,
+      "label": "11. Hud (English)",
+      "text": "Surah Hud",
+      "trigger": "surah hood",
+      "aliases": [
+        "surah al hood",
+        "surat hood",
+        "surat al hood",
+        "sura hood",
+        "sura al hood",
+        "sehood"
+      ]
+    },
+    {
+      "id": 23,
+      "label": "12. Yusuf (Arabic)",
+      "text": "سورة يوسف",
+      "trigger": "syusuf",
+      "aliases": [
+        "s12",
+        "سورة يوس"
+      ]
+    },
+    {
+      "id": 24,
+      "label": "12. Yusuf (English)",
+      "text": "Surah Yusuf",
+      "trigger": "surah yusuf",
+      "aliases": [
+        "surah al yusuf",
+        "surah yusoof",
+        "surah al yusoof",
+        "surat yusuf",
+        "surat al yusuf",
+        "surat yusoof",
+        "surat al yusoof",
+        "sura yusuf",
+        "sura al yusuf",
+        "sura yusoof",
+        "sura al yusoof",
+        "seyusuf"
+      ]
+    },
+    {
+      "id": 25,
+      "label": "13. Ar-Ra'd (Arabic)",
+      "text": "سورة الرعد",
+      "trigger": "srad",
+      "aliases": [
+        "s13",
+        "سورة الرع"
+      ]
+    },
+    {
+      "id": 26,
+      "label": "13. Ar-Ra'd (English)",
+      "text": "Surah Ar-Ra'd",
+      "trigger": "surah rad",
+      "aliases": [
+        "surah al rad",
+        "surah ar rad",
+        "surat rad",
+        "surat al rad",
+        "surat ar rad",
+        "sura rad",
+        "sura al rad",
+        "sura ar rad",
+        "serad"
+      ]
+    },
+    {
+      "id": 27,
+      "label": "14. Ibrahim (Arabic)",
+      "text": "سورة إبراهيم",
+      "trigger": "sibrahim",
+      "aliases": [
+        "s14",
+        "سورة إبراهي",
+        "سورة إبراه"
+      ]
+    },
+    {
+      "id": 28,
+      "label": "14. Ibrahim (English)",
+      "text": "Surah Ibrahim",
+      "trigger": "surah ibrahim",
+      "aliases": [
+        "surah al ibrahim",
+        "surah ibraheem",
+        "surah al ibraheem",
+        "surat ibrahim",
+        "surat al ibrahim",
+        "surat ibraheem",
+        "surat al ibraheem",
+        "sura ibrahim",
+        "sura al ibrahim",
+        "sura ibraheem",
+        "sura al ibraheem",
+        "seibrahim"
+      ]
+    },
+    {
+      "id": 29,
+      "label": "15. Al-Hijr (Arabic)",
+      "text": "سورة الحجر",
+      "trigger": "shijr",
+      "aliases": [
+        "s15",
+        "سورة الح"
+      ]
+    },
+    {
+      "id": 30,
+      "label": "15. Al-Hijr (English)",
+      "text": "Surah Al-Hijr",
+      "trigger": "surah hijr",
+      "aliases": [
+        "surah al hijr",
+        "surah heejr",
+        "surah al heejr",
+        "surat hijr",
+        "surat al hijr",
+        "surat heejr",
+        "surat al heejr",
+        "sura hijr",
+        "sura al hijr",
+        "sura heejr",
+        "sura al heejr",
+        "sehijr"
+      ]
+    },
+    {
+      "id": 31,
+      "label": "16. An-Nahl (Arabic)",
+      "text": "سورة النحل",
+      "trigger": "snahl",
+      "aliases": [
+        "s16",
+        "سورة النح",
+        "سورة الن"
+      ]
+    },
+    {
+      "id": 32,
+      "label": "16. An-Nahl (English)",
+      "text": "Surah An-Nahl",
+      "trigger": "surah nahl",
+      "aliases": [
+        "surah al nahl",
+        "surah an nahl",
+        "surat nahl",
+        "surat al nahl",
+        "surat an nahl",
+        "sura nahl",
+        "sura al nahl",
+        "sura an nahl",
+        "senahl"
+      ]
+    },
+    {
+      "id": 33,
+      "label": "17. Al-Isra (Arabic)",
+      "text": "سورة الإسراء",
+      "trigger": "sisra",
+      "aliases": [
+        "s17",
+        "سورة الإسرا",
+        "سورة الإسر"
+      ]
+    },
+    {
+      "id": 34,
+      "label": "17. Al-Isra (English)",
+      "text": "Surah Al-Isra",
+      "trigger": "surah isra",
+      "aliases": [
+        "surah al isra",
+        "surat isra",
+        "surat al isra",
+        "sura isra",
+        "sura al isra",
+        "seisra"
+      ]
+    },
+    {
+      "id": 35,
+      "label": "18. Al-Kahf (Arabic)",
+      "text": "سورة الكهف",
+      "trigger": "skahf",
+      "aliases": [
+        "s18",
+        "سورة الكه",
+        "سورة الك"
+      ]
+    },
+    {
+      "id": 36,
+      "label": "18. Al-Kahf (English)",
+      "text": "Surah Al-Kahf",
+      "trigger": "surah kahf",
+      "aliases": [
+        "surah al kahf",
+        "surat kahf",
+        "surat al kahf",
+        "sura kahf",
+        "sura al kahf",
+        "sekahf"
+      ]
+    },
+    {
+      "id": 37,
+      "label": "19. Maryam (Arabic)",
+      "text": "سورة مريم",
+      "trigger": "smaryam",
+      "aliases": [
+        "s19"
+      ]
+    },
+    {
+      "id": 38,
+      "label": "19. Maryam (English)",
+      "text": "Surah Maryam",
+      "trigger": "surah maryam",
+      "aliases": [
+        "surah al maryam",
+        "surat maryam",
+        "surat al maryam",
+        "sura maryam",
+        "sura al maryam",
+        "semaryam"
+      ]
+    },
+    {
+      "id": 39,
+      "label": "20. Taha (Arabic)",
+      "text": "سورة طه",
+      "trigger": "staha",
+      "aliases": [
+        "sthaha",
+        "s20"
+      ]
+    },
+    {
+      "id": 40,
+      "label": "20. Taha (English)",
+      "text": "Surah Taha",
+      "trigger": "surah taha",
+      "aliases": [
+        "surah al taha",
+        "surah thaha",
+        "surah al thaha",
+        "surat taha",
+        "surat al taha",
+        "surat thaha",
+        "surat al thaha",
+        "sura taha",
+        "sura al taha",
+        "sura thaha",
+        "sura al thaha",
+        "setaha",
+        "sethaha"
+      ]
+    },
+    {
+      "id": 41,
+      "label": "21. Al-Anbiya (Arabic)",
+      "text": "سورة الأنبياء",
+      "trigger": "sanbiya",
+      "aliases": [
+        "s21",
+        "سورة الأنبيا",
+        "سورة الأنبي"
+      ]
+    },
+    {
+      "id": 42,
+      "label": "21. Al-Anbiya (English)",
+      "text": "Surah Al-Anbiya",
+      "trigger": "surah anbiya",
+      "aliases": [
+        "surah al anbiya",
+        "surah anbeeya",
+        "surah al anbeeya",
+        "surat anbiya",
+        "surat al anbiya",
+        "surat anbeeya",
+        "surat al anbeeya",
+        "sura anbiya",
+        "sura al anbiya",
+        "sura anbeeya",
+        "sura al anbeeya",
+        "seanbiya"
+      ]
+    },
+    {
+      "id": 43,
+      "label": "22. Al-Hajj (Arabic)",
+      "text": "سورة الحج",
+      "trigger": "shajj",
+      "aliases": [
+        "s22"
+      ]
+    },
+    {
+      "id": 44,
+      "label": "22. Al-Hajj (English)",
+      "text": "Surah Al-Hajj",
+      "trigger": "surah hajj",
+      "aliases": [
+        "surah al hajj",
+        "surat hajj",
+        "surat al hajj",
+        "sura hajj",
+        "sura al hajj",
+        "sehajj"
+      ]
+    },
+    {
+      "id": 45,
+      "label": "23. Al-Mu'minun (Arabic)",
+      "text": "سورة المؤمنون",
+      "trigger": "smuminun",
+      "aliases": [
+        "s23",
+        "سورة المؤمنو"
+      ]
+    },
+    {
+      "id": 46,
+      "label": "23. Al-Mu'minun (English)",
+      "text": "Surah Al-Mu'minun",
+      "trigger": "surah muminun",
+      "aliases": [
+        "surah al muminun",
+        "surah muminoon",
+        "surah al muminoon",
+        "surat muminun",
+        "surat al muminun",
+        "surat muminoon",
+        "surat al muminoon",
+        "sura muminun",
+        "sura al muminun",
+        "sura muminoon",
+        "sura al muminoon",
+        "semuminun"
+      ]
+    },
+    {
+      "id": 47,
+      "label": "24. An-Nur (Arabic)",
+      "text": "سورة النور",
+      "trigger": "snur",
+      "aliases": [
+        "s24",
+        "سورة النو"
+      ]
+    },
+    {
+      "id": 48,
+      "label": "24. An-Nur (English)",
+      "text": "Surah An-Nur",
+      "trigger": "surah nur",
+      "aliases": [
+        "surah al nur",
+        "surah an nur",
+        "surah noor",
+        "surah al noor",
+        "surah an noor",
+        "surat nur",
+        "surat al nur",
+        "surat an nur",
+        "surat noor",
+        "surat al noor",
+        "surat an noor",
+        "sura nur",
+        "sura al nur",
+        "sura an nur",
+        "sura noor",
+        "sura al noor",
+        "sura an noor",
+        "senur"
+      ]
+    },
+    {
+      "id": 49,
+      "label": "25. Al-Furqan (Arabic)",
+      "text": "سورة الفرقان",
+      "trigger": "sfurqan",
+      "aliases": [
+        "s25",
+        "سورة الفرقا"
+      ]
+    },
+    {
+      "id": 50,
+      "label": "25. Al-Furqan (English)",
+      "text": "Surah Al-Furqan",
+      "trigger": "surah furqan",
+      "aliases": [
+        "surah al furqan",
+        "surat furqan",
+        "surat al furqan",
+        "sura furqan",
+        "sura al furqan",
+        "sefurqan"
+      ]
+    },
+    {
+      "id": 51,
+      "label": "26. Ash-Shu'ara (Arabic)",
+      "text": "سورة الشعراء",
+      "trigger": "sshuara",
+      "aliases": [
+        "s26",
+        "سورة الشعرا"
+      ]
+    },
+    {
+      "id": 52,
+      "label": "26. Ash-Shu'ara (English)",
+      "text": "Surah Ash-Shu'ara",
+      "trigger": "surah shuara",
+      "aliases": [
+        "surah al shuara",
+        "surah ash shuara",
+        "surat shuara",
+        "surat al shuara",
+        "surat ash shuara",
+        "sura shuara",
+        "sura al shuara",
+        "sura ash shuara",
+        "seshuara"
+      ]
+    },
+    {
+      "id": 53,
+      "label": "27. An-Naml (Arabic)",
+      "text": "سورة النمل",
+      "trigger": "snaml",
+      "aliases": [
+        "s27",
+        "سورة النم"
+      ]
+    },
+    {
+      "id": 54,
+      "label": "27. An-Naml (English)",
+      "text": "Surah An-Naml",
+      "trigger": "surah naml",
+      "aliases": [
+        "surah al naml",
+        "surah an naml",
+        "surat naml",
+        "surat al naml",
+        "surat an naml",
+        "sura naml",
+        "sura al naml",
+        "sura an naml",
+        "senaml"
+      ]
+    },
+    {
+      "id": 55,
+      "label": "28. Al-Qasas (Arabic)",
+      "text": "سورة القصص",
+      "trigger": "sqasas",
+      "aliases": [
+        "s28",
+        "سورة القص",
+        "سورة الق"
+      ]
+    },
+    {
+      "id": 56,
+      "label": "28. Al-Qasas (English)",
+      "text": "Surah Al-Qasas",
+      "trigger": "surah qasas",
+      "aliases": [
+        "surah al qasas",
+        "surat qasas",
+        "surat al qasas",
+        "sura qasas",
+        "sura al qasas",
+        "seqasas"
+      ]
+    },
+    {
+      "id": 57,
+      "label": "29. Al-'Ankabut (Arabic)",
+      "text": "سورة العنكبوت",
+      "trigger": "sankabut",
+      "aliases": [
+        "s29",
+        "سورة العنكبو",
+        "سورة العنكب"
+      ]
+    },
+    {
+      "id": 58,
+      "label": "29. Al-'Ankabut (English)",
+      "text": "Surah Al-'Ankabut",
+      "trigger": "surah ankabut",
+      "aliases": [
+        "surah al ankabut",
+        "surah ankaboot",
+        "surah al ankaboot",
+        "surat ankabut",
+        "surat al ankabut",
+        "surat ankaboot",
+        "surat al ankaboot",
+        "sura ankabut",
+        "sura al ankabut",
+        "sura ankaboot",
+        "sura al ankaboot",
+        "seankabut"
+      ]
+    },
+    {
+      "id": 59,
+      "label": "30. Ar-Rum (Arabic)",
+      "text": "سورة الروم",
+      "trigger": "sroom",
+      "aliases": [
+        "s30",
+        "سورة الرو"
+      ]
+    },
+    {
+      "id": 60,
+      "label": "30. Ar-Rum (English)",
+      "text": "Surah Ar-Rum",
+      "trigger": "surah room",
+      "aliases": [
+        "surah al room",
+        "surah ar room",
+        "surat room",
+        "surat al room",
+        "surat ar room",
+        "sura room",
+        "sura al room",
+        "sura ar room",
+        "seroom"
+      ]
+    },
+    {
+      "id": 61,
+      "label": "31. Luqman (Arabic)",
+      "text": "سورة لقمان",
+      "trigger": "sluqman",
+      "aliases": [
+        "s31",
+        "سورة لقما"
+      ]
+    },
+    {
+      "id": 62,
+      "label": "31. Luqman (English)",
+      "text": "Surah Luqman",
+      "trigger": "surah luqman",
+      "aliases": [
+        "surah al luqman",
+        "surat luqman",
+        "surat al luqman",
+        "sura luqman",
+        "sura al luqman",
+        "seluqman"
+      ]
+    },
+    {
+      "id": 63,
+      "label": "32. As-Sajdah (Arabic)",
+      "text": "سورة السجدة",
+      "trigger": "ssajdah",
+      "aliases": [
+        "s32",
+        "سورة السجد",
+        "سورة السج"
+      ]
+    },
+    {
+      "id": 64,
+      "label": "32. As-Sajdah (English)",
+      "text": "Surah As-Sajdah",
+      "trigger": "surah sajdah",
+      "aliases": [
+        "surah al sajdah",
+        "surah as sajdah",
+        "surat sajdah",
+        "surat al sajdah",
+        "surat as sajdah",
+        "sura sajdah",
+        "sura al sajdah",
+        "sura as sajdah",
+        "sesajdah"
+      ]
+    },
+    {
+      "id": 65,
+      "label": "33. Al-Ahzab (Arabic)",
+      "text": "سورة الأحزاب",
+      "trigger": "sahzab",
+      "aliases": [
+        "s33",
+        "سورة الأحزا",
+        "سورة الأحز"
+      ]
+    },
+    {
+      "id": 66,
+      "label": "33. Al-Ahzab (English)",
+      "text": "Surah Al-Ahzab",
+      "trigger": "surah ahzab",
+      "aliases": [
+        "surah al ahzab",
+        "surat ahzab",
+        "surat al ahzab",
+        "sura ahzab",
+        "sura al ahzab",
+        "seahzab"
+      ]
+    },
+    {
+      "id": 67,
+      "label": "34. Saba (Arabic)",
+      "text": "سورة سبأ",
+      "trigger": "ssaba",
+      "aliases": [
+        "s34"
+      ]
+    },
+    {
+      "id": 68,
+      "label": "34. Saba (English)",
+      "text": "Surah Saba",
+      "trigger": "surah saba",
+      "aliases": [
+        "surah al saba",
+        "surat saba",
+        "surat al saba",
+        "sura saba",
+        "sura al saba",
+        "sesaba"
+      ]
+    },
+    {
+      "id": 69,
+      "label": "35. Fatir (Arabic)",
+      "text": "سورة فاطر",
+      "trigger": "sfatir",
+      "aliases": [
+        "s35",
+        "سورة فاط"
+      ]
+    },
+    {
+      "id": 70,
+      "label": "35. Fatir (English)",
+      "text": "Surah Fatir",
+      "trigger": "surah fatir",
+      "aliases": [
+        "surah al fatir",
+        "surah fateer",
+        "surah al fateer",
+        "surat fatir",
+        "surat al fatir",
+        "surat fateer",
+        "surat al fateer",
+        "sura fatir",
+        "sura al fatir",
+        "sura fateer",
+        "sura al fateer",
+        "sefatir"
+      ]
+    },
+    {
+      "id": 71,
+      "label": "36. Ya-Sin (Arabic)",
+      "text": "سورة يس",
+      "trigger": "syasin",
+      "aliases": [
+        "syaseen",
+        "s36"
+      ]
+    },
+    {
+      "id": 72,
+      "label": "36. Ya-Sin (English)",
+      "text": "Surah Ya-Sin",
+      "trigger": "surah yasin",
+      "aliases": [
+        "surah al yasin",
+        "surah yaseen",
+        "surah al yaseen",
+        "surat yasin",
+        "surat al yasin",
+        "surat yaseen",
+        "surat al yaseen",
+        "sura yasin",
+        "sura al yasin",
+        "sura yaseen",
+        "sura al yaseen",
+        "seyasin",
+        "seyaseen"
+      ]
+    },
+    {
+      "id": 73,
+      "label": "37. As-Saffat (Arabic)",
+      "text": "سورة الصافات",
+      "trigger": "ssaffat",
+      "aliases": [
+        "s37",
+        "سورة الصافا",
+        "سورة الصاف"
+      ]
+    },
+    {
+      "id": 74,
+      "label": "37. As-Saffat (English)",
+      "text": "Surah As-Saffat",
+      "trigger": "surah saffat",
+      "aliases": [
+        "surah al saffat",
+        "surah as saffat",
+        "surat saffat",
+        "surat al saffat",
+        "surat as saffat",
+        "sura saffat",
+        "sura al saffat",
+        "sura as saffat",
+        "sesaffat"
+      ]
+    },
+    {
+      "id": 75,
+      "label": "38. Sad (Arabic)",
+      "text": "سورة ص",
+      "trigger": "ssad",
+      "aliases": [
+        "s38"
+      ]
+    },
+    {
+      "id": 76,
+      "label": "38. Sad (English)",
+      "text": "Surah Sad",
+      "trigger": "surah sad",
+      "aliases": [
+        "surah al sad",
+        "surat sad",
+        "surat al sad",
+        "sura sad",
+        "sura al sad",
+        "sesad"
+      ]
+    },
+    {
+      "id": 77,
+      "label": "39. Az-Zumar (Arabic)",
+      "text": "سورة الزمر",
+      "trigger": "szumar",
+      "aliases": [
+        "s39",
+        "سورة الزم",
+        "سورة الز"
+      ]
+    },
+    {
+      "id": 78,
+      "label": "39. Az-Zumar (English)",
+      "text": "Surah Az-Zumar",
+      "trigger": "surah zumar",
+      "aliases": [
+        "surah al zumar",
+        "surah az zumar",
+        "surat zumar",
+        "surat al zumar",
+        "surat az zumar",
+        "sura zumar",
+        "sura al zumar",
+        "sura az zumar",
+        "sezumar"
+      ]
+    },
+    {
+      "id": 79,
+      "label": "40. Ghafir (Arabic)",
+      "text": "سورة غافر",
+      "trigger": "sghafir",
+      "aliases": [
+        "s40",
+        "سورة غاف"
+      ]
+    },
+    {
+      "id": 80,
+      "label": "40. Ghafir (English)",
+      "text": "Surah Ghafir",
+      "trigger": "surah ghafir",
+      "aliases": [
+        "surah al ghafir",
+        "surah ghafeer",
+        "surah al ghafeer",
+        "surat ghafir",
+        "surat al ghafir",
+        "surat ghafeer",
+        "surat al ghafeer",
+        "sura ghafir",
+        "sura al ghafir",
+        "sura ghafeer",
+        "sura al ghafeer",
+        "seghafir"
+      ]
+    },
+    {
+      "id": 81,
+      "label": "41. Fussilat (Arabic)",
+      "text": "سورة فصلت",
+      "trigger": "sfussilat",
+      "aliases": [
+        "s41"
+      ]
+    },
+    {
+      "id": 82,
+      "label": "41. Fussilat (English)",
+      "text": "Surah Fussilat",
+      "trigger": "surah fussilat",
+      "aliases": [
+        "surah al fussilat",
+        "surat fussilat",
+        "surat al fussilat",
+        "sura fussilat",
+        "sura al fussilat",
+        "sefussilat"
+      ]
+    },
+    {
+      "id": 83,
+      "label": "42. Ash-Shura (Arabic)",
+      "text": "سورة الشورى",
+      "trigger": "sshura",
+      "aliases": [
+        "s42",
+        "سورة الشور",
+        "سورة الشو"
+      ]
+    },
+    {
+      "id": 84,
+      "label": "42. Ash-Shura (English)",
+      "text": "Surah Ash-Shura",
+      "trigger": "surah shura",
+      "aliases": [
+        "surah al shura",
+        "surah ash shura",
+        "surah shoora",
+        "surah al shoora",
+        "surah ash shoora",
+        "surat shura",
+        "surat al shura",
+        "surat ash shura",
+        "surat shoora",
+        "surat al shoora",
+        "surat ash shoora",
+        "sura shura",
+        "sura al shura",
+        "sura ash shura",
+        "sura shoora",
+        "sura al shoora",
+        "sura ash shoora",
+        "seshura"
+      ]
+    },
+    {
+      "id": 85,
+      "label": "43. Az-Zukhruf (Arabic)",
+      "text": "سورة الزخرف",
+      "trigger": "szukhruf",
+      "aliases": [
+        "s43",
+        "سورة الزخر",
+        "سورة الزخ"
+      ]
+    },
+    {
+      "id": 86,
+      "label": "43. Az-Zukhruf (English)",
+      "text": "Surah Az-Zukhruf",
+      "trigger": "surah zukhruf",
+      "aliases": [
+        "surah al zukhruf",
+        "surah az zukhruf",
+        "surah zukhroof",
+        "surah al zukhroof",
+        "surah az zukhroof",
+        "surat zukhruf",
+        "surat al zukhruf",
+        "surat az zukhruf",
+        "surat zukhroof",
+        "surat al zukhroof",
+        "surat az zukhroof",
+        "sura zukhruf",
+        "sura al zukhruf",
+        "sura az zukhruf",
+        "sura zukhroof",
+        "sura al zukhroof",
+        "sura az zukhroof",
+        "sezukhruf"
+      ]
+    },
+    {
+      "id": 87,
+      "label": "44. Ad-Dukhan (Arabic)",
+      "text": "سورة الدخان",
+      "trigger": "sdukhan",
+      "aliases": [
+        "s44",
+        "سورة الدخا"
+      ]
+    },
+    {
+      "id": 88,
+      "label": "44. Ad-Dukhan (English)",
+      "text": "Surah Ad-Dukhan",
+      "trigger": "surah dukhan",
+      "aliases": [
+        "surah al dukhan",
+        "surah ad dukhan",
+        "surat dukhan",
+        "surat al dukhan",
+        "surat ad dukhan",
+        "sura dukhan",
+        "sura al dukhan",
+        "sura ad dukhan",
+        "sedukhan"
+      ]
+    },
+    {
+      "id": 89,
+      "label": "45. Al-Jathiyah (Arabic)",
+      "text": "سورة الجاثية",
+      "trigger": "sjathiyah",
+      "aliases": [
+        "s45",
+        "سورة الجاثي",
+        "سورة الجاث"
+      ]
+    },
+    {
+      "id": 90,
+      "label": "45. Al-Jathiyah (English)",
+      "text": "Surah Al-Jathiyah",
+      "trigger": "surah jathiyah",
+      "aliases": [
+        "surah al jathiyah",
+        "surat jathiyah",
+        "surat al jathiyah",
+        "sura jathiyah",
+        "sura al jathiyah",
+        "sejathiyah"
+      ]
+    },
+    {
+      "id": 91,
+      "label": "46. Al-Ahqaf (Arabic)",
+      "text": "سورة الأحقاف",
+      "trigger": "sahqaf",
+      "aliases": [
+        "s46",
+        "سورة الأحقا",
+        "سورة الأحق"
+      ]
+    },
+    {
+      "id": 92,
+      "label": "46. Al-Ahqaf (English)",
+      "text": "Surah Al-Ahqaf",
+      "trigger": "surah ahqaf",
+      "aliases": [
+        "surah al ahqaf",
+        "surat ahqaf",
+        "surat al ahqaf",
+        "sura ahqaf",
+        "sura al ahqaf",
+        "seahqaf"
+      ]
+    },
+    {
+      "id": 93,
+      "label": "47. Muhammad (Arabic)",
+      "text": "سورة محمد",
+      "trigger": "smuhammad",
+      "aliases": [
+        "s47",
+        "سورة محم"
+      ]
+    },
+    {
+      "id": 94,
+      "label": "47. Muhammad (English)",
+      "text": "Surah Muhammad",
+      "trigger": "surah muhammad",
+      "aliases": [
+        "surah al muhammad",
+        "surat muhammad",
+        "surat al muhammad",
+        "sura muhammad",
+        "sura al muhammad",
+        "semuhammad"
+      ]
+    },
+    {
+      "id": 95,
+      "label": "48. Al-Fath (Arabic)",
+      "text": "سورة الفتح",
+      "trigger": "sfath",
+      "aliases": [
+        "s48",
+        "سورة الفت"
+      ]
+    },
+    {
+      "id": 96,
+      "label": "48. Al-Fath (English)",
+      "text": "Surah Al-Fath",
+      "trigger": "surah fath",
+      "aliases": [
+        "surah al fath",
+        "surat fath",
+        "surat al fath",
+        "sura fath",
+        "sura al fath",
+        "sefath"
+      ]
+    },
+    {
+      "id": 97,
+      "label": "49. Al-Hujurat (Arabic)",
+      "text": "سورة الحجرات",
+      "trigger": "shujurat",
+      "aliases": [
+        "s49",
+        "سورة الحجرا"
+      ]
+    },
+    {
+      "id": 98,
+      "label": "49. Al-Hujurat (English)",
+      "text": "Surah Al-Hujurat",
+      "trigger": "surah hujurat",
+      "aliases": [
+        "surah al hujurat",
+        "surat hujurat",
+        "surat al hujurat",
+        "sura hujurat",
+        "sura al hujurat",
+        "sehujurat"
+      ]
+    },
+    {
+      "id": 99,
+      "label": "50. Qaf (Arabic)",
+      "text": "سورة ق",
+      "trigger": "sqaf",
+      "aliases": [
+        "s50"
+      ]
+    },
+    {
+      "id": 100,
+      "label": "50. Qaf (English)",
+      "text": "Surah Qaf",
+      "trigger": "surah qaf",
+      "aliases": [
+        "surah al qaf",
+        "surat qaf",
+        "surat al qaf",
+        "sura qaf",
+        "sura al qaf",
+        "seqaf"
+      ]
+    },
+    {
+      "id": 101,
+      "label": "51. Adh-Dhariyat (Arabic)",
+      "text": "سورة الذاريات",
+      "trigger": "sdhariyat",
+      "aliases": [
+        "s51",
+        "سورة الذاريا",
+        "سورة الذاري"
+      ]
+    },
+    {
+      "id": 102,
+      "label": "51. Adh-Dhariyat (English)",
+      "text": "Surah Adh-Dhariyat",
+      "trigger": "surah dhariyat",
+      "aliases": [
+        "surah al dhariyat",
+        "surah adh dhariyat",
+        "surat dhariyat",
+        "surat al dhariyat",
+        "surat adh dhariyat",
+        "sura dhariyat",
+        "sura al dhariyat",
+        "sura adh dhariyat",
+        "sedhariyat"
+      ]
+    },
+    {
+      "id": 103,
+      "label": "52. At-Tur (Arabic)",
+      "text": "سورة الطور",
+      "trigger": "stur",
+      "aliases": [
+        "s52",
+        "سورة الطو",
+        "سورة الط"
+      ]
+    },
+    {
+      "id": 104,
+      "label": "52. At-Tur (English)",
+      "text": "Surah At-Tur",
+      "trigger": "surah tur",
+      "aliases": [
+        "surah al tur",
+        "surah at tur",
+        "surah toor",
+        "surah al toor",
+        "surah at toor",
+        "surat tur",
+        "surat al tur",
+        "surat at tur",
+        "surat toor",
+        "surat al toor",
+        "surat at toor",
+        "sura tur",
+        "sura al tur",
+        "sura at tur",
+        "sura toor",
+        "sura al toor",
+        "sura at toor",
+        "setur"
+      ]
+    },
+    {
+      "id": 105,
+      "label": "53. An-Najm (Arabic)",
+      "text": "سورة النجم",
+      "trigger": "snajm",
+      "aliases": [
+        "s53",
+        "سورة النج"
+      ]
+    },
+    {
+      "id": 106,
+      "label": "53. An-Najm (English)",
+      "text": "Surah An-Najm",
+      "trigger": "surah najm",
+      "aliases": [
+        "surah al najm",
+        "surah an najm",
+        "surat najm",
+        "surat al najm",
+        "surat an najm",
+        "sura najm",
+        "sura al najm",
+        "sura an najm",
+        "senajm"
+      ]
+    },
+    {
+      "id": 107,
+      "label": "54. Al-Qamar (Arabic)",
+      "text": "سورة القمر",
+      "trigger": "sqamar",
+      "aliases": [
+        "s54",
+        "سورة القم"
+      ]
+    },
+    {
+      "id": 108,
+      "label": "54. Al-Qamar (English)",
+      "text": "Surah Al-Qamar",
+      "trigger": "surah qamar",
+      "aliases": [
+        "surah al qamar",
+        "surat qamar",
+        "surat al qamar",
+        "sura qamar",
+        "sura al qamar",
+        "seqamar"
+      ]
+    },
+    {
+      "id": 109,
+      "label": "55. Ar-Rahman (Arabic)",
+      "text": "سورة الرحمن",
+      "trigger": "srahman",
+      "aliases": [
+        "srahmaan",
+        "s55",
+        "سورة الرح"
+      ]
+    },
+    {
+      "id": 110,
+      "label": "55. Ar-Rahman (English)",
+      "text": "Surah Ar-Rahman",
+      "trigger": "surah rahman",
+      "aliases": [
+        "surah al rahman",
+        "surah ar rahman",
+        "surah rahmaan",
+        "surah al rahmaan",
+        "surah ar rahmaan",
+        "surat rahman",
+        "surat al rahman",
+        "surat ar rahman",
+        "surat rahmaan",
+        "surat al rahmaan",
+        "surat ar rahmaan",
+        "sura rahman",
+        "sura al rahman",
+        "sura ar rahman",
+        "sura rahmaan",
+        "sura al rahmaan",
+        "sura ar rahmaan",
+        "serahman",
+        "serahmaan"
+      ]
+    },
+    {
+      "id": 111,
+      "label": "56. Al-Waqi'ah (Arabic)",
+      "text": "سورة الواقعة",
+      "trigger": "swaqiah",
+      "aliases": [
+        "swaqia",
+        "s56",
+        "سورة الواقع",
+        "سورة الواق"
+      ]
+    },
+    {
+      "id": 112,
+      "label": "56. Al-Waqi'ah (English)",
+      "text": "Surah Al-Waqi'ah",
+      "trigger": "surah waqiah",
+      "aliases": [
+        "surah al waqiah",
+        "surah waqia",
+        "surah al waqia",
+        "surah waqeeah",
+        "surah al waqeeah",
+        "surah waqeea",
+        "surah al waqeea",
+        "surat waqiah",
+        "surat al waqiah",
+        "surat waqia",
+        "surat al waqia",
+        "surat waqeeah",
+        "surat al waqeeah",
+        "surat waqeea",
+        "surat al waqeea",
+        "sura waqiah",
+        "sura al waqiah",
+        "sura waqia",
+        "sura al waqia",
+        "sura waqeeah",
+        "sura al waqeeah",
+        "sura waqeea",
+        "sura al waqeea",
+        "sewaqiah",
+        "sewaqia"
+      ]
+    },
+    {
+      "id": 113,
+      "label": "57. Al-Hadid (Arabic)",
+      "text": "سورة الحديد",
+      "trigger": "shadid",
+      "aliases": [
+        "s57",
+        "سورة الحدي"
+      ]
+    },
+    {
+      "id": 114,
+      "label": "57. Al-Hadid (English)",
+      "text": "Surah Al-Hadid",
+      "trigger": "surah hadid",
+      "aliases": [
+        "surah al hadid",
+        "surah hadeed",
+        "surah al hadeed",
+        "surat hadid",
+        "surat al hadid",
+        "surat hadeed",
+        "surat al hadeed",
+        "sura hadid",
+        "sura al hadid",
+        "sura hadeed",
+        "sura al hadeed",
+        "sehadid"
+      ]
+    },
+    {
+      "id": 115,
+      "label": "58. Al-Mujadila (Arabic)",
+      "text": "سورة المجادلة",
+      "trigger": "smujadila",
+      "aliases": [
+        "s58",
+        "سورة المجادل",
+        "سورة المجاد"
+      ]
+    },
+    {
+      "id": 116,
+      "label": "58. Al-Mujadila (English)",
+      "text": "Surah Al-Mujadila",
+      "trigger": "surah mujadila",
+      "aliases": [
+        "surah al mujadila",
+        "surah mujadeela",
+        "surah al mujadeela",
+        "surat mujadila",
+        "surat al mujadila",
+        "surat mujadeela",
+        "surat al mujadeela",
+        "sura mujadila",
+        "sura al mujadila",
+        "sura mujadeela",
+        "sura al mujadeela",
+        "semujadila"
+      ]
+    },
+    {
+      "id": 117,
+      "label": "59. Al-Hashr (Arabic)",
+      "text": "سورة الحشر",
+      "trigger": "shashr",
+      "aliases": [
+        "s59",
+        "سورة الحش"
+      ]
+    },
+    {
+      "id": 118,
+      "label": "59. Al-Hashr (English)",
+      "text": "Surah Al-Hashr",
+      "trigger": "surah hashr",
+      "aliases": [
+        "surah al hashr",
+        "surat hashr",
+        "surat al hashr",
+        "sura hashr",
+        "sura al hashr",
+        "sehashr"
+      ]
+    },
+    {
+      "id": 119,
+      "label": "60. Al-Mumtahanah (Arabic)",
+      "text": "سورة الممتحنة",
+      "trigger": "smumtahanah",
+      "aliases": [
+        "s60",
+        "سورة الممتحن",
+        "سورة الممتح"
+      ]
+    },
+    {
+      "id": 120,
+      "label": "60. Al-Mumtahanah (English)",
+      "text": "Surah Al-Mumtahanah",
+      "trigger": "surah mumtahanah",
+      "aliases": [
+        "surah al mumtahanah",
+        "surat mumtahanah",
+        "surat al mumtahanah",
+        "sura mumtahanah",
+        "sura al mumtahanah",
+        "semumtahanah"
+      ]
+    },
+    {
+      "id": 121,
+      "label": "61. As-Saf (Arabic)",
+      "text": "سورة الصف",
+      "trigger": "ssaf",
+      "aliases": [
+        "s61",
+        "سورة الص"
+      ]
+    },
+    {
+      "id": 122,
+      "label": "61. As-Saf (English)",
+      "text": "Surah As-Saf",
+      "trigger": "surah saf",
+      "aliases": [
+        "surah al saf",
+        "surah as saf",
+        "surat saf",
+        "surat al saf",
+        "surat as saf",
+        "sura saf",
+        "sura al saf",
+        "sura as saf",
+        "sesaf"
+      ]
+    },
+    {
+      "id": 123,
+      "label": "62. Al-Jumu'ah (Arabic)",
+      "text": "سورة الجمعة",
+      "trigger": "sjumuah",
+      "aliases": [
+        "sjumua",
+        "sjumah",
+        "s62",
+        "سورة الجم"
+      ]
+    },
+    {
+      "id": 124,
+      "label": "62. Al-Jumu'ah (English)",
+      "text": "Surah Al-Jumu'ah",
+      "trigger": "surah jumuah",
+      "aliases": [
+        "surah al jumuah",
+        "surah jumua",
+        "surah al jumua",
+        "surah jumah",
+        "surah al jumah",
+        "surah jumooah",
+        "surah al jumooah",
+        "surah jumooa",
+        "surah al jumooa",
+        "surat jumuah",
+        "surat al jumuah",
+        "surat jumua",
+        "surat al jumua",
+        "surat jumah",
+        "surat al jumah",
+        "surat jumooah",
+        "surat al jumooah",
+        "surat jumooa",
+        "surat al jumooa",
+        "sura jumuah",
+        "sura al jumuah",
+        "sura jumua",
+        "sura al jumua",
+        "sura jumah",
+        "sura al jumah",
+        "sura jumooah",
+        "sura al jumooah",
+        "sura jumooa",
+        "sura al jumooa",
+        "sejumuah",
+        "sejumua",
+        "sejumah"
+      ]
+    },
+    {
+      "id": 125,
+      "label": "63. Al-Munafiqun (Arabic)",
+      "text": "سورة المنافقون",
+      "trigger": "smunafiqun",
+      "aliases": [
+        "s63",
+        "سورة المنافقو"
+      ]
+    },
+    {
+      "id": 126,
+      "label": "63. Al-Munafiqun (English)",
+      "text": "Surah Al-Munafiqun",
+      "trigger": "surah munafiqun",
+      "aliases": [
+        "surah al munafiqun",
+        "surah munafiqoon",
+        "surah al munafiqoon",
+        "surat munafiqun",
+        "surat al munafiqun",
+        "surat munafiqoon",
+        "surat al munafiqoon",
+        "sura munafiqun",
+        "sura al munafiqun",
+        "sura munafiqoon",
+        "sura al munafiqoon",
+        "semunafiqun"
+      ]
+    },
+    {
+      "id": 127,
+      "label": "64. At-Taghabun (Arabic)",
+      "text": "سورة التغابن",
+      "trigger": "staghabun",
+      "aliases": [
+        "s64",
+        "سورة التغاب",
+        "سورة التغا"
+      ]
+    },
+    {
+      "id": 128,
+      "label": "64. At-Taghabun (English)",
+      "text": "Surah At-Taghabun",
+      "trigger": "surah taghabun",
+      "aliases": [
+        "surah al taghabun",
+        "surah at taghabun",
+        "surah taghaboon",
+        "surah al taghaboon",
+        "surah at taghaboon",
+        "surat taghabun",
+        "surat al taghabun",
+        "surat at taghabun",
+        "surat taghaboon",
+        "surat al taghaboon",
+        "surat at taghaboon",
+        "sura taghabun",
+        "sura al taghabun",
+        "sura at taghabun",
+        "sura taghaboon",
+        "sura al taghaboon",
+        "sura at taghaboon",
+        "setaghabun"
+      ]
+    },
+    {
+      "id": 129,
+      "label": "65. At-Talaq (Arabic)",
+      "text": "سورة الطلاق",
+      "trigger": "stalaq",
+      "aliases": [
+        "s65",
+        "سورة الطلا"
+      ]
+    },
+    {
+      "id": 130,
+      "label": "65. At-Talaq (English)",
+      "text": "Surah At-Talaq",
+      "trigger": "surah talaq",
+      "aliases": [
+        "surah al talaq",
+        "surah at talaq",
+        "surat talaq",
+        "surat al talaq",
+        "surat at talaq",
+        "sura talaq",
+        "sura al talaq",
+        "sura at talaq",
+        "setalaq"
+      ]
+    },
+    {
+      "id": 131,
+      "label": "66. At-Tahrim (Arabic)",
+      "text": "سورة التحريم",
+      "trigger": "stahrim",
+      "aliases": [
+        "s66",
+        "سورة التحري",
+        "سورة التحر"
+      ]
+    },
+    {
+      "id": 132,
+      "label": "66. At-Tahrim (English)",
+      "text": "Surah At-Tahrim",
+      "trigger": "surah tahrim",
+      "aliases": [
+        "surah al tahrim",
+        "surah at tahrim",
+        "surah tahreem",
+        "surah al tahreem",
+        "surah at tahreem",
+        "surat tahrim",
+        "surat al tahrim",
+        "surat at tahrim",
+        "surat tahreem",
+        "surat al tahreem",
+        "surat at tahreem",
+        "sura tahrim",
+        "sura al tahrim",
+        "sura at tahrim",
+        "sura tahreem",
+        "sura al tahreem",
+        "sura at tahreem",
+        "setahrim"
+      ]
+    },
+    {
+      "id": 133,
+      "label": "67. Al-Mulk (Arabic)",
+      "text": "سورة الملك",
+      "trigger": "smulk",
+      "aliases": [
+        "s67",
+        "سورة المل"
+      ]
+    },
+    {
+      "id": 134,
+      "label": "67. Al-Mulk (English)",
+      "text": "Surah Al-Mulk",
+      "trigger": "surah mulk",
+      "aliases": [
+        "surah al mulk",
+        "surah moolk",
+        "surah al moolk",
+        "surat mulk",
+        "surat al mulk",
+        "surat moolk",
+        "surat al moolk",
+        "sura mulk",
+        "sura al mulk",
+        "sura moolk",
+        "sura al moolk",
+        "semulk"
+      ]
+    },
+    {
+      "id": 135,
+      "label": "68. Al-Qalam (Arabic)",
+      "text": "سورة القلم",
+      "trigger": "sqalam",
+      "aliases": [
+        "s68",
+        "سورة القل"
+      ]
+    },
+    {
+      "id": 136,
+      "label": "68. Al-Qalam (English)",
+      "text": "Surah Al-Qalam",
+      "trigger": "surah qalam",
+      "aliases": [
+        "surah al qalam",
+        "surat qalam",
+        "surat al qalam",
+        "sura qalam",
+        "sura al qalam",
+        "seqalam"
+      ]
+    },
+    {
+      "id": 137,
+      "label": "69. Al-Haqqah (Arabic)",
+      "text": "سورة الحاقة",
+      "trigger": "shaqqah",
+      "aliases": [
+        "s69",
+        "سورة الحاق",
+        "سورة الحا"
+      ]
+    },
+    {
+      "id": 138,
+      "label": "69. Al-Haqqah (English)",
+      "text": "Surah Al-Haqqah",
+      "trigger": "surah haqqah",
+      "aliases": [
+        "surah al haqqah",
+        "surat haqqah",
+        "surat al haqqah",
+        "sura haqqah",
+        "sura al haqqah",
+        "sehaqqah"
+      ]
+    },
+    {
+      "id": 139,
+      "label": "70. Al-Ma'arij (Arabic)",
+      "text": "سورة المعارج",
+      "trigger": "smaarij",
+      "aliases": [
+        "s70",
+        "سورة المعار",
+        "سورة المعا"
+      ]
+    },
+    {
+      "id": 140,
+      "label": "70. Al-Ma'arij (English)",
+      "text": "Surah Al-Ma'arij",
+      "trigger": "surah maarij",
+      "aliases": [
+        "surah al maarij",
+        "surah maareej",
+        "surah al maareej",
+        "surat maarij",
+        "surat al maarij",
+        "surat maareej",
+        "surat al maareej",
+        "sura maarij",
+        "sura al maarij",
+        "sura maareej",
+        "sura al maareej",
+        "semaarij"
+      ]
+    },
+    {
+      "id": 141,
+      "label": "71. Nuh (Arabic)",
+      "text": "سورة نوح",
+      "trigger": "snuh",
+      "aliases": [
+        "s71"
+      ]
+    },
+    {
+      "id": 142,
+      "label": "71. Nuh (English)",
+      "text": "Surah Nuh",
+      "trigger": "surah nuh",
+      "aliases": [
+        "surah al nuh",
+        "surah nooh",
+        "surah al nooh",
+        "surat nuh",
+        "surat al nuh",
+        "surat nooh",
+        "surat al nooh",
+        "sura nuh",
+        "sura al nuh",
+        "sura nooh",
+        "sura al nooh",
+        "senuh"
+      ]
+    },
+    {
+      "id": 143,
+      "label": "72. Al-Jinn (Arabic)",
+      "text": "سورة الجن",
+      "trigger": "sjinn",
+      "aliases": [
+        "s72",
+        "سورة الج"
+      ]
+    },
+    {
+      "id": 144,
+      "label": "72. Al-Jinn (English)",
+      "text": "Surah Al-Jinn",
+      "trigger": "surah jinn",
+      "aliases": [
+        "surah al jinn",
+        "surah jeenn",
+        "surah al jeenn",
+        "surat jinn",
+        "surat al jinn",
+        "surat jeenn",
+        "surat al jeenn",
+        "sura jinn",
+        "sura al jinn",
+        "sura jeenn",
+        "sura al jeenn",
+        "sejinn"
+      ]
+    },
+    {
+      "id": 145,
+      "label": "73. Al-Muzzammil (Arabic)",
+      "text": "سورة المزمل",
+      "trigger": "smuzzammil",
+      "aliases": [
+        "smuzammil",
+        "s73",
+        "سورة المزم",
+        "سورة المز"
+      ]
+    },
+    {
+      "id": 146,
+      "label": "73. Al-Muzzammil (English)",
+      "text": "Surah Al-Muzzammil",
+      "trigger": "surah muzzammil",
+      "aliases": [
+        "surah al muzzammil",
+        "surah muzammil",
+        "surah al muzammil",
+        "surah muzzammeel",
+        "surah al muzzammeel",
+        "surah muzammeel",
+        "surah al muzammeel",
+        "surat muzzammil",
+        "surat al muzzammil",
+        "surat muzammil",
+        "surat al muzammil",
+        "surat muzzammeel",
+        "surat al muzzammeel",
+        "surat muzammeel",
+        "surat al muzammeel",
+        "sura muzzammil",
+        "sura al muzzammil",
+        "sura muzammil",
+        "sura al muzammil",
+        "sura muzzammeel",
+        "sura al muzzammeel",
+        "sura muzammeel",
+        "sura al muzammeel",
+        "semuzzammil",
+        "semuzammil"
+      ]
+    },
+    {
+      "id": 147,
+      "label": "74. Al-Muddaththir (Arabic)",
+      "text": "سورة المدثر",
+      "trigger": "smuddaththir",
+      "aliases": [
+        "smuddathir",
+        "smudathir",
+        "s74",
+        "سورة المدث"
+      ]
+    },
+    {
+      "id": 148,
+      "label": "74. Al-Muddaththir (English)",
+      "text": "Surah Al-Muddaththir",
+      "trigger": "surah muddaththir",
+      "aliases": [
+        "surah al muddaththir",
+        "surah muddathir",
+        "surah al muddathir",
+        "surah mudathir",
+        "surah al mudathir",
+        "surah muddaththeer",
+        "surah al muddaththeer",
+        "surah muddatheer",
+        "surah al muddatheer",
+        "surah mudatheer",
+        "surah al mudatheer",
+        "surat muddaththir",
+        "surat al muddaththir",
+        "surat muddathir",
+        "surat al muddathir",
+        "surat mudathir",
+        "surat al mudathir",
+        "surat muddaththeer",
+        "surat al muddaththeer",
+        "surat muddatheer",
+        "surat al muddatheer",
+        "surat mudatheer",
+        "surat al mudatheer",
+        "sura muddaththir",
+        "sura al muddaththir",
+        "sura muddathir",
+        "sura al muddathir",
+        "sura mudathir",
+        "sura al mudathir",
+        "sura muddaththeer",
+        "sura al muddaththeer",
+        "sura muddatheer",
+        "sura al muddatheer",
+        "sura mudatheer",
+        "sura al mudatheer",
+        "semuddaththir",
+        "semuddathir",
+        "semudathir"
+      ]
+    },
+    {
+      "id": 149,
+      "label": "75. Al-Qiyamah (Arabic)",
+      "text": "سورة القيامة",
+      "trigger": "sqiyamah",
+      "aliases": [
+        "s75",
+        "سورة القيا"
+      ]
+    },
+    {
+      "id": 150,
+      "label": "75. Al-Qiyamah (English)",
+      "text": "Surah Al-Qiyamah",
+      "trigger": "surah qiyamah",
+      "aliases": [
+        "surah al qiyamah",
+        "surat qiyamah",
+        "surat al qiyamah",
+        "sura qiyamah",
+        "sura al qiyamah",
+        "seqiyamah"
+      ]
+    },
+    {
+      "id": 151,
+      "label": "76. Al-Insan (Arabic)",
+      "text": "سورة الإنسان",
+      "trigger": "sinsan",
+      "aliases": [
+        "s76",
+        "سورة الإنسا"
+      ]
+    },
+    {
+      "id": 152,
+      "label": "76. Al-Insan (English)",
+      "text": "Surah Al-Insan",
+      "trigger": "surah insan",
+      "aliases": [
+        "surah al insan",
+        "surat insan",
+        "surat al insan",
+        "sura insan",
+        "sura al insan",
+        "seinsan"
+      ]
+    },
+    {
+      "id": 153,
+      "label": "77. Al-Mursalat (Arabic)",
+      "text": "سورة المرسلات",
+      "trigger": "smursalat",
+      "aliases": [
+        "s77",
+        "سورة المرسلا",
+        "سورة المرسل"
+      ]
+    },
+    {
+      "id": 154,
+      "label": "77. Al-Mursalat (English)",
+      "text": "Surah Al-Mursalat",
+      "trigger": "surah mursalat",
+      "aliases": [
+        "surah al mursalat",
+        "surat mursalat",
+        "surat al mursalat",
+        "sura mursalat",
+        "sura al mursalat",
+        "semursalat"
+      ]
+    },
+    {
+      "id": 155,
+      "label": "78. An-Naba (Arabic)",
+      "text": "سورة النبأ",
+      "trigger": "snaba",
+      "aliases": [
+        "s78",
+        "سورة النب"
+      ]
+    },
+    {
+      "id": 156,
+      "label": "78. An-Naba (English)",
+      "text": "Surah An-Naba",
+      "trigger": "surah naba",
+      "aliases": [
+        "surah al naba",
+        "surah an naba",
+        "surat naba",
+        "surat al naba",
+        "surat an naba",
+        "sura naba",
+        "sura al naba",
+        "sura an naba",
+        "senaba"
+      ]
+    },
+    {
+      "id": 157,
+      "label": "79. An-Nazi'at (Arabic)",
+      "text": "سورة النازعات",
+      "trigger": "snaziat",
+      "aliases": [
+        "s79",
+        "سورة النازعا",
+        "سورة النازع"
+      ]
+    },
+    {
+      "id": 158,
+      "label": "79. An-Nazi'at (English)",
+      "text": "Surah An-Nazi'at",
+      "trigger": "surah naziat",
+      "aliases": [
+        "surah al naziat",
+        "surah an naziat",
+        "surah nazeeat",
+        "surah al nazeeat",
+        "surah an nazeeat",
+        "surat naziat",
+        "surat al naziat",
+        "surat an naziat",
+        "surat nazeeat",
+        "surat al nazeeat",
+        "surat an nazeeat",
+        "sura naziat",
+        "sura al naziat",
+        "sura an naziat",
+        "sura nazeeat",
+        "sura al nazeeat",
+        "sura an nazeeat",
+        "senaziat"
+      ]
+    },
+    {
+      "id": 159,
+      "label": "80. 'Abasa (Arabic)",
+      "text": "سورة عبس",
+      "trigger": "sabasa",
+      "aliases": [
+        "s80"
+      ]
+    },
+    {
+      "id": 160,
+      "label": "80. 'Abasa (English)",
+      "text": "Surah 'Abasa",
+      "trigger": "surah abasa",
+      "aliases": [
+        "surah al abasa",
+        "surat abasa",
+        "surat al abasa",
+        "sura abasa",
+        "sura al abasa",
+        "seabasa"
+      ]
+    },
+    {
+      "id": 161,
+      "label": "81. At-Takwir (Arabic)",
+      "text": "سورة التكوير",
+      "trigger": "stakwir",
+      "aliases": [
+        "s81",
+        "سورة التكوي",
+        "سورة التكو"
+      ]
+    },
+    {
+      "id": 162,
+      "label": "81. At-Takwir (English)",
+      "text": "Surah At-Takwir",
+      "trigger": "surah takwir",
+      "aliases": [
+        "surah al takwir",
+        "surah at takwir",
+        "surah takweer",
+        "surah al takweer",
+        "surah at takweer",
+        "surat takwir",
+        "surat al takwir",
+        "surat at takwir",
+        "surat takweer",
+        "surat al takweer",
+        "surat at takweer",
+        "sura takwir",
+        "sura al takwir",
+        "sura at takwir",
+        "sura takweer",
+        "sura al takweer",
+        "sura at takweer",
+        "setakwir"
+      ]
+    },
+    {
+      "id": 163,
+      "label": "82. Al-Infitar (Arabic)",
+      "text": "سورة الانفطار",
+      "trigger": "sinfitar",
+      "aliases": [
+        "s82",
+        "سورة الانفطا",
+        "سورة الانفط"
+      ]
+    },
+    {
+      "id": 164,
+      "label": "82. Al-Infitar (English)",
+      "text": "Surah Al-Infitar",
+      "trigger": "surah infitar",
+      "aliases": [
+        "surah al infitar",
+        "surat infitar",
+        "surat al infitar",
+        "sura infitar",
+        "sura al infitar",
+        "seinfitar"
+      ]
+    },
+    {
+      "id": 165,
+      "label": "83. Al-Mutaffifin (Arabic)",
+      "text": "سورة المطففين",
+      "trigger": "smutaffifin",
+      "aliases": [
+        "s83",
+        "سورة المطففي",
+        "سورة المطفف"
+      ]
+    },
+    {
+      "id": 166,
+      "label": "83. Al-Mutaffifin (English)",
+      "text": "Surah Al-Mutaffifin",
+      "trigger": "surah mutaffifin",
+      "aliases": [
+        "surah al mutaffifin",
+        "surah mutaffifeen",
+        "surah al mutaffifeen",
+        "surat mutaffifin",
+        "surat al mutaffifin",
+        "surat mutaffifeen",
+        "surat al mutaffifeen",
+        "sura mutaffifin",
+        "sura al mutaffifin",
+        "sura mutaffifeen",
+        "sura al mutaffifeen",
+        "semutaffifin"
+      ]
+    },
+    {
+      "id": 167,
+      "label": "84. Al-Inshiqaq (Arabic)",
+      "text": "سورة الانشقاق",
+      "trigger": "sinshiqaq",
+      "aliases": [
+        "s84",
+        "سورة الانشقا",
+        "سورة الانشق"
+      ]
+    },
+    {
+      "id": 168,
+      "label": "84. Al-Inshiqaq (English)",
+      "text": "Surah Al-Inshiqaq",
+      "trigger": "surah inshiqaq",
+      "aliases": [
+        "surah al inshiqaq",
+        "surat inshiqaq",
+        "surat al inshiqaq",
+        "sura inshiqaq",
+        "sura al inshiqaq",
+        "seinshiqaq"
+      ]
+    },
+    {
+      "id": 169,
+      "label": "85. Al-Buruj (Arabic)",
+      "text": "سورة البروج",
+      "trigger": "sburuj",
+      "aliases": [
+        "s85",
+        "سورة البرو"
+      ]
+    },
+    {
+      "id": 170,
+      "label": "85. Al-Buruj (English)",
+      "text": "Surah Al-Buruj",
+      "trigger": "surah buruj",
+      "aliases": [
+        "surah al buruj",
+        "surah burooj",
+        "surah al burooj",
+        "surat buruj",
+        "surat al buruj",
+        "surat burooj",
+        "surat al burooj",
+        "sura buruj",
+        "sura al buruj",
+        "sura burooj",
+        "sura al burooj",
+        "seburuj"
+      ]
+    },
+    {
+      "id": 171,
+      "label": "86. At-Tariq (Arabic)",
+      "text": "سورة الطارق",
+      "trigger": "stariq",
+      "aliases": [
+        "s86",
+        "سورة الطار",
+        "سورة الطا"
+      ]
+    },
+    {
+      "id": 172,
+      "label": "86. At-Tariq (English)",
+      "text": "Surah At-Tariq",
+      "trigger": "surah tariq",
+      "aliases": [
+        "surah al tariq",
+        "surah at tariq",
+        "surah tareeq",
+        "surah al tareeq",
+        "surah at tareeq",
+        "surat tariq",
+        "surat al tariq",
+        "surat at tariq",
+        "surat tareeq",
+        "surat al tareeq",
+        "surat at tareeq",
+        "sura tariq",
+        "sura al tariq",
+        "sura at tariq",
+        "sura tareeq",
+        "sura al tareeq",
+        "sura at tareeq",
+        "setariq"
+      ]
+    },
+    {
+      "id": 173,
+      "label": "87. Al-A'la (Arabic)",
+      "text": "سورة الأعلى",
+      "trigger": "saala",
+      "aliases": [
+        "s87",
+        "سورة الأعل",
+        "سورة الأع"
+      ]
+    },
+    {
+      "id": 174,
+      "label": "87. Al-A'la (English)",
+      "text": "Surah Al-A'la",
+      "trigger": "surah aala",
+      "aliases": [
+        "surah al aala",
+        "surat aala",
+        "surat al aala",
+        "sura aala",
+        "sura al aala",
+        "seaala"
+      ]
+    },
+    {
+      "id": 175,
+      "label": "88. Al-Ghashiyah (Arabic)",
+      "text": "سورة الغاشية",
+      "trigger": "sghashiyah",
+      "aliases": [
+        "s88",
+        "سورة الغاشي",
+        "سورة الغاش"
+      ]
+    },
+    {
+      "id": 176,
+      "label": "88. Al-Ghashiyah (English)",
+      "text": "Surah Al-Ghashiyah",
+      "trigger": "surah ghashiyah",
+      "aliases": [
+        "surah al ghashiyah",
+        "surat ghashiyah",
+        "surat al ghashiyah",
+        "sura ghashiyah",
+        "sura al ghashiyah",
+        "seghashiyah"
+      ]
+    },
+    {
+      "id": 177,
+      "label": "89. Al-Fajr (Arabic)",
+      "text": "سورة الفجر",
+      "trigger": "sfajr",
+      "aliases": [
+        "s89",
+        "سورة الفج"
+      ]
+    },
+    {
+      "id": 178,
+      "label": "89. Al-Fajr (English)",
+      "text": "Surah Al-Fajr",
+      "trigger": "surah fajr",
+      "aliases": [
+        "surah al fajr",
+        "surat fajr",
+        "surat al fajr",
+        "sura fajr",
+        "sura al fajr",
+        "sefajr"
+      ]
+    },
+    {
+      "id": 179,
+      "label": "90. Al-Balad (Arabic)",
+      "text": "سورة البلد",
+      "trigger": "sbalad",
+      "aliases": [
+        "s90",
+        "سورة البل",
+        "سورة الب"
+      ]
+    },
+    {
+      "id": 180,
+      "label": "90. Al-Balad (English)",
+      "text": "Surah Al-Balad",
+      "trigger": "surah balad",
+      "aliases": [
+        "surah al balad",
+        "surat balad",
+        "surat al balad",
+        "sura balad",
+        "sura al balad",
+        "sebalad"
+      ]
+    },
+    {
+      "id": 181,
+      "label": "91. Ash-Shams (Arabic)",
+      "text": "سورة الشمس",
+      "trigger": "sshams",
+      "aliases": [
+        "s91",
+        "سورة الشم",
+        "سورة الش"
+      ]
+    },
+    {
+      "id": 182,
+      "label": "91. Ash-Shams (English)",
+      "text": "Surah Ash-Shams",
+      "trigger": "surah shams",
+      "aliases": [
+        "surah al shams",
+        "surah ash shams",
+        "surat shams",
+        "surat al shams",
+        "surat ash shams",
+        "sura shams",
+        "sura al shams",
+        "sura ash shams",
+        "seshams"
+      ]
+    },
+    {
+      "id": 183,
+      "label": "92. Al-Layl (Arabic)",
+      "text": "سورة الليل",
+      "trigger": "slayl",
+      "aliases": [
+        "s92",
+        "سورة اللي",
+        "سورة الل"
+      ]
+    },
+    {
+      "id": 184,
+      "label": "92. Al-Layl (English)",
+      "text": "Surah Al-Layl",
+      "trigger": "surah layl",
+      "aliases": [
+        "surah al layl",
+        "surat layl",
+        "surat al layl",
+        "sura layl",
+        "sura al layl",
+        "selayl"
+      ]
+    },
+    {
+      "id": 185,
+      "label": "93. Ad-Duha (Arabic)",
+      "text": "سورة الضحى",
+      "trigger": "sduha",
+      "aliases": [
+        "s93",
+        "سورة الضح",
+        "سورة الض"
+      ]
+    },
+    {
+      "id": 186,
+      "label": "93. Ad-Duha (English)",
+      "text": "Surah Ad-Duha",
+      "trigger": "surah duha",
+      "aliases": [
+        "surah al duha",
+        "surah ad duha",
+        "surah dooha",
+        "surah al dooha",
+        "surah ad dooha",
+        "surat duha",
+        "surat al duha",
+        "surat ad duha",
+        "surat dooha",
+        "surat al dooha",
+        "surat ad dooha",
+        "sura duha",
+        "sura al duha",
+        "sura ad duha",
+        "sura dooha",
+        "sura al dooha",
+        "sura ad dooha",
+        "seduha"
+      ]
+    },
+    {
+      "id": 187,
+      "label": "94. Ash-Sharh (Arabic)",
+      "text": "سورة الشرح",
+      "trigger": "ssharh",
+      "aliases": [
+        "s94"
+      ]
+    },
+    {
+      "id": 188,
+      "label": "94. Ash-Sharh (English)",
+      "text": "Surah Ash-Sharh",
+      "trigger": "surah sharh",
+      "aliases": [
+        "surah al sharh",
+        "surah ash sharh",
+        "surat sharh",
+        "surat al sharh",
+        "surat ash sharh",
+        "sura sharh",
+        "sura al sharh",
+        "sura ash sharh",
+        "sesharh"
+      ]
+    },
+    {
+      "id": 189,
+      "label": "95. At-Tin (Arabic)",
+      "text": "سورة التين",
+      "trigger": "stin",
+      "aliases": [
+        "s95",
+        "سورة الت"
+      ]
+    },
+    {
+      "id": 190,
+      "label": "95. At-Tin (English)",
+      "text": "Surah At-Tin",
+      "trigger": "surah tin",
+      "aliases": [
+        "surah al tin",
+        "surah at tin",
+        "surah teen",
+        "surah al teen",
+        "surah at teen",
+        "surat tin",
+        "surat al tin",
+        "surat at tin",
+        "surat teen",
+        "surat al teen",
+        "surat at teen",
+        "sura tin",
+        "sura al tin",
+        "sura at tin",
+        "sura teen",
+        "sura al teen",
+        "sura at teen",
+        "setin"
+      ]
+    },
+    {
+      "id": 191,
+      "label": "96. Al-'Alaq (Arabic)",
+      "text": "سورة العلق",
+      "trigger": "salaq",
+      "aliases": [
+        "s96",
+        "سورة العل",
+        "سورة الع"
+      ]
+    },
+    {
+      "id": 192,
+      "label": "96. Al-'Alaq (English)",
+      "text": "Surah Al-'Alaq",
+      "trigger": "surah alaq",
+      "aliases": [
+        "surah al alaq",
+        "surat alaq",
+        "surat al alaq",
+        "sura alaq",
+        "sura al alaq",
+        "sealaq"
+      ]
+    },
+    {
+      "id": 193,
+      "label": "97. Al-Qadr (Arabic)",
+      "text": "سورة القدر",
+      "trigger": "sqadr",
+      "aliases": [
+        "s97"
+      ]
+    },
+    {
+      "id": 194,
+      "label": "97. Al-Qadr (English)",
+      "text": "Surah Al-Qadr",
+      "trigger": "surah qadr",
+      "aliases": [
+        "surah al qadr",
+        "surat qadr",
+        "surat al qadr",
+        "sura qadr",
+        "sura al qadr",
+        "seqadr"
+      ]
+    },
+    {
+      "id": 195,
+      "label": "98. Al-Bayyinah (Arabic)",
+      "text": "سورة البينة",
+      "trigger": "sbayyinah",
+      "aliases": [
+        "s98",
+        "سورة البين",
+        "سورة البي"
+      ]
+    },
+    {
+      "id": 196,
+      "label": "98. Al-Bayyinah (English)",
+      "text": "Surah Al-Bayyinah",
+      "trigger": "surah bayyinah",
+      "aliases": [
+        "surah al bayyinah",
+        "surat bayyinah",
+        "surat al bayyinah",
+        "sura bayyinah",
+        "sura al bayyinah",
+        "sebayyinah"
+      ]
+    },
+    {
+      "id": 197,
+      "label": "99. Az-Zalzalah (Arabic)",
+      "text": "سورة الزلزلة",
+      "trigger": "szalzalah",
+      "aliases": [
+        "s99",
+        "سورة الزلزل",
+        "سورة الزلز"
+      ]
+    },
+    {
+      "id": 198,
+      "label": "99. Az-Zalzalah (English)",
+      "text": "Surah Az-Zalzalah",
+      "trigger": "surah zalzalah",
+      "aliases": [
+        "surah al zalzalah",
+        "surah az zalzalah",
+        "surat zalzalah",
+        "surat al zalzalah",
+        "surat az zalzalah",
+        "sura zalzalah",
+        "sura al zalzalah",
+        "sura az zalzalah",
+        "sezalzalah"
+      ]
+    },
+    {
+      "id": 199,
+      "label": "100. Al-'Adiyat (Arabic)",
+      "text": "سورة العاديات",
+      "trigger": "sadiyat",
+      "aliases": [
+        "s100",
+        "سورة العاديا",
+        "سورة العادي"
+      ]
+    },
+    {
+      "id": 200,
+      "label": "100. Al-'Adiyat (English)",
+      "text": "Surah Al-'Adiyat",
+      "trigger": "surah adiyat",
+      "aliases": [
+        "surah al adiyat",
+        "surat adiyat",
+        "surat al adiyat",
+        "sura adiyat",
+        "sura al adiyat",
+        "seadiyat"
+      ]
+    },
+    {
+      "id": 201,
+      "label": "101. Al-Qari'ah (Arabic)",
+      "text": "سورة القارعة",
+      "trigger": "sqariah",
+      "aliases": [
+        "s101",
+        "سورة القارع",
+        "سورة القار"
+      ]
+    },
+    {
+      "id": 202,
+      "label": "101. Al-Qari'ah (English)",
+      "text": "Surah Al-Qari'ah",
+      "trigger": "surah qariah",
+      "aliases": [
+        "surah al qariah",
+        "surah qareeah",
+        "surah al qareeah",
+        "surat qariah",
+        "surat al qariah",
+        "surat qareeah",
+        "surat al qareeah",
+        "sura qariah",
+        "sura al qariah",
+        "sura qareeah",
+        "sura al qareeah",
+        "seqariah"
+      ]
+    },
+    {
+      "id": 203,
+      "label": "102. At-Takathur (Arabic)",
+      "text": "سورة التكاثر",
+      "trigger": "stakathur",
+      "aliases": [
+        "s102",
+        "سورة التكاث",
+        "سورة التكا"
+      ]
+    },
+    {
+      "id": 204,
+      "label": "102. At-Takathur (English)",
+      "text": "Surah At-Takathur",
+      "trigger": "surah takathur",
+      "aliases": [
+        "surah al takathur",
+        "surah at takathur",
+        "surah takathoor",
+        "surah al takathoor",
+        "surah at takathoor",
+        "surat takathur",
+        "surat al takathur",
+        "surat at takathur",
+        "surat takathoor",
+        "surat al takathoor",
+        "surat at takathoor",
+        "sura takathur",
+        "sura al takathur",
+        "sura at takathur",
+        "sura takathoor",
+        "sura al takathoor",
+        "sura at takathoor",
+        "setakathur"
+      ]
+    },
+    {
+      "id": 205,
+      "label": "103. Al-'Asr (Arabic)",
+      "text": "سورة العصر",
+      "trigger": "sasr",
+      "aliases": [
+        "s103",
+        "سورة العص"
+      ]
+    },
+    {
+      "id": 206,
+      "label": "103. Al-'Asr (English)",
+      "text": "Surah Al-'Asr",
+      "trigger": "surah asr",
+      "aliases": [
+        "surah al asr",
+        "surat asr",
+        "surat al asr",
+        "sura asr",
+        "sura al asr",
+        "seasr"
+      ]
+    },
+    {
+      "id": 207,
+      "label": "104. Al-Humazah (Arabic)",
+      "text": "سورة الهمزة",
+      "trigger": "shumazah",
+      "aliases": [
+        "s104",
+        "سورة الهمز"
+      ]
+    },
+    {
+      "id": 208,
+      "label": "104. Al-Humazah (English)",
+      "text": "Surah Al-Humazah",
+      "trigger": "surah humazah",
+      "aliases": [
+        "surah al humazah",
+        "surat humazah",
+        "surat al humazah",
+        "sura humazah",
+        "sura al humazah",
+        "sehumazah"
+      ]
+    },
+    {
+      "id": 209,
+      "label": "105. Al-Fil (Arabic)",
+      "text": "سورة الفيل",
+      "trigger": "sfil",
+      "aliases": [
+        "s105",
+        "سورة الفي"
+      ]
+    },
+    {
+      "id": 210,
+      "label": "105. Al-Fil (English)",
+      "text": "Surah Al-Fil",
+      "trigger": "surah fil",
+      "aliases": [
+        "surah al fil",
+        "surah feel",
+        "surah al feel",
+        "surat fil",
+        "surat al fil",
+        "surat feel",
+        "surat al feel",
+        "sura fil",
+        "sura al fil",
+        "sura feel",
+        "sura al feel",
+        "sefil"
+      ]
+    },
+    {
+      "id": 211,
+      "label": "106. Quraysh (Arabic)",
+      "text": "سورة قريش",
+      "trigger": "squraysh",
+      "aliases": [
+        "s106",
+        "سورة قري"
+      ]
+    },
+    {
+      "id": 212,
+      "label": "106. Quraysh (English)",
+      "text": "Surah Quraysh",
+      "trigger": "surah quraysh",
+      "aliases": [
+        "surah al quraysh",
+        "surat quraysh",
+        "surat al quraysh",
+        "sura quraysh",
+        "sura al quraysh",
+        "sequraysh"
+      ]
+    },
+    {
+      "id": 213,
+      "label": "107. Al-Ma'un (Arabic)",
+      "text": "سورة الماعون",
+      "trigger": "smaun",
+      "aliases": [
+        "s107",
+        "سورة الماعو",
+        "سورة الماع"
+      ]
+    },
+    {
+      "id": 214,
+      "label": "107. Al-Ma'un (English)",
+      "text": "Surah Al-Ma'un",
+      "trigger": "surah maun",
+      "aliases": [
+        "surah al maun",
+        "surah maoon",
+        "surah al maoon",
+        "surat maun",
+        "surat al maun",
+        "surat maoon",
+        "surat al maoon",
+        "sura maun",
+        "sura al maun",
+        "sura maoon",
+        "sura al maoon",
+        "semaun"
+      ]
+    },
+    {
+      "id": 215,
+      "label": "108. Al-Kawthar (Arabic)",
+      "text": "سورة الكوثر",
+      "trigger": "skawthar",
+      "aliases": [
+        "skauthar",
+        "skawsar",
+        "s108",
+        "سورة الكوث",
+        "سورة الكو"
+      ]
+    },
+    {
+      "id": 216,
+      "label": "108. Al-Kawthar (English)",
+      "text": "Surah Al-Kawthar",
+      "trigger": "surah kawthar",
+      "aliases": [
+        "surah al kawthar",
+        "surah kauthar",
+        "surah al kauthar",
+        "surah kawsar",
+        "surah al kawsar",
+        "surat kawthar",
+        "surat al kawthar",
+        "surat kauthar",
+        "surat al kauthar",
+        "surat kawsar",
+        "surat al kawsar",
+        "sura kawthar",
+        "sura al kawthar",
+        "sura kauthar",
+        "sura al kauthar",
+        "sura kawsar",
+        "sura al kawsar",
+        "sekawthar",
+        "sekauthar",
+        "sekawsar"
+      ]
+    },
+    {
+      "id": 217,
+      "label": "109. Al-Kafirun (Arabic)",
+      "text": "سورة الكافرون",
+      "trigger": "skafirun",
+      "aliases": [
+        "s109",
+        "سورة الكافرو"
+      ]
+    },
+    {
+      "id": 218,
+      "label": "109. Al-Kafirun (English)",
+      "text": "Surah Al-Kafirun",
+      "trigger": "surah kafirun",
+      "aliases": [
+        "surah al kafirun",
+        "surah kafiroon",
+        "surah al kafiroon",
+        "surat kafirun",
+        "surat al kafirun",
+        "surat kafiroon",
+        "surat al kafiroon",
+        "sura kafirun",
+        "sura al kafirun",
+        "sura kafiroon",
+        "sura al kafiroon",
+        "sekafirun"
+      ]
+    },
+    {
+      "id": 219,
+      "label": "110. An-Nasr (Arabic)",
+      "text": "سورة النصر",
+      "trigger": "snasr",
+      "aliases": [
+        "s110",
+        "سورة النص"
+      ]
+    },
+    {
+      "id": 220,
+      "label": "110. An-Nasr (English)",
+      "text": "Surah An-Nasr",
+      "trigger": "surah nasr",
+      "aliases": [
+        "surah al nasr",
+        "surah an nasr",
+        "surat nasr",
+        "surat al nasr",
+        "surat an nasr",
+        "sura nasr",
+        "sura al nasr",
+        "sura an nasr",
+        "senasr"
+      ]
+    },
+    {
+      "id": 221,
+      "label": "111. Al-Masad (Arabic)",
+      "text": "سورة المسد",
+      "trigger": "smasad",
+      "aliases": [
+        "s111"
+      ]
+    },
+    {
+      "id": 222,
+      "label": "111. Al-Masad (English)",
+      "text": "Surah Al-Masad",
+      "trigger": "surah masad",
+      "aliases": [
+        "surah al masad",
+        "surat masad",
+        "surat al masad",
+        "sura masad",
+        "sura al masad",
+        "semasad"
+      ]
+    },
+    {
+      "id": 223,
+      "label": "112. Al-Ikhlas (Arabic)",
+      "text": "سورة الإخلاص",
+      "trigger": "sikhlas",
+      "aliases": [
+        "sikhlaas",
+        "s112",
+        "سورة الإخلا",
+        "سورة الإخل"
+      ]
+    },
+    {
+      "id": 224,
+      "label": "112. Al-Ikhlas (English)",
+      "text": "Surah Al-Ikhlas",
+      "trigger": "surah ikhlas",
+      "aliases": [
+        "surah al ikhlas",
+        "surah ikhlaas",
+        "surah al ikhlaas",
+        "surat ikhlas",
+        "surat al ikhlas",
+        "surat ikhlaas",
+        "surat al ikhlaas",
+        "sura ikhlas",
+        "sura al ikhlas",
+        "sura ikhlaas",
+        "sura al ikhlaas",
+        "seikhlas",
+        "seikhlaas"
+      ]
+    },
+    {
+      "id": 225,
+      "label": "113. Al-Falaq (Arabic)",
+      "text": "سورة الفلق",
+      "trigger": "sfalaq",
+      "aliases": [
+        "s113",
+        "سورة الفل"
+      ]
+    },
+    {
+      "id": 226,
+      "label": "113. Al-Falaq (English)",
+      "text": "Surah Al-Falaq",
+      "trigger": "surah falaq",
+      "aliases": [
+        "surah al falaq",
+        "surat falaq",
+        "surat al falaq",
+        "sura falaq",
+        "sura al falaq",
+        "sefalaq"
+      ]
+    },
+    {
+      "id": 227,
+      "label": "114. An-Nas (Arabic)",
+      "text": "سورة الناس",
+      "trigger": "snas",
+      "aliases": [
+        "snaas",
+        "s114",
+        "سورة النا"
+      ]
+    },
+    {
+      "id": 228,
+      "label": "114. An-Nas (English)",
+      "text": "Surah An-Nas",
+      "trigger": "surah nas",
+      "aliases": [
+        "surah al nas",
+        "surah an nas",
+        "surah naas",
+        "surah al naas",
+        "surah an naas",
+        "surat nas",
+        "surat al nas",
+        "surat an nas",
+        "surat naas",
+        "surat al naas",
+        "surat an naas",
+        "sura nas",
+        "sura al nas",
+        "sura an nas",
+        "sura naas",
+        "sura al naas",
+        "sura an naas",
+        "senas",
+        "senaas"
+      ]
+    }
+  ]
+}

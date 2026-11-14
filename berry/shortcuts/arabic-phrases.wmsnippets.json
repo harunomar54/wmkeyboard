@@ -1,0 +1,593 @@
+{
+  "format": "wmkeyboard-snippets",
+  "version": 2,
+  "appVersion": 0,
+  "appVersionName": "",
+  "snippets": [
+    {
+      "id": 501,
+      "label": "السلام عليكم",
+      "text": "السلام عليكم",
+      "trigger": "salam",
+      "aliases": [
+        "salaam",
+        "assalamualaikum",
+        "asalamualaikum",
+        "assalamualaykum",
+        "salamualaikum"
+      ]
+    },
+    {
+      "id": 502,
+      "label": "السلام عليكم ورحمة الله وبركاته",
+      "text": "السلام عليكم ورحمة الله وبركاته",
+      "trigger": "salamfull",
+      "aliases": [
+        "assalamualaikumwarahmatullahiwabarakatuh",
+        "slmwrwb",
+        "aswrwb"
+      ]
+    },
+    {
+      "id": 503,
+      "label": "وعليكم السلام",
+      "text": "وعليكم السلام",
+      "trigger": "walaikumsalam",
+      "aliases": [
+        "waalaikumsalam",
+        "wassalam",
+        "walaikumassalam",
+        "wslm"
+      ]
+    },
+    {
+      "id": 504,
+      "label": "وعليكم السلام ورحمة الله وبركاته",
+      "text": "وعليكم السلام ورحمة الله وبركاته",
+      "trigger": "walaikumsalamfull",
+      "aliases": [
+        "wswrwb"
+      ]
+    },
+    {
+      "id": 505,
+      "label": "بسم الله",
+      "text": "بسم الله",
+      "trigger": "bismillah",
+      "aliases": [
+        "bismilah"
+      ]
+    },
+    {
+      "id": 506,
+      "label": "بسم الله الرحمن الرحيم",
+      "text": "بسم الله الرحمن الرحيم",
+      "trigger": "bismillahfull",
+      "aliases": [
+        "bismillahirrahmanirrahim"
+      ]
+    },
+    {
+      "id": 507,
+      "label": "الحمد لله",
+      "text": "الحمد لله",
+      "trigger": "alhamdulillah",
+      "aliases": [
+        "alhamdulilah",
+        "alhamdullilah",
+        "hamdulillah",
+        "alhamdolillah"
+      ]
+    },
+    {
+      "id": 508,
+      "label": "الحمد لله رب العالمين",
+      "text": "الحمد لله رب العالمين",
+      "trigger": "alhamdulillahrab",
+      "aliases": [
+        "alhamdulillahirabbilalamin"
+      ]
+    },
+    {
+      "id": 509,
+      "label": "الحمد لله على كل حال",
+      "text": "الحمد لله على كل حال",
+      "trigger": "alhamdulillahkul",
+      "aliases": [
+        "alhamdulillahalakullihal"
+      ]
+    },
+    {
+      "id": 510,
+      "label": "ما شاء الله",
+      "text": "ما شاء الله",
+      "trigger": "mashallah",
+      "aliases": [
+        "mashaallah",
+        "mashaalah",
+        "mashalla"
+      ]
+    },
+    {
+      "id": 511,
+      "label": "إن شاء الله",
+      "text": "إن شاء الله",
+      "trigger": "inshallah",
+      "aliases": [
+        "inshaallah",
+        "inshalla"
+      ]
+    },
+    {
+      "id": 512,
+      "label": "سبحان الله",
+      "text": "سبحان الله",
+      "trigger": "subhanallah",
+      "aliases": [
+        "subhanalah",
+        "subhaanallah"
+      ]
+    },
+    {
+      "id": 513,
+      "label": "سبحان الله وبحمده",
+      "text": "سبحان الله وبحمده",
+      "trigger": "subhanallahwabihamdihi",
+      "aliases": [
+        "swb"
+      ]
+    },
+    {
+      "id": 514,
+      "label": "سبحان الله العظيم",
+      "text": "سبحان الله العظيم",
+      "trigger": "subhanallahazim",
+      "aliases": [
+        "subhanallahilazim"
+      ]
+    },
+    {
+      "id": 515,
+      "label": "الله أكبر",
+      "text": "الله أكبر",
+      "trigger": "allahuakbar",
+      "aliases": [
+        "allahuakber"
+      ]
+    },
+    {
+      "id": 516,
+      "label": "لا إله إلا الله",
+      "text": "لا إله إلا الله",
+      "trigger": "lailahaillallah",
+      "aliases": [
+        "lailaha",
+        "lailahaillalah"
+      ]
+    },
+    {
+      "id": 517,
+      "label": "أستغفر الله",
+      "text": "أستغفر الله",
+      "trigger": "astaghfirullah",
+      "aliases": [
+        "astagfirullah",
+        "astaghfirulah",
+        "astaghfirallah"
+      ]
+    },
+    {
+      "id": 518,
+      "label": "أستغفر الله العظيم",
+      "text": "أستغفر الله العظيم",
+      "trigger": "astaghfirullahazim",
+      "aliases": [
+        "astaghfirullahalazim"
+      ]
+    },
+    {
+      "id": 519,
+      "label": "جزاك الله خيرًا",
+      "text": "جزاك الله خيرًا",
+      "trigger": "jazakallah",
+      "aliases": [
+        "jazakallahkhair",
+        "jazakallahkhairan",
+        "jzk"
+      ]
+    },
+    {
+      "id": 520,
+      "label": "جزاكم الله خيرًا",
+      "text": "جزاكم الله خيرًا",
+      "trigger": "jazakumullah",
+      "aliases": [
+        "jazakumullahkhair",
+        "jazakumullahkhairan"
+      ]
+    },
+    {
+      "id": 521,
+      "label": "بارك الله فيك",
+      "text": "بارك الله فيك",
+      "trigger": "barakallah",
+      "aliases": [
+        "barakallahufeek",
+        "barakallahfeek"
+      ]
+    },
+    {
+      "id": 522,
+      "label": "بارك الله فيكم",
+      "text": "بارك الله فيكم",
+      "trigger": "barakallahufeekum",
+      "aliases": [
+        "barakallahfeekum"
+      ]
+    },
+    {
+      "id": 523,
+      "label": "تبارك الله",
+      "text": "تبارك الله",
+      "trigger": "tabarakallah",
+      "aliases": [
+        "tabarakalah"
+      ]
+    },
+    {
+      "id": 524,
+      "label": "آمين",
+      "text": "آمين",
+      "trigger": "ameen",
+      "aliases": [
+        "aameen",
+        "amiin"
+      ]
+    },
+    {
+      "id": 525,
+      "label": "اللهم آمين",
+      "text": "اللهم آمين",
+      "trigger": "allahummaameen",
+      "aliases": [
+        "allahumaameen"
+      ]
+    },
+    {
+      "id": 526,
+      "label": "لا حول ولا قوة إلا بالله",
+      "text": "لا حول ولا قوة إلا بالله",
+      "trigger": "lahawla",
+      "aliases": [
+        "lahawlawalaquwwata",
+        "lahawlawalaquwwataillabillah"
+      ]
+    },
+    {
+      "id": 527,
+      "label": "إنا لله وإنا إليه راجعون",
+      "text": "إنا لله وإنا إليه راجعون",
+      "trigger": "innalillahi",
+      "aliases": [
+        "inalillahi",
+        "innalillah",
+        "innalillahiwainnailayhirajiun"
+      ]
+    },
+    {
+      "id": 528,
+      "label": "حسبنا الله ونعم الوكيل",
+      "text": "حسبنا الله ونعم الوكيل",
+      "trigger": "hasbunallah",
+      "aliases": [
+        "hasbunallahwanimalwakil"
+      ]
+    },
+    {
+      "id": 529,
+      "label": "حسبي الله ونعم الوكيل",
+      "text": "حسبي الله ونعم الوكيل",
+      "trigger": "hasbiyallah",
+      "aliases": [
+        "hasbiallah"
+      ]
+    },
+    {
+      "id": 530,
+      "label": "أعوذ بالله من الشيطان الرجيم",
+      "text": "أعوذ بالله من الشيطان الرجيم",
+      "trigger": "audhubillah",
+      "aliases": [
+        "aoothubillah",
+        "audhubillahiminashaytanirrajim"
+      ]
+    },
+    {
+      "id": 531,
+      "label": "رحمه الله",
+      "text": "رحمه الله",
+      "trigger": "rahimahullah",
+      "aliases": [
+        "rahimahulah"
+      ]
+    },
+    {
+      "id": 532,
+      "label": "رحمها الله",
+      "text": "رحمها الله",
+      "trigger": "rahimahallah",
+      "aliases": []
+    },
+    {
+      "id": 533,
+      "label": "الله يرحمه",
+      "text": "الله يرحمه",
+      "trigger": "allahyarhamu",
+      "aliases": [
+        "allahyarhamhu"
+      ]
+    },
+    {
+      "id": 534,
+      "label": "الله يرحمها",
+      "text": "الله يرحمها",
+      "trigger": "allahyarhamha",
+      "aliases": []
+    },
+    {
+      "id": 535,
+      "label": "يرحمك الله",
+      "text": "يرحمك الله",
+      "trigger": "yarhamukallah",
+      "aliases": [
+        "yarhamukallh"
+      ]
+    },
+    {
+      "id": 536,
+      "label": "يهديكم الله ويصلح بالكم",
+      "text": "يهديكم الله ويصلح بالكم",
+      "trigger": "yahdikumullah",
+      "aliases": [
+        "yahdeekumullah"
+      ]
+    },
+    {
+      "id": 537,
+      "label": "رضي الله عنه",
+      "text": "رضي الله عنه",
+      "trigger": "radiallahuanhu",
+      "aliases": [
+        "radiyallahuanhu"
+      ]
+    },
+    {
+      "id": 538,
+      "label": "رضي الله عنها",
+      "text": "رضي الله عنها",
+      "trigger": "radiallahuanha",
+      "aliases": [
+        "radiyallahuanha"
+      ]
+    },
+    {
+      "id": 539,
+      "label": "رضي الله عنهم",
+      "text": "رضي الله عنهم",
+      "trigger": "radiallahuanhum",
+      "aliases": [
+        "radiyallahuanhum"
+      ]
+    },
+    {
+      "id": 540,
+      "label": "عليه السلام",
+      "text": "عليه السلام",
+      "trigger": "alayhissalam",
+      "aliases": [
+        "alaihissalam",
+        "alayhisalam"
+      ]
+    },
+    {
+      "id": 541,
+      "label": "صلى الله عليه وسلم",
+      "text": "صلى الله عليه وسلم",
+      "trigger": "sallallahualayhiwasallam",
+      "aliases": [
+        "salallahualayhiwasallam",
+        "sallallahualaihiwasallam",
+        "sawsfull"
+      ]
+    },
+    {
+      "id": 542,
+      "label": "في أمان الله",
+      "text": "في أمان الله",
+      "trigger": "fiamanillah",
+      "aliases": [
+        "fiamanallah"
+      ]
+    },
+    {
+      "id": 543,
+      "label": "حياك الله",
+      "text": "حياك الله",
+      "trigger": "hayakallah",
+      "aliases": [
+        "hayyakallah"
+      ]
+    },
+    {
+      "id": 544,
+      "label": "حياكم الله",
+      "text": "حياكم الله",
+      "trigger": "hayakumullah",
+      "aliases": [
+        "hayyakumullah"
+      ]
+    },
+    {
+      "id": 545,
+      "label": "أخي الكريم",
+      "text": "أخي الكريم",
+      "trigger": "akhialkarim",
+      "aliases": [
+        "akhialkareem"
+      ]
+    },
+    {
+      "id": 546,
+      "label": "أختي الكريمة",
+      "text": "أختي الكريمة",
+      "trigger": "ukhtialkarima",
+      "aliases": [
+        "ukhtialkareema"
+      ]
+    },
+    {
+      "id": 547,
+      "label": "والله",
+      "text": "والله",
+      "trigger": "wallahi",
+      "aliases": [
+        "walahi",
+        "wallah"
+      ]
+    },
+    {
+      "id": 548,
+      "label": "والله أعلم",
+      "text": "والله أعلم",
+      "trigger": "allahualam",
+      "aliases": [
+        "allahuaalam",
+        "wallahualam"
+      ]
+    },
+    {
+      "id": 549,
+      "label": "عيد مبارك",
+      "text": "عيد مبارك",
+      "trigger": "eidmubarak",
+      "aliases": [
+        "eidmubarek"
+      ]
+    },
+    {
+      "id": 550,
+      "label": "عيد سعيد",
+      "text": "عيد سعيد",
+      "trigger": "eidsaid",
+      "aliases": []
+    },
+    {
+      "id": 551,
+      "label": "رمضان مبارك",
+      "text": "رمضان مبارك",
+      "trigger": "ramadanmubarak",
+      "aliases": [
+        "ramadhanmubarak"
+      ]
+    },
+    {
+      "id": 552,
+      "label": "رمضان كريم",
+      "text": "رمضان كريم",
+      "trigger": "ramadankarim",
+      "aliases": [
+        "ramadankareem",
+        "ramadhankareem"
+      ]
+    },
+    {
+      "id": 553,
+      "label": "جمعة مباركة",
+      "text": "جمعة مباركة",
+      "trigger": "jumuahmubarak",
+      "aliases": [
+        "jummahmubarak",
+        "jumamubarak"
+      ]
+    },
+    {
+      "id": 554,
+      "label": "تقبل الله منا ومنكم",
+      "text": "تقبل الله منا ومنكم",
+      "trigger": "taqabbalallah",
+      "aliases": [
+        "taqabbalallahuminnawaminkum"
+      ]
+    },
+    {
+      "id": 555,
+      "label": "شكرًا",
+      "text": "شكرًا",
+      "trigger": "shukran",
+      "aliases": [
+        "shukranjazilan"
+      ]
+    },
+    {
+      "id": 556,
+      "label": "عفوًا",
+      "text": "عفوًا",
+      "trigger": "afwan",
+      "aliases": []
+    },
+    {
+      "id": 557,
+      "label": "مرحبًا",
+      "text": "مرحبًا",
+      "trigger": "marhaba",
+      "aliases": [
+        "marhaban"
+      ]
+    },
+    {
+      "id": 558,
+      "label": "أهلًا وسهلًا",
+      "text": "أهلًا وسهلًا",
+      "trigger": "ahlanwasahlan",
+      "aliases": []
+    },
+    {
+      "id": 559,
+      "label": "مع السلامة",
+      "text": "مع السلامة",
+      "trigger": "maasalama",
+      "aliases": [
+        "maassalama",
+        "maasalaama"
+      ]
+    },
+    {
+      "id": 560,
+      "label": "صباح الخير",
+      "text": "صباح الخير",
+      "trigger": "sabahalkhair",
+      "aliases": [
+        "sabahalkhayr"
+      ]
+    },
+    {
+      "id": 561,
+      "label": "مساء الخير",
+      "text": "مساء الخير",
+      "trigger": "masaalkhair",
+      "aliases": [
+        "masaalkhayr"
+      ]
+    },
+    {
+      "id": 562,
+      "label": "كيف حالك؟",
+      "text": "كيف حالك؟",
+      "trigger": "kayfahaluk",
+      "aliases": [
+        "kaifhaluk",
+        "kifhalak"
+      ]
+    }
+  ]
+}

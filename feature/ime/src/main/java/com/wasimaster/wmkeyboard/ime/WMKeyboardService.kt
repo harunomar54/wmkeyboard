@@ -21317,8 +21317,9 @@ open class WMKeyboardService : InputMethodService() {
         ) {
             null
         } else {
-            snippetStore.matchTrigger(typed)
-                ?.takeIf { !snippetStore.offers(it) }
+            // A trigger that reaches back past this word ("surah tahrim",
+            // "الله اك") outranks a one-word one, as on the commit path.
+            (prefixTriggerSnippet(typed) ?: snippetStore.matchTrigger(typed)?.takeIf { !snippetStore.offers(it) })
                 ?.let { s -> if ('{' in s.text || '$' in s.text) s.label else s.text }
                 ?.lineSequence()?.firstOrNull()?.take(40)
         }
@@ -21335,6 +21336,23 @@ open class WMKeyboardService : InputMethodService() {
     }
 
     private var spacebarFlashJob: Job? = null
+
+    /**
+     * The snippet a space would expand through a trigger of several words
+     * that [typed] finishes, for the green preview. The field is read only
+     * when some such trigger ends in [typed], which is rare, so ordinary
+     * typing pays nothing for it.
+     */
+    private fun prefixTriggerSnippet(typed: String): com.wasimaster.wmkeyboard.core.snippets.Snippet? {
+        if (!snippetStore.couldFinishPrefix(typed)) return null
+        val ic = currentInputConnection ?: return null
+        val before = runCatching { ic.getTextBeforeCursor(PREFIX_PREVIEW_WINDOW, 0)?.toString() }.getOrNull() ?: return null
+        // The composing word is part of the field's text: what lies in front of
+        // the trigger's last word is the rest.
+        if (!before.endsWith(typed)) return null
+        val ahead = before.dropLast(typed.length)
+        return snippetStore.matchPrefix(typed, ahead)?.snippet?.takeIf { !snippetStore.offers(it) }
+    }
 
     /**
      * BB-Keyboard: the space bar swiped up. The word being written goes in
@@ -59770,6 +59788,8 @@ private const val OCTOPUS_POOL_DEPTH = 4
 
 /** How long the spacebar keeps showing a correction once the space has made it. */
 private const val SPACEBAR_FLASH_MS = 1600L
+/** How much of the field in front of the caret a multi-word trigger's preview reads. */
+private const val PREFIX_PREVIEW_WINDOW = 80
 
 private class GesturePreviewRequest(
     val points: List<GesturePoint>,
