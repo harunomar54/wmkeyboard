@@ -3154,14 +3154,17 @@ private fun ClipRow(
         ) {
             hold.picked?.let { ClipPickMark(it) }
             if (number != null) ClipNumberBadge(number)
-            if (visual) {
-                Box(
-                    modifier = Modifier
-                        .size(BerryClipTile)
-                        .clip(RoundedCornerShape(3.dp)),
-                ) { ClipBody(item, maxLines = 1, hold = hold) }
-            } else {
-                BerryDocTile()
+            // Tapping the tile opens the row's buttons, the same as the
+            // chevron under it, as BlackBerry did; the rest of the row pastes.
+            Box(
+                modifier = Modifier
+                    .size(BerryClipTile)
+                    .clip(RoundedCornerShape(3.dp))
+                    .clickable(
+                        onClickLabel = stringResource(if (open) R.string.ime_clip_row_less else R.string.ime_clip_row_more),
+                    ) { open = !open },
+            ) {
+                if (visual) ClipBody(item, maxLines = 1, hold = hold) else BerryDocTile()
             }
             Box(
                 modifier = Modifier

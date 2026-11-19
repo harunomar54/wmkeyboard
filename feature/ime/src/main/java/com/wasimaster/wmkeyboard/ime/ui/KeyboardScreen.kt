@@ -31079,13 +31079,16 @@ private fun Modifier.pointerInputKey(
                 val repeat = scope.launch {
                     delay(keyRepeat.startDelayMs.toLong())
                     longPressFired = true
-                    while (canDeleteHere()) {
+                    // Held at the start of a line, ⌫ takes the words after the
+                    // cursor instead, as BlackBerry's did.
+                    val ahead = !forward && deleteSwipe.holdGoesForward()
+                    while (if (ahead) canForwardDelete() else canDeleteHere()) {
                         repeatFeedback(vibrateOnRepeat, soundOnRepeat, onKeyPress, onKeySound, onKeyHaptic)
                         // Through the swipe's own delete rather than the key's:
                         // a word clear is the swipe's one-step call, and going
                         // by the key would repeat a single character.
-                        if (holdWords) deleteSwipe.onDeleteUnit(true, forward) else onKeyRepeat(key)
-                        delay(repeatMs)
+                        if (ahead || holdWords) deleteSwipe.onDeleteUnit(true, ahead || forward) else onKeyRepeat(key)
+                        delay(if (ahead) keyRepeat.wordDeleteMs.toLong() else repeatMs)
                     }
                 }
                 // Cancelled with the finger down (see the flick key's handler),
@@ -31711,8 +31714,13 @@ private fun Modifier.pointerInputKey(
                                             // buzzing against an empty field. ⌦
                                             // runs out at the other end of the text,
                                             // so it polls its own predicate.
+                                            // Held at the start of a line, ⌫
+                                            // takes the words after the cursor
+                                            // instead, as BlackBerry's did.
+                                            val ahead = deletesBack && deleteSwipe.holdGoesForward()
                                             while (
                                                 when {
+                                                    ahead -> canForwardDelete()
                                                     deletesBack -> canDelete()
                                                     deletesFwd -> canForwardDelete()
                                                     else -> true
@@ -31726,12 +31734,12 @@ private fun Modifier.pointerInputKey(
                                                 // knows how to take a word; the key
                                                 // itself only ever takes one
                                                 // character.
-                                                if (holdWords) {
-                                                    deleteSwipe.onDeleteUnit(true, deletesFwd)
+                                                if (ahead || holdWords) {
+                                                    deleteSwipe.onDeleteUnit(true, ahead || deletesFwd)
                                                 } else {
                                                     onKeyRepeat(key)
                                                 }
-                                                delay(intervalMs)
+                                                delay(if (ahead) keyRepeat.wordDeleteMs.toLong() else intervalMs)
                                             }
                                         } else if (key.clipboardAction != null) {
                                             // Clipboard shortcut replaces the alternates popup

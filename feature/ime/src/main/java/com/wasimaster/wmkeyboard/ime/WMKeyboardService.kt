@@ -17962,6 +17962,25 @@ open class WMKeyboardService : InputMethodService() {
      * off, or an editor that could not show one), and one tick of a hold that
      * clears words (issue #216).
      */
+    /**
+     * Whether a held backspace takes the words after the cursor instead, as
+     * BlackBerry's did: with the cursor at the start of a line (or of the
+     * field) in the app's own field, where deleting backwards would only eat
+     * the line break and run on into the line above. Never inside one of the
+     * keyboard's own boxes, a word still being typed, or a selection.
+     */
+    fun backspaceHoldGoesForward(): Boolean {
+        val state = _uiState.value
+        if (state.captureTarget() != null || composing.isNotEmpty()) return false
+        if (state.panel == PanelMode.HANDWRITING || keyboardHandwriteActive(state)) return false
+        val ic = currentInputConnection ?: return false
+        if (isNullField() || hasSelection(ic)) return false
+        val before = ic.getTextBeforeCursor(1, 0) ?: return false
+        if (before.isNotEmpty() && before[0] != '\n') return false
+        val after = ic.getTextAfterCursor(1, 0) ?: return false
+        return after.isNotEmpty()
+    }
+
     fun onDeleteSwipeUnit(byWord: Boolean, forward: Boolean) {
         if (forward) {
             trackForwardDeletion(if (byWord) ::onForwardDeleteWord else ::onForwardDelete)
@@ -40035,6 +40054,7 @@ open class WMKeyboardService : InputMethodService() {
             onSelectAll = ::onDeleteSwipeSelectAll,
             onCommit = ::onDeleteSwipeCommit,
             onCancel = ::onDeleteSwipeCancel,
+            holdGoesForward = ::backspaceHoldGoesForward,
         )
     }
 

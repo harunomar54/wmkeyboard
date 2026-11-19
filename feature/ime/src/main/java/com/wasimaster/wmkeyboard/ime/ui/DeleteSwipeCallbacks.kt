@@ -48,4 +48,11 @@ class DeleteSwipeCallbacks(
     val onCommit: () -> Unit = {},
     /** The gesture ended with nothing selected: drop the preview, delete nothing. */
     val onCancel: () -> Unit = {},
+    /**
+     * Whether a held ⌫ should take the words after the cursor rather than the
+     * text before it: true with the cursor at the start of a line in the app's
+     * own field and text after it, as BlackBerry's keyboard did. Asked once,
+     * when the hold starts repeating; a tap is never affected.
+     */
+    val holdGoesForward: () -> Boolean = { false },
 )
